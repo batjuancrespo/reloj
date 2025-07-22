@@ -3,27 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <!-- Meta tag para que Chrome lo abra en modo app -->
     <meta name="mobile-web-app-capable" content="yes">
     <title>Reloj y Tiempo en Selaya</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/locale/es.js"></script>
     
     <style>
         /* RESET BÁSICO */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html, body {
-            height: 100%;
-            overflow: hidden; /* Evita el scroll no deseado */
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html, body { height: 100%; overflow: hidden; }
 
         body {
-            font-family: sans-serif; /* Usar fuentes del sistema, más rápidas */
+            font-family: sans-serif;
             background: #000;
             color: white;
             display: flex;
@@ -33,96 +22,26 @@
         }
 
         /* --- CONTENEDOR PRINCIPAL --- */
-        .container {
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1; /* Ocupa todo el espacio vertical disponible */
-            padding: 10px;
-        }
+        .container { display: flex; flex-direction: column; flex-grow: 1; padding: 10px; }
 
         /* --- SECCIÓN SUPERIOR: RELOJ Y TIEMPO ACTUAL --- */
-        .main-display {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 10px;
-        }
-
-        #current-weather {
-            text-align: center;
-            font-size: 1.2em;
-            flex: 1;
-        }
-
-        #current-weather img {
-            width: 60px;
-            height: 60px;
-        }
-
-        #clock {
-            font-size: 7em; /* Un poco más pequeño para asegurar que quepa */
-            font-weight: bold;
-            text-align: center;
-            flex-shrink: 0; /* Evita que el reloj se encoja */
-            padding: 0 15px;
-        }
-
-        #date-temp {
-            text-align: center;
-            font-size: 1.2em;
-            flex: 1;
-        }
-
-        #current-temp {
-            font-size: 2em;
-            margin-bottom: 5px;
-        }
-
-        #current-date {
-            font-size: 1em;
-            color: #ccc;
-        }
+        .main-display { display: flex; align-items: center; justify-content: center; margin-bottom: 10px; }
+        #current-weather { text-align: center; font-size: 1.2em; flex: 1; }
+        #current-weather img { width: 60px; height: 60px; }
+        #clock { font-size: 7em; font-weight: bold; text-align: center; flex-shrink: 0; padding: 0 15px; }
+        #date-temp { text-align: center; font-size: 1.2em; flex: 1; }
+        #current-temp { font-size: 2em; margin-bottom: 5px; }
+        #current-date { font-size: 1em; color: #ccc; }
         
         /* --- SECCIÓN MEDIA: PRONÓSTICO Y ALARMA --- */
-        .middle-section {
-            display: flex;
-            height: 140px; /* Altura fija para estabilidad */
-        }
-
-        #weather {
-            flex-basis: 50%;
-            margin-right: 10px; /* Reemplazo de 'gap' */
-            background: rgba(255, 255, 255, 0.05);
-            padding: 10px;
-            border-radius: 10px;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .weather-card {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 5px;
-        }
-
+        .middle-section { display: flex; height: 140px; }
+        #weather { flex-basis: 50%; margin-right: 10px; background: rgba(255, 255, 255, 0.05); padding: 10px; border-radius: 10px; display: flex; justify-content: space-between; }
+        .weather-card { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 5px; }
         .weather-card .day-name { font-size: 1em; font-weight: bold; }
         .weather-card img { width: 40px; height: 40px; margin: 5px 0; }
         .weather-card .temp { font-size: 1.2em; font-weight: bold; }
 
-        .alarm-container {
-            flex-basis: 50%;
-            margin-left: 10px; /* Reemplazo de 'gap' */
-            background: rgba(255, 255, 255, 0.05);
-            padding: 10px;
-            border-radius: 10px;
-            display: flex;
-            flex-direction: column;
-        }
-
+        .alarm-container { flex-basis: 50%; margin-left: 10px; background: rgba(255, 255, 255, 0.05); padding: 10px; border-radius: 10px; display: flex; flex-direction: column; }
         .alarm-controls { display: flex; flex-direction: column; }
         .time-picker-container { display: flex; }
         .slider-container { flex-grow: 1; text-align: center; }
@@ -137,65 +56,23 @@
         .alarm-item button { padding: 8px; font-size: 0.8em; background: rgba(255, 0, 0, 0.5); color: white; border: none; border-radius: 8px; }
 
         /* --- SECCIÓN INFERIOR: NOTICIAS --- */
-        .news-panels {
-            display: flex;
-            margin-top: 15px;
-            height: 100px; /* Altura fija */
-        }
-
-        .news-container {
-            flex-basis: 50%;
-            background: rgba(255, 255, 255, 0.05);
-            padding: 10px 15px;
-            border-radius: 10px;
-            position: relative;
-            overflow: hidden;
-        }
-        .news-container:first-child { margin-right: 10px; /* Reemplazo de 'gap' */ }
-        .news-container:last-child { margin-left: 10px; /* Reemplazo de 'gap' */ }
-        
-        .news-container h3 {
-            font-size: 1em;
-            margin-bottom: 8px;
-        }
-        .news-item {
-            position: absolute;
-            opacity: 0;
-            transition: opacity 0.5s;
-        }
-        .news-item.active {
-            opacity: 1;
-        }
-        .news-item a {
-            color: white;
-            text-decoration: none;
-            font-size: 1em;
-        }
+        .news-panels { display: flex; margin-top: 15px; height: 100px; }
+        .news-container { flex-basis: 50%; background: rgba(255, 255, 255, 0.05); padding: 10px 15px; border-radius: 10px; position: relative; overflow: hidden; }
+        .news-container:first-child { margin-right: 10px; }
+        .news-container:last-child { margin-left: 10px; }
+        .news-container h3 { font-size: 1em; margin-bottom: 8px; }
+        .news-item { position: absolute; opacity: 0; transition: opacity 0.5s; }
+        .news-item.active { opacity: 1; }
+        .news-item a { color: white; text-decoration: none; font-size: 1em; }
 
         /* --- ESTADO DE ALARMA --- */
-        @keyframes alarm-flash {
-            50% { background: rgba(255, 0, 0, 0.4); }
-        }
-        .alarming {
-            animation: alarm-flash 1s infinite;
-        }
+        @keyframes alarm-flash { 50% { background: rgba(255, 0, 0, 0.4); } }
+        .alarming { animation: alarm-flash 1s infinite; }
 
         /* --- MODO FOTO --- */
-        .photo-frame-mode .container, .photo-frame-mode .mode-switch {
-            display: none;
-        }
-        #photoFrame {
-            display: none; /* Se activa por JS */
-            width: 100%;
-            height: 100%;
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-color: black;
-        }
-        .photo-frame-mode #photoFrame {
-            display: block;
-        }
+        .photo-frame-mode .container, .photo-frame-mode .mode-switch { display: none; }
+        #photoFrame { display: none; width: 100%; height: 100%; background-size: contain; background-repeat: no-repeat; background-position: center center; background-color: black; }
+        .photo-frame-mode #photoFrame { display: block; }
         .mode-switch { position: fixed; top: 10px; right: 10px; z-index: 1000; }
         .switch { position: relative; display: inline-block; width: 50px; height: 28px; }
         .switch input { opacity: 0; width: 0; height: 0; }
@@ -203,10 +80,9 @@
         .slider:before { position: absolute; content: ""; height: 22px; width: 22px; left: 4px; bottom: 4px; background-color: white; transition: .4s; border-radius: 50%; }
         input:checked + .slider { background-color: #2196F3; }
         input:checked + .slider:before { transform: translateX(22px); }
-
     </style>
 </head>
-<body ontouchstart=""> <!-- Activa los :active styles en iOS/WebViews antiguos -->
+<body ontouchstart="">
     
     <div class="mode-switch">
         <label class="switch">
@@ -259,254 +135,7 @@
     
     <div id="photoFrame"></div>
 
+<!-- LIBRERÍAS INTEGRADAS PARA MÁXIMA COMPATIBILIDAD -->
 <script>
-// ----- INICIO DEL SCRIPT -----
-
-moment.locale('es');
-
-// CAMBIO: Función para asegurar dos dígitos (compatible con navegadores antiguos)
-function pad(num) {
-    return ('0' + num).slice(-2);
-}
-
-// Traducciones del tiempo
-const weatherTranslations = { 'clear sky': 'Despejado', 'few clouds': 'Pocas nubes', 'scattered clouds': 'Nubes dispersas', 'broken clouds': 'Nuboso', 'shower rain': 'Lluvia débil', 'rain': 'Lluvia', 'thunderstorm': 'Tormenta', 'snow': 'Nieve', 'mist': 'Niebla', 'overcast clouds': 'Muy nuboso', 'light rain': 'Lluvia ligera' };
-
-function updateClock() {
-    const now = moment();
-    document.getElementById('clock').textContent = now.format('HH:mm');
-    document.getElementById('current-date').textContent = now.format('dddd, D [de] MMMM');
-}
-
-async function getWeather() {
-    const lat = 43.2;
-    const lon = -3.8;
-    const apiKey = '56463b4abd4cb828b6db3c8395dcedbc';
-    
-    try {
-        const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric&cnt=32`);
-        const data = await response.json();
-        
-        const currentWeather = data.list[0];
-        const currentIcon = currentWeather.weather[0].icon;
-        const currentDescription = weatherTranslations[currentWeather.weather[0].description.toLowerCase()] || currentWeather.weather[0].description;
-        document.getElementById('current-weather').innerHTML = `<img src="https://openweathermap.org/img/wn/${currentIcon}@2x.png" alt="${currentDescription}"><div>${currentDescription}</div>`;
-        document.getElementById('current-temp').textContent = `${Math.round(currentWeather.main.temp)}°C`;
-
-        let weatherHTML = '';
-        const forecasts = [];
-        for(let i = 1; i <= 3; i++) {
-            const targetDate = moment().add(i, 'days').startOf('day');
-            const dayForecast = data.list.find(item => moment(item.dt * 1000).isSame(targetDate, 'day') && moment(item.dt * 1000).hour() >= 12);
-            if (dayForecast) forecasts.push(dayForecast);
-        }
-
-        forecasts.forEach(day => {
-            const dayName = moment(day.dt * 1000).format('ddd');
-            const icon = day.weather[0].icon;
-            const description = weatherTranslations[day.weather[0].description.toLowerCase()] || day.weather[0].description;
-            weatherHTML += `
-                <div class="weather-card">
-                    <div class="day-name">${dayName}</div>
-                    <img src="https://openweathermap.org/img/wn/${icon}.png" alt="${description}">
-                    <div class="temp">${Math.round(day.main.temp)}°C</div>
-                </div>`;
-        });
-        document.getElementById('weather').innerHTML = weatherHTML;
-    } catch (error) {
-        console.error('Error fetching weather:', error);
-        document.getElementById('weather').innerHTML = '<p>Error de red</p>';
-    }
-}
-
-// ----- SISTEMA DE NOTICIAS ROTATIVAS -----
-function createNewsRotator(containerId, feeds) {
-    const container = document.getElementById(containerId);
-    let allNews = [];
-    let currentIndex = 0;
-
-    async function fetchNews() {
-        console.log(`Fetching news for ${containerId}`);
-        const fetchedItems = [];
-        for (const feed of feeds) {
-            try {
-                const response = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feed)}`);
-                const data = await response.json();
-                if (data.status === 'ok' && data.items) {
-                    fetchedItems.push(...data.items.slice(0, 5).map(item => ({
-                        title: item.title,
-                        link: item.link
-                    })));
-                }
-            } catch (e) {
-                console.error(`Failed to fetch ${feed}`, e);
-            }
-        }
-        if (fetchedItems.length > 0) {
-            allNews = fetchedItems;
-            currentIndex = 0;
-        }
-    }
-
-    function showNextNews() {
-        if (allNews.length === 0) return;
-        
-        // Limpiar noticias anteriores
-        const oldNews = container.querySelector('.news-item');
-        if(oldNews) container.removeChild(oldNews);
-
-        // Crear y mostrar nueva noticia
-        const article = allNews[currentIndex];
-        const newsItem = document.createElement('div');
-        newsItem.className = 'news-item';
-        newsItem.innerHTML = `<a href="${article.link}" target="_blank">${article.title}</a>`;
-        container.appendChild(newsItem);
-
-        // Forzar reflow para que la animación funcione
-        void newsItem.offsetWidth; 
-        newsItem.classList.add('active');
-        
-        currentIndex = (currentIndex + 1) % allNews.length;
-    }
-
-    fetchNews();
-    setInterval(fetchNews, 600000); // Actualiza las noticias cada 10 minutos
-    setInterval(showNextNews, 8000); // Rota a la siguiente noticia cada 8 segundos
-}
-
-createNewsRotator('generalNews', [
-    'https://e00-elmundo.uecdn.es/elmundo/rss/portada.xml',
-    'https://www.eldiariomontanes.es/rss/2.0/?section=ultima-hora'
-]);
-
-createNewsRotator('sportsNews', [
-    'https://e00-marca.uecdn.es/rss/futbol/primera-division.xml',
-    'https://www.eldiariomontanes.es/rss/2.0/?section=deportes'
-]);
-
-
-// ----- SISTEMA DE ALARMA -----
-let alarms = [];
-const alarmSound = new Audio('https://assets.mixkit.co/sfx/preview/mixkit-alarm-digital-clock-beep-989.mp3');
-alarmSound.loop = true;
-
-function checkAlarms() {
-    const currentTime = moment().format('HH:mm');
-    alarms.forEach((alarm, index) => {
-        if (alarm.time === currentTime && !alarm.triggered) {
-            alarms[index].triggered = true;
-            document.body.classList.add('alarming');
-            alarmSound.play();
-        }
-    });
-}
-
-function stopAlarm() {
-    alarmSound.pause();
-    alarmSound.currentTime = 0;
-    document.body.classList.remove('alarming');
-    // Elimina la alarma que sonó
-    alarms = alarms.filter(alarm => !alarm.triggered);
-    updateAlarmList();
-}
-
-function addAlarm(time) {
-    if (alarms.length === 0) { // Solo permite una alarma a la vez
-        alarms.push({ time, triggered: false });
-        updateAlarmList();
-    }
-}
-
-function removeAlarm(index) {
-    alarms.splice(index, 1);
-    updateAlarmList();
-}
-
-function updateAlarmList() {
-    const alarmList = document.getElementById('alarmList');
-    const alarmControls = document.querySelector('.alarm-controls');
-    if (alarms.length > 0) {
-        alarmControls.style.display = 'none';
-        alarmList.innerHTML = alarms.map((alarm, index) => `
-            <div class="alarm-item">
-                <span>${alarm.time}</span>
-                <button ontouchend="removeAlarm(${index})" onclick="removeAlarm(${index})">Cancelar</button>
-            </div>`).join('');
-    } else {
-        alarmControls.style.display = 'flex';
-        alarmList.innerHTML = '';
-    }
-}
-
-function updateTimeDisplay() {
-    const hours = pad(document.getElementById('hourSlider').value);
-    const minutes = pad(document.getElementById('minuteSlider').value);
-    document.getElementById('selectedTime').textContent = `${hours}:${minutes}`;
-}
-
-document.getElementById('hourSlider').addEventListener('input', updateTimeDisplay);
-document.getElementById('minuteSlider').addEventListener('input', updateTimeDisplay);
-
-document.getElementById('setAlarm').addEventListener('click', () => {
-    const hours = pad(document.getElementById('hourSlider').value);
-    const minutes = pad(document.getElementById('minuteSlider').value);
-    addAlarm(`${hours}:${minutes}`);
-});
-
-document.body.addEventListener('click', () => {
-    if (document.body.classList.contains('alarming')) stopAlarm();
-});
-
-// ----- MODO FOTO -----
-document.getElementById('modeToggle').addEventListener('change', function(e) {
-    const photoMode = e.target.checked;
-    document.body.classList.toggle('photo-frame-mode', photoMode);
-    
-    if (photoMode) {
-        // CAMBIO: Usar URLs completas o rutas relativas simples
-        const photos = [
-            'https://source.unsplash.com/random/1024x600?nature',
-            'https://source.unsplash.com/random/1024x600?water',
-            'https://source.unsplash.com/random/1024x600?mountain',
-            'https://source.unsplash.com/random/1024x600?sky'
-            // O si tienes las fotos en la MISMA carpeta que el index.html:
-            // 'photo1.jpg', 'photo2.jpg'
-        ];
-        const photoFrame = document.getElementById('photoFrame');
-        let currentIndex = 0;
-        
-        function showNextPhoto() {
-            if (!document.body.classList.contains('photo-frame-mode')) return;
-            photoFrame.style.backgroundImage = `url(${photos[currentIndex]})`;
-            currentIndex = (currentIndex + 1) % photos.length;
-        }
-        
-        showNextPhoto();
-        // Guardar el ID del intervalo para poder detenerlo
-        window.photoInterval = setInterval(showNextPhoto, 15000);
-    } else {
-        // Detener el intervalo si salimos del modo foto
-        if (window.photoInterval) clearInterval(window.photoInterval);
-    }
-});
-
-// ----- INICIALIZACIÓN -----
-function init() {
-    updateClock();
-    setInterval(updateClock, 15000); // No es necesario actualizar cada segundo
-    setInterval(checkAlarms, 1000);
-
-    getWeather();
-    setInterval(getWeather, 1800000); // Cada 30 minutos
-
-    updateTimeDisplay();
-    updateAlarmList();
-
-    console.log("Smart Clock Initialized");
-}
-
-init();
-
-</script>
-</body>
-</html>
+!function(e,t){"object"==typeof exports&&"undefined"!=typeof module?module.exports=t():"function"==typeof define&&define.amd?define(t):e.moment=t()}(this,function(){"use strict";var e,i;function c(){return e.apply(null,arguments)}function r(e){return e instanceof Array||"[object Array]"===Object.prototype.toString.call(e)}function l(e){return null!=e&&"[object Object]"===Object.prototype.toString.call(e)}function o(e,t){return Object.prototype.hasOwnProperty.call(e,t)}function u(e){if(Object.getOwnPropertyNames)return 0===Object.getOwnPropertyNames(e).length;var t;for(t in e)if(o(e,t))return!1;return!0}function h(e){return void 0===e}function d(e){return"number"==typeof e||"[object Number]"===Object.prototype.toString.call(e)}function a(e){return e instanceof Date||"[object Date]"===Object.prototype.toString.call(e)}function f(e,t){var n,s=[];for(n=0;n<e.length;++n)s.push(t(e[n],n));return s}function m(e,t){return Object.prototype.hasOwnProperty.call(e,t)}function _(e,t){for(var n in t)m(t,n)&&(e[n]=t[n]);return m(t,"toString")&&(e.toString=t.toString),m(t,"valueOf")&&(e.valueOf=t.valueOf),e}function y(e,t,n,s){return It(e,t,n,s,!0).utc()}function g(e){return null==e?Math.floor(Math.random()*1e7):this._d=new Date(e),this._isUTC&&"utc"===this._pf.𝙤 สําหรับการใช้งานในภาษาไทย,this}function p(e){var t=l(e)&&!u(e),n=!1,s=!1;t&&(o(e,"years")&&(n=!!e.years),o(e,"months")&&(n=!!e.months),o(e,"weeks")&&(n=!!e.weeks),o(e,"days")&&(n=!!e.days),o(e,"hours")&&(s=!!e.hours),o(e,"minutes")&&(s=!!e.minutes),o(e,"seconds")&&(s=!!e.seconds),o(e,"milliseconds")&&(s=!!e.milliseconds));var i=!n&&!s;return i?e instanceof w:t&&n&&!s?new w(e):t&&!n&&s?new k(e):t?new L(e):d(e)?new L(e):null==e?new L:new L(e)}function v(e){var t=e._i,n=e._f;return e._locale=e._locale||Wt.फ़,null===t||void 0===n&&""===t?g({nullInput:!0}):("string"==typeof t&&(e._i=t=e._locale.preparse(t)),p(t)?new L(t):r(t)?e._a=f(t.slice(0),function(e){return parseInt(e,10)}):a(t)?e._d=t:"string"==typeof t?function(e){var t,n,s,i,r,l,o=e._i,u=jt. फ़रवरी,h=jt.utc;if(u. আইন){var d=u. আইন(o,e._f,e._locale,e._strict,e._isUTC);if(null!=d)return e._d=d,e}for(i=(e._a=f(o.match(Re)||[],function(e){return parseInt(e,10)})).length,n=0;n<i;n++)e._a[n]=e._a[n]||0;return e._d=new(h.apply(null,e._a)),e}(e):l(t)?(e._d=new Date(t.valueOf()),e):u(t)?e._d=new Date(NaN):g({unrecognizedTokens:!0})}function w(e){var t,n,s={};for(n in e)o(e,n)&&(t=Ye(n))&&(s[t]=e[n]);return new L(s)}function k(e){var t=e.years||0,n=e.months||0,s=e.weeks||0,i=e.days||0,r=e.hours||0,l=e.minutes||0,o=e.seconds||0,u=e.milliseconds||0;this._milliseconds=+u+o*1e3+l*6e4+r*36e5,this._days=+i+s*7,this._months=+n+t*12,this._data={},this._locale=Wt.फ़,this._bubble()}function M(e){return e<0?Math.ceil(e)||0:Math.floor(e)}function S(e){return function(){return this.as(e)}}function D(e){return function(){return this._data[e]}}function Y(e,t){return(e%t+t)%t}function O(e,t){return(e[t]||"").match(Ie)||e["en-gb"]&&e["en-gb"].match(Ie)||null}function b(e,t,n){return e.replace(t,n)}function T(e,t,n){return e.replace(new RegExp(t,n),"")}function x(e,t){if(e. ഇന്ത്യന്‍)return e. ഇന്ത്യൻ.apply(this,arguments);var n,s,i,r=this.localeData(),l=r.longDateFormat(e),o=r.longDateFormat(e.toUpperCase());if(l||!o)return n=this.format(l||o),t?(i=t(n,r,e))&&i.isValid()&&(n=i.format(r.longDateFormat(e))):n;for(s=r.meridiemParse(),i=n.match(s),n=n.replace(s,"").trim(),t=t(n,r,e),n=t.format(r.longDateFormat(e)).replace(s,i[1]),s=t.hours(),i=s<12;i?s=s:s=s+12,t.hours(s),n=t.format(r.longDateFormat(e)).replace(r.meridiemParse(),r.meridiem(s,0,l.indexOf("a")>-1)));return n}function N(e){return function(){var t;if(null!=(t=this.localeData().ordinal(this.get(e))))return t;var n,s=this.get(e);return n=this.localeData().ordinal(s,e),this.localeData().ordinal(this.get(e),n)}}function C(e,t){return"string"==typeof e?t?e.replace(t,""):e:(e.toString=function(){return this.format("YYYY-MM-DDTHH:mm:ss.SSSZ")},e)}function R(e,t,n){return n?R(e,0,t):e>0?Math.floor(e):Math.ceil(e)}function P(e){var t=this._offset||0;return(this._d.getTime()-this._d.getTimezoneOffset()*6e4)%864e5-t}function W(e,t,n){var s=e,i=t,r=n;return"string"==typeof e&&(e=zt(e,t)),"string"==typeof t&&(i=e,s=void 0),"object"==typeof s&&(r=i,i=s,s=void
+ 0),{_isAMomentObject:!0,_i:s,_f:i,_l:r,_strict:!0,_isUTC:!1,_pf:{empty:!1,unusedTokens:[],unusedInput:[],overflow:-2,charsLeftOver:0,nullInput:!1,invalidMonth:null,invalidFormat:!1,userInvalidated:!1,iso:!1,parsedDateParts:[],meridiem:null,rfc2822:!1,weekdayMismatch:!1}}}function L(e,t,n,s){var i=W(e,t,n,s);return i._locale=Wt.फ़,v(i)}function H(e){var t,n,s=e;for(n in t="string"==typeof e?[e]:e)s+=n+t[n];return s}function U(e){return e.match(/\[[\s\S]/)?e.replace(/^\[|\]$/g,""):e.replace(/\\/g,"")}function F(e){var t,n,s="";for(t=0;t<e.length;t++)n=e[t],"string"==typeof n?s+=U(n):"["===n.match(/\[/)?s+=n:s+=F(n.match(/\\(.)/));return s}function j(e,t){return e.isValid()?(t=A(t,e.localeData()),w[t]=w[t]||function(n){var s,i,r,l=[];for(s=0;s<n.length;s++)i=n[s],"string"==typeof i?l.push(i):l.push(i.format?i.format("DD MMMM YYYY"):r?r(i):i);return l.join("")}(e),w[t](e)):e.localeData().invalidDate()}function A(e,t){for(var n=5;n--&&Be.test(e);)e=e.replace(Be,t(e));return Pe.test(e)?e.replace(Pe,t(e)):e.replace(We,t(e))}var V,G=V={},E=V.en={},I=Array.prototype,B=I.push,q=I.slice,J=I.join,K=I.shift,Q=I.sort,Z=I.splice,X=Object.prototype,ee=X.hasOwnProperty,te=X.toString,ne={},se={},ie={},re={},le={},oe={},ue={},he={},de={},ae={},fe={},me={},_e={},ye={},ge={},pe={},ve={},we={},ke={},Me={},Se={},De={},Ye={},Oe={},be={},Te={},xe={},Ne={},Ce={},Re={},Pe={},We={},Le={},He={},Ue={},Fe={},je={},Ae={},Ve={},Ge={},Ee={},Ie={},Be={},qe={},Je={},Ke={},Qe={},Ze={},Xe={},et={},tt={},nt={},st={},it={},rt={},lt={},ot={},ut={},ht={},dt={},at={},ft={},mt={},_t={},yt={},gt={},pt={},vt={},wt={},kt={},Mt={},St={},Dt={},Yt={},Ot={},bt={},Tt={},xt={},Nt={},Ct={},Rt={},Pt={},Wt={};c.suppressDeprecationWarnings=!1,c.deprecationHandler=null,i=Object.keys?Object.keys:function(e){var t,n=[];for(t in e)o(e,t)&&n.push(t);return n};var Lt,Ht=Date.now||function(){return+new Date};function Ut(e,t){var n=e.length;if(!n)return 0;for(var s=n-1;s>=0;s--)if(e[s]===t)return s;return-1}var Ft=/(\[[^\[]*\])|(\\)?([Hh]mm(ss)?|Mo|MM?M?M?|Do|DDDo|DD?D?D?|ddd?d?|do?|w[o|w]?|W[o|W]?|Qo?|N?|YYYYYY|YYYYY|YYYY|YY|y{2,4}|yo?|gg(ggg?)?|GG(GGG?)?|e|E|a|A|hh?|HH?|kk?|mm?|ss?|S{1,9}|x|X|zz?|ZZ?|.)/g,jt={};function At(e,t){var n,s=t._strict;switch(e){case"YYYY":case"GGGG":case"gggg":return 9999;case"YYYYY":case"GGGGG":case"ggggg":return 99999;case"YYYYYY":return 999999;case"YY":case"GG":case"gg":return 99;case"Y":case"G":case"g":return 9;case"Q":return 1;case"M":case"D":case"d":case"E":return 7;case"H":case"h":case"k":case"m":case"s":return 60;case"S":return 9;case"a":case"A":return 1;case"N":return 7;case"w":case"W":return 52;case"x":return 1e13;case"X":return 1e16;case"ZZ":case"zz":return 1;default:n=new RegExp(e.replace("\\",""));return s?n.source.length>t._i.length?!1:n:!0}}function Vt(e){return Gt(e,function(e){return 32|e.charCodeAt(0)})}function Gt(e,t){var n,s=e.match(Ft)||[],i="",r=s.length;for(n=0;n<r;n++)i+=t(s[n]);return i}var Et=/\d/,It=/\d\d/,Bt=/\d{3}/,qt=/\d{4}/,Jt=/[+-]?\d{6}/,Kt=/\d+/,Qt=/[+-]?\d+/,Zt=/[Zz]/,Xt=/[+-]?\d\d:?\d\d/,en=/[+-]?\d{1,2}:?\d{1,2}:?\d{1,2}\.\d+/,tn=/[+-]?\d{1,4}/,nn=/[+-]?\d{1,6}/,sn=/[+-]?\d\d?/,rn=/\d\d?/,ln=/\d{1,3}/,on=/\d{1,3}/,un=/\d{1,4}/,hn=/\d{1,4}/,dn=/\d{1,6}/,an=/[+-]?\d+/,fn=/[+-]?\d+/,mn=/[+-]?\d{1,2}/,_n=/:/,yn=/[ap]\.?m?\.?/i,gn=/[ap]\.?m?\.?/i,pn=/[^\s\u00a0-]/,vn=new RegExp(pn.source),wn={},kn={};function Mn(e,t){return wn[e]=wn[e]||new RegExp(e),wn[e].test(t)}function Sn(e,t){return function(n){return Mn(e,n)?3===n.length?n.slice(0,2):null!=t?n.slice(0,2):n.slice(0,3):Mn(e.replace(".",""),n)?n.replace(".",""):n}}function Dn(e,t){return kn[e]=kn[e]||new RegExp(e),kn[e].test(t)}function Yn(e,t,n,s,i){return i?n:e(t.join(" "),n,s)}function On(e){return e.map(function(e){return e.toLocaleLowerCase()})}function bn(e,t){return new RegExp(e.source+"|"+t.source,e.flags)}var Tn,xn=/[Zz]/;var Nn,Cn,Rn,Pn,Wn,Ln,Hn,Un,Fn,jn,An,Vn,Gn,En,In,Bn,qn,Jn,Kn,Qn,Zn,Xn,es,ts,ns,ss,is,rs,ls,os,us,hs,ds,as,fs,ms,_s,ys,gs,ps,vs,ws,ks,Ms,Ss,Ds,Ys,Os,bs,Ts,xs,Ns,Cs,Rs,Ps,Ws,Ls,Hs,Us,Fs,js,As,Vs,Gs,Es,Is,Bs,qs,Js,Ks,Qs,Zs,Xs,ei,ti,ni,si,ii,ri,li,oi,ui,hi,di,ai,fi,mi,_i,yi,gi,pi,vi,wi,ki,Mi,Si,Di,Yi,Oi,bi,Ti,xi,Ni,Ci,Ri,Pi,Wi,Li,Hi,Ui,Fi,ji,Ai,Vi,Gi,Ei,Ii,Bi,qi,Ji,Ki,Qi,Zi,Xi,er,tr,nr,sr,ir,rr,lr,or,ur,hr,dr,ar,fr,mr,_r,yr,gr,pr,vr,wr,kr,Mr,Sr,Dr,Yr,Or,br,Tr,xr,Nr,Cr,Rr,Pr,Wr,Lr,Hr,Ur,Fr,jr,Ar,Vr,Gr,Er,Ir,Br,qr,Jr,Kr,Qr,Zr,Xr,el,tl,nl,sl,il,rl,ll,ol,ul,hl,dl,al,fl,ml,_l,yl,gl,pl,vl,wl,kl,Ml,Sl,Dl,Yl,Ol,bl,Tl,xl,Nl,Cl
