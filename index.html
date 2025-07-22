@@ -10,41 +10,15 @@
     
     <style>
         /* RESET BÁSICO Y ESTILOS GLOBALES */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            -webkit-tap-highlight-color: transparent;
-        }
-        html, body {
-            height: 100%;
-            overflow: hidden;
-        }
-        body {
-            font-family: sans-serif;
-            background: #000;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+        html, body { height: 100%; overflow: hidden; }
+        body { font-family: sans-serif; background: #000; color: white; display: flex; flex-direction: column; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
         /* --- CONTENEDOR PRINCIPAL --- */
-        .container {
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-            padding: 10px;
-        }
+        .container { display: flex; flex-direction: column; flex-grow: 1; padding: 10px; }
 
-        /* --- SECCIÓN SUPERIOR: RELOJ Y TIEMPO ACTUAL --- */
-        .main-display {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 10px;
-        }
+        /* --- SECCIONES PRINCIPALES --- */
+        .main-display { display: flex; align-items: center; justify-content: center; margin-bottom: 10px; }
         #current-weather { text-align: center; font-size: 1.2em; flex: 1; }
         #current-weather img { width: 60px; height: 60px; }
         #clock { font-size: 7em; font-weight: bold; text-align: center; flex-shrink: 0; padding: 0 15px; }
@@ -52,13 +26,13 @@
         #current-temp { font-size: 2em; margin-bottom: 5px; }
         #current-date { font-size: 1em; color: #ccc; }
         
-        /* --- SECCIÓN MEDIA: PRONÓSTICO Y ALARMA --- */
         .middle-section { display: flex; height: 140px; }
         #weather { flex-basis: 50%; margin-right: 10px; background: rgba(255, 255, 255, 0.05); padding: 10px; border-radius: 10px; display: flex; justify-content: space-between; }
         .weather-card { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 5px; }
         .weather-card .day-name { font-size: 1em; font-weight: bold; }
         .weather-card img { width: 40px; height: 40px; margin: 5px 0; }
         .weather-card .temp { font-size: 1.2em; font-weight: bold; }
+        
         .alarm-container { flex-basis: 50%; margin-left: 10px; background: rgba(255, 255, 255, 0.05); padding: 10px; border-radius: 10px; display: flex; flex-direction: column; }
         .alarm-controls { display: flex; flex-direction: column; }
         .time-picker-container { display: flex; }
@@ -72,23 +46,20 @@
         .alarm-item { display: flex; justify-content: space-between; align-items: center; font-size: 1.5em; width: 100%; }
         .alarm-item span { margin-right: 15px; }
         .alarm-item button { padding: 8px; font-size: 0.8em; background: rgba(255, 0, 0, 0.5); color: white; border: none; border-radius: 8px; }
-
-        /* --- SECCIÓN INFERIOR: NOTICIAS --- */
-        .news-panels { display: flex; margin-top: 15px; height: 100px; }
-        .news-container { flex-basis: 50%; background: rgba(255, 255, 255, 0.05); padding: 10px 15px; border-radius: 10px; position: relative; overflow: hidden; }
+        
+        .news-panels { display: flex; margin-top: 15px; flex-grow: 1; min-height: 80px; }
+        .news-container { flex: 1; background: rgba(255, 255, 255, 0.05); padding: 10px 15px; border-radius: 10px; position: relative; overflow: hidden; }
         .news-container:first-child { margin-right: 10px; }
-        .news-container:last-child { margin-left: 10px; }
         .news-container h3 { font-size: 1em; margin-bottom: 8px; }
         .news-item { position: absolute; opacity: 0; transition: opacity 0.5s; }
         .news-item.active { opacity: 1; }
         .news-item a { color: white; text-decoration: none; font-size: 1em; }
-
-        /* --- ESTADO DE ALARMA --- */
+        
         @keyframes alarm-flash { 50% { background: rgba(255, 0, 0, 0.4); } }
         .alarming { animation: alarm-flash 1s infinite; }
-
+        
         /* --- MODO FOTO Y CONTROLES FIJOS --- */
-        .photo-frame-mode .container, .photo-frame-mode .mode-switch, .photo-frame-mode .quote-container { display: none; }
+        .photo-frame-mode .container, .photo-frame-mode .mode-switch { display: none; }
         #photoFrame { display: none; width: 100%; height: 100%; background-size: contain; background-repeat: no-repeat; background-position: center center; background-color: black; }
         .photo-frame-mode #photoFrame { display: block; }
         .mode-switch { position: fixed; top: 10px; right: 10px; z-index: 1001; }
@@ -99,29 +70,46 @@
         input:checked + .slider { background-color: #2196F3; }
         input:checked + .slider:before { transform: translateX(22px); }
         
-        /* CSS AÑADIDO: Estilos para el contenedor de frases célebres */
-        .quote-container {
-            position: fixed;
-            top: 10px;
-            right: 80px; /* Dejamos espacio para el interruptor */
-            z-index: 1000;
-            max-width: 300px;
+        /* --- ESTILOS PARA LA SECCIÓN DE FRASES --- */
+        #quote-section {
+            width: 100%;
+            margin-top: 10px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
             text-align: right;
-            color: rgba(255, 255, 255, 0.7);
+            overflow: hidden; /* Muy importante para la animación */
+            color: rgba(255, 255, 255, 0.8);
         }
         .quote-text {
-            font-size: 1em;
+            font-size: 1.1em;
             font-style: italic;
-            margin-bottom: 4px;
+            margin-bottom: 5px;
         }
         .quote-author {
-            font-size: 0.9em;
+            font-size: 1em;
+            font-weight: bold;
+        }
+
+        /* --- ANIMACIÓN PARA LAS FRASES --- */
+        @keyframes slideInFromRight {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        .quote-content.animate {
+            -webkit-animation: slideInFromRight 1.5s ease-out forwards;
+            animation: slideInFromRight 1.5s ease-out forwards;
         }
     </style>
 </head>
 <body ontouchstart="">
     
-    <!-- Interruptor para el modo foto -->
     <div class="mode-switch">
         <label class="switch">
             <input type="checkbox" id="modeToggle">
@@ -129,13 +117,6 @@
         </label>
     </div>
 
-    <!-- HTML AÑADIDO: Contenedor para las frases -->
-    <div class="quote-container">
-        <div class="quote-text"></div>
-        <div class="quote-author"></div>
-    </div>
-
-    <!-- Contenedor principal de la interfaz -->
     <div class="container">
         <div class="main-display">
             <div id="current-weather"></div>
@@ -169,22 +150,24 @@
             <div class="news-container" id="generalNews"><h3>Noticias Generales</h3></div>
             <div class="news-container" id="sportsNews"><h3>Noticias Deportivas</h3></div>
         </div>
+        <div id="quote-section">
+            <div class="quote-content">
+                <div class="quote-text"></div>
+                <div class="quote-author"></div>
+            </div>
+        </div>
     </div>
     
     <div id="photoFrame"></div>
 
 <script>
 // ----- INICIO DEL SCRIPT -----
-
 moment.locale('es');
 
-function pad(num) {
-    return ('0' + num).slice(-2);
-}
+function pad(num) { return ('0' + num).slice(-2); }
 
 const weatherTranslations = { 'clear sky': 'Despejado', 'few clouds': 'Pocas nubes', 'scattered clouds': 'Nubes dispersas', 'broken clouds': 'Nuboso', 'shower rain': 'Lluvia débil', 'rain': 'Lluvia', 'thunderstorm': 'Tormenta', 'snow': 'Nieve', 'mist': 'Niebla', 'overcast clouds': 'Muy nuboso', 'light rain': 'Lluvia ligera' };
 
-// JAVASCRIPT AÑADIDO: Array de frases célebres
 const quotes = [
     { text: "La vida no es la que uno vivió, sino la que uno recuerda y cómo la recuerda para contarla.", author: "Gabriel García Márquez" },
     { text: "En la vida no hay nada que temer, solo hay que comprender.", author: "Marie Curie" },
@@ -205,18 +188,20 @@ function updateClock() {
     document.getElementById('current-date').textContent = moment().format('dddd, D [de] MMMM');
 }
 
-// JAVASCRIPT AÑADIDO: Función para actualizar la frase
 function updateQuote() {
+    var contentWrapper = document.querySelector('#quote-section .quote-content');
     var quoteTextEl = document.querySelector('.quote-text');
     var quoteAuthorEl = document.querySelector('.quote-author');
+    contentWrapper.classList.remove('animate');
+    void contentWrapper.offsetWidth;
     var randomIndex = Math.floor(Math.random() * quotes.length);
     var randomQuote = quotes[randomIndex];
     quoteTextEl.textContent = '"' + randomQuote.text + '"';
     quoteAuthorEl.textContent = '- ' + randomQuote.author;
+    contentWrapper.classList.add('animate');
 }
 
 function getWeather() {
-    // ... (El código de getWeather se mantiene igual)
     const lat = 43.2, lon = -3.8, apiKey = '56463b4abd4cb828b6db3c8395dcedbc';
     fetch('https://api.openweathermap.org/data/2.5/forecast?lat=' + lat + '&lon=' + lon + '&appid=' + apiKey + '&units=metric&cnt=32')
         .then(function(r) { if (!r.ok) throw new Error('Network error'); return r.json(); })
@@ -240,7 +225,6 @@ function getWeather() {
 }
 
 function createNewsRotator(containerId, feeds) {
-    // ... (El código de createNewsRotator se mantiene igual)
     const container = document.getElementById(containerId);
     let allNews = [], currentIndex = 0;
     function fetchNews() {
@@ -272,7 +256,7 @@ function createNewsRotator(containerId, feeds) {
     fetchNews(); setInterval(fetchNews, 600000); setInterval(showNextNews, 8000);
 }
 
-// ----- SISTEMA DE ALARMA (código compatible) -----
+// ----- SISTEMA DE ALARMA -----
 let alarms = [];
 const alarmSound = new Audio('https://assets.mixkit.co/sfx/preview/mixkit-alarm-digital-clock-beep-989.mp3');
 alarmSound.loop = true;
@@ -306,16 +290,32 @@ document.getElementById('setAlarm').addEventListener('click', function() {
     addAlarm(h + ':' + m);
 });
 document.body.addEventListener('click', function() { if (document.body.classList.contains('alarming')) stopAlarm(); });
-document.getElementById('modeToggle').addEventListener('change', function(e) { /* El código del modo foto se mantiene igual */ });
+document.getElementById('modeToggle').addEventListener('change', function(e) {
+    const photoMode = e.target.checked;
+    document.body.classList.toggle('photo-frame-mode', photoMode);
+    if (photoMode) {
+        const photos = ['https://source.unsplash.com/random/1024x600?nature','https://source.unsplash.com/random/1024x600?water','https://source.unsplash.com/random/1024x600?mountain','https://source.unsplash.com/random/1024x600?sky'];
+        const photoFrame = document.getElementById('photoFrame');
+        let currentIndex = 0;
+        function showNextPhoto() {
+            if (!document.body.classList.contains('photo-frame-mode')) return;
+            photoFrame.style.backgroundImage = 'url(' + photos[currentIndex] + ')';
+            currentIndex = (currentIndex + 1) % photos.length;
+        }
+        showNextPhoto();
+        window.photoInterval = setInterval(showNextPhoto, 15000);
+    } else {
+        if (window.photoInterval) clearInterval(window.photoInterval);
+    }
+});
 
 // ----- INICIALIZACIÓN DE LA APLICACIÓN -----
 function init() {
     updateClock();
     setInterval(updateClock, 15000);
     
-    // JAVASCRIPT AÑADIDO: Iniciar y programar la actualización de la frase
     updateQuote();
-    setInterval(updateQuote, 3600000); // Cambia la frase cada hora
+    setInterval(updateQuote, 20000); // Cambia la frase cada 20 segundos para prueba. Cambiar a 3600000 para una hora.
 
     setInterval(checkAlarms, 1000);
     getWeather();
@@ -324,7 +324,7 @@ function init() {
     createNewsRotator('sportsNews', ['https://e00-marca.uecdn.es/rss/futbol/primera-division.xml', 'https://www.eldiariomontanes.es/rss/2.0/?section=deportes']);
     updateTimeDisplay();
     updateAlarmList();
-    console.log("Smart Clock Initialized with Quotes");
+    console.log("Smart Clock Initialized. Version: Animated Quotes Bottom.");
 }
 
 init();
