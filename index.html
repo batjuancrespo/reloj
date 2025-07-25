@@ -9,7 +9,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/locale/es.js"></script>
     
     <style>
-        /* CSS se mantiene igual, es compatible */
+        /* CSS optimizado para máxima compatibilidad */
         * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
         html, body { height: 100%; overflow: hidden; }
         body { font-family: sans-serif; background: #000; color: white; display: flex; flex-direction: column; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
@@ -31,14 +31,12 @@
         .alarm-controls { display: flex; flex-direction: column; }
         .time-picker-container { display: flex; }
         .slider-container { flex-grow: 1; text-align: center; }
-        .slider-container div { font-size: 0.9em; margin-bottom: 2px; }
         .time-slider { width: 95%; }
         .time-controls { display: flex; flex-direction: column; justify-content: center; margin-left: 10px; }
         .time-display { font-size: 1.8em; font-weight: bold; text-align: center; margin-bottom: 5px; }
         .alarm-button { padding: 8px; font-size: 0.9em; border-radius: 8px; border: none; background: #2196F3; color: white; }
         .alarm-list { flex-grow: 1; display: flex; justify-content: center; align-items: center; }
         .alarm-item { display: flex; justify-content: space-between; align-items: center; font-size: 1.5em; width: 100%; }
-        .alarm-item span { margin-right: 15px; }
         .alarm-item button { padding: 8px; font-size: 0.8em; background: rgba(255, 0, 0, 0.5); color: white; border: none; border-radius: 8px; }
         .news-panels { display: flex; margin-top: 15px; flex-grow: 1; min-height: 80px; }
         .news-container { flex: 1; background: rgba(255, 255, 255, 0.05); padding: 10px 15px; border-radius: 10px; position: relative; overflow: hidden; }
@@ -47,8 +45,6 @@
         .news-item { position: absolute; opacity: 0; transition: opacity 0.5s; }
         .news-item.active { opacity: 1; }
         .news-item a { color: white; text-decoration: none; font-size: 1em; }
-        @keyframes alarm-flash { 50% { background: rgba(255, 0, 0, 0.4); } }
-        .alarming { animation: alarm-flash 1s infinite; }
         #quote-section { width: 100%; margin-top: 10px; padding: 15px; background: rgba(255, 255, 255, 0.05); border-radius: 10px; text-align: right; overflow: hidden; color: rgba(255, 255, 255, 0.8); }
         .quote-text { font-size: 1.1em; font-style: italic; margin-bottom: 5px; }
         .quote-author { font-size: 1em; font-weight: bold; }
@@ -61,20 +57,12 @@
         <div class="main-display">
             <div id="current-weather"></div>
             <div id="clock">00:00</div>
-            <div id="date-temp">
-                <div id="current-temp">--°C</div>
-                <div id="current-date">Cargando...</div>
-            </div>
+            <div id="date-temp"><div id="current-temp">--°C</div><div id="current-date">Cargando...</div></div>
         </div>
         <div class="middle-section">
             <div id="weather"></div>
             <div class="alarm-container">
-                <div class="alarm-controls">
-                    <div class="time-picker-container">
-                        <div class="slider-container"><div>Horas</div><input type="range" min="0" max="23" value="7" class="time-slider" id="hourSlider"><div>Minutos</div><input type="range" min="0" max="59" value="30" class="time-slider" id="minuteSlider"></div>
-                        <div class="time-controls"><div class="time-display" id="selectedTime">07:30</div><button class="alarm-button" id="setAlarm">Fijar</button></div>
-                    </div>
-                </div>
+                <div class="alarm-controls"><div class="time-picker-container"><div class="slider-container"><div>Horas</div><input type="range" min="0" max="23" value="7" class="time-slider" id="hourSlider"><div>Minutos</div><input type="range" min="0" max="59" value="30" class="time-slider" id="minuteSlider"></div><div class="time-controls"><div class="time-display" id="selectedTime">07:30</div><button class="alarm-button" id="setAlarm">Fijar</button></div></div></div>
                 <div class="alarm-list" id="alarmList"></div>
             </div>
         </div>
@@ -82,180 +70,97 @@
             <div class="news-container" id="generalNews"><h3>Noticias Generales</h3></div>
             <div class="news-container" id="sportsNews"><h3>Noticias Deportivas</h3></div>
         </div>
-        <div id="quote-section">
-            <div class="quote-content"><div class="quote-text"></div><div class="quote-author"></div></div>
-        </div>
+        <div id="quote-section"><div class="quote-content"><div class="quote-text"></div><div class="quote-author"></div></div></div>
     </div>
 
 <script>
-// ----- INICIO DEL SCRIPT (VERSIÓN MÁXIMA COMPATIBILIDAD) -----
+// ----- INICIO DEL SCRIPT (VERSIÓN COMPATIBLE) -----
 moment.locale('es');
-
-// Todas las variables se declaran con 'var' para compatibilidad con ES5
 function pad(num) { return ('0' + num).slice(-2); }
+const weatherTranslations = { 'clear sky': 'Despejado', 'few clouds': 'Pocas nubes', 'scattered clouds': 'Nubes dispersas', 'broken clouds': 'Nuboso', 'shower rain': 'Lluvia débil', 'rain': 'Lluvia', 'thunderstorm': 'Tormenta', 'snow': 'Nieve', 'mist': 'Niebla', 'overcast clouds': 'Muy nuboso', 'light rain': 'Lluvia ligera' };
+const quotes = [ { text: "La vida no es la que uno vivió, sino la que uno recuerda y cómo la recuerda para contarla.", author: "Gabriel García Márquez" }, { text: "En la vida no hay nada que temer, solo hay que comprender.", author: "Marie Curie" }, { text: "La creatividad es la inteligencia divirtiéndose.", author: "Albert Einstein" }, { text: "El único modo de hacer un gran trabajo es amar lo que haces.", author: "Steve Jobs" } ];
 
-var weatherTranslations = { 'clear sky': 'Despejado', 'few clouds': 'Pocas nubes', 'scattered clouds': 'Nubes dispersas', 'broken clouds': 'Nuboso', 'shower rain': 'Lluvia débil', 'rain': 'Lluvia', 'thunderstorm': 'Tormenta', 'snow': 'Nieve', 'mist': 'Niebla', 'overcast clouds': 'Muy nuboso', 'light rain': 'Lluvia ligera' };
+function updateClock() { document.getElementById('clock').textContent = moment().format('HH:mm'); document.getElementById('current-date').textContent = moment().format('dddd, D [de] MMMM'); }
+function updateQuote() { var cw = document.querySelector('#quote-section .quote-content'), qt = document.querySelector('.quote-text'), qa = document.querySelector('.quote-author'); cw.classList.remove('animate'); void cw.offsetWidth; var rq = quotes[Math.floor(Math.random()*quotes.length)]; qt.textContent = '"'+rq.text+'"'; qa.textContent = '- '+rq.author; cw.classList.add('animate'); }
 
-var quotes = [
-    { text: "La vida no es la que uno vivió...", author: "Gabriel García Márquez" },
-    { text: "En la vida no hay nada que temer...", author: "Marie Curie" },
-    { text: "La creatividad es la inteligencia divirtiéndose.", author: "Albert Einstein" }
-    // ... añadir más frases si se desea
-];
-
-function updateClock() {
-    document.getElementById('clock').textContent = moment().format('HH:mm');
-    document.getElementById('current-date').textContent = moment().format('dddd, D [de] MMMM');
-}
-
-function updateQuote() {
-    var contentWrapper = document.querySelector('#quote-section .quote-content');
-    var quoteTextEl = document.querySelector('.quote-text');
-    var quoteAuthorEl = document.querySelector('.quote-author');
-    contentWrapper.classList.remove('animate');
-    void contentWrapper.offsetWidth;
-    var randomIndex = Math.floor(Math.random() * quotes.length);
-    var randomQuote = quotes[randomIndex];
-    quoteTextEl.textContent = '"' + randomQuote.text + '"';
-    quoteAuthorEl.textContent = '- ' + randomQuote.author;
-    contentWrapper.classList.add('animate');
-}
-
-// CAMBIO RADICAL: Usando XMLHttpRequest en lugar de fetch() para máxima compatibilidad
 function getWeather() {
-    var lat = 43.2, lon = -3.8, apiKey = '56463b4abd4cb828b6db3c8395dcedbc';
-    var url = 'https://api.openweathermap.org/data/2.5/forecast?lat=' + lat + '&lon=' + lon + '&appid=' + apiKey + '&units=metric&cnt=32';
-
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', url, true);
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-            var data = JSON.parse(xhr.responseText);
-            var cw = data.list[0], icon = cw.weather[0].icon, desc = weatherTranslations[cw.weather[0].description.toLowerCase()] || cw.weather[0].description;
-            document.getElementById('current-weather').innerHTML = '<img src="https://openweathermap.org/img/wn/' + icon + '@2x.png" alt="' + desc + '"><div>' + desc + '</div>';
-            document.getElementById('current-temp').textContent = Math.round(cw.main.temp) + '°C';
-            var html = '';
-            var forecasts = [];
-            for (var i = 1; i <= 3; i++) {
-                var target = moment().add(i, 'days').startOf('day');
-                var f = data.list.find(function(item) { return moment(item.dt*1000).isSame(target,'day') && moment(item.dt*1000).hour()>=12; });
-                if(f) forecasts.push(f);
-            }
-            forecasts.forEach(function(day) {
-                var dayName = moment(day.dt*1000).format('ddd'), icon = day.weather[0].icon, desc = weatherTranslations[day.weather[0].description.toLowerCase()] || day.weather[0].description;
-                html += '<div class="weather-card"><div class="day-name">' + dayName + '</div><img src="https://openweathermap.org/img/wn/' + icon + '.png" alt="' + desc + '"><div class="temp">' + Math.round(day.main.temp) + '°C</div></div>';
-            });
-            document.getElementById('weather').innerHTML = html;
-        } else if (xhr.readyState === 4) {
-            console.error('Weather Error:', xhr.status);
-            document.getElementById('weather').innerHTML = '<p>Error Tiempo</p>';
+    fetch('https://api.openweathermap.org/data/2.5/forecast?lat=43.2&lon=-3.8&appid=56463b4abd4cb828b6db3c8395dcedbc&units=metric&cnt=32')
+    .then(function(r) { if (!r.ok) throw new Error('Network error'); return r.json(); })
+    .then(function(d) {
+        var cw = d.list[0], icon = cw.weather[0].icon, desc = weatherTranslations[cw.weather[0].description.toLowerCase()] || cw.weather[0].description;
+        document.getElementById('current-weather').innerHTML = '<img src="https://openweathermap.org/img/wn/'+icon+'@2x.png" alt="'+desc+'"><div>'+desc+'</div>';
+        document.getElementById('current-temp').textContent = Math.round(cw.main.temp)+'°C';
+        var html = '';
+        var forecasts = [];
+        for (var i = 1; i <= 3; i++) {
+            var target = moment().add(i, 'days').startOf('day');
+            var f = d.list.find(function(item) { return moment(item.dt*1000).isSame(target,'day') && moment(item.dt*1000).hour()>=12; });
+            if(f) forecasts.push(f);
         }
-    };
-    xhr.onerror = function() {
-        console.error('Network error occurred');
-        document.getElementById('weather').innerHTML = '<p>Error Red</p>';
-    };
-    xhr.send();
+        forecasts.forEach(function(day) {
+            var dayName = moment(day.dt*1000).format('ddd'), icon = day.weather[0].icon, desc = weatherTranslations[day.weather[0].description.toLowerCase()] || day.weather[0].description;
+            html += '<div class="weather-card"><div class="day-name">'+dayName+'</div><img src="https://openweathermap.org/img/wn/'+icon+'.png" alt="'+desc+'"><div class="temp">'+Math.round(day.main.temp)+'°C</div></div>';
+        });
+        document.getElementById('weather').innerHTML = html;
+    }).catch(function(e) { console.error('Weather Error:', e); document.getElementById('weather').innerHTML = '<p>Error Tiempo</p>'; });
 }
 
-// CAMBIO RADICAL: Usando XMLHttpRequest para las noticias
 function createNewsRotator(containerId, feeds) {
     var container = document.getElementById(containerId);
-    var allNews = [];
-    var currentIndex = 0;
-
+    var allNews = [], currentIndex = 0;
     function fetchNews() {
-        allNews = []; // Limpiamos las noticias antes de cada petición
-        feeds.forEach(function(feed) {
-            var url = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(feed);
-            var xhr = new XMLHttpRequest();
-            xhr.open('GET', url, true);
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState === 4 && xhr.status === 200) {
-                    var data = JSON.parse(xhr.responseText);
-                    if (data && data.status === 'ok' && data.items) {
-                        data.items.slice(0, 5).forEach(function(item) {
-                            allNews.push({ title: item.title, link: item.link });
-                        });
-                    }
-                }
-            };
-            xhr.send();
+        var promises = feeds.map(function(feed) {
+            return fetch('https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(feed))
+            .then(function(r) { return r.json(); }).catch(function() { return null; });
+        });
+        Promise.all(promises).then(function(results) {
+            var items = [];
+            results.forEach(function(data) { if (data && data.status === 'ok' && data.items) { data.items.slice(0, 5).forEach(function(item) { items.push({ title: item.title, link: item.link }); }); } });
+            if (items.length > 0) { allNews = items; currentIndex = 0; showNextNews(); }
         });
     }
-
     function showNextNews() {
         if (allNews.length === 0) return;
         var old = container.querySelector('.news-item');
         if(old) container.removeChild(old);
-        var article = allNews[currentIndex];
-        var item = document.createElement('div');
+        var article = allNews[currentIndex], item = document.createElement('div');
         item.className = 'news-item';
-        item.innerHTML = '<a href="' + article.link + '" target="_blank">' + article.title + '</a>';
+        item.innerHTML = '<a href="'+article.link+'" target="_blank">'+article.title+'</a>';
         container.appendChild(item);
         void item.offsetWidth; item.classList.add('active');
         currentIndex = (currentIndex + 1) % allNews.length;
     }
-
-    fetchNews();
-    setInterval(fetchNews, 600000);
-    setInterval(showNextNews, 8000);
+    fetchNews(); setInterval(fetchNews, 600000); setInterval(showNextNews, 8000);
 }
 
-// --- El resto del código de la alarma y los listeners es compatible y se mantiene ---
-var alarms = [];
-var alarmSound = new Audio('https://assets.mixkit.co/sfx/preview/mixkit-alarm-digital-clock-beep-989.mp3');
+var alarms = [], alarmSound = new Audio('https://assets.mixkit.co/sfx/preview/mixkit-alarm-digital-clock-beep-989.mp3');
 alarmSound.loop = true;
-function checkAlarms() {
-    var time = moment().format('HH:mm');
-    alarms.forEach(function(a, i) { if (a.time === time && !a.triggered) { alarms[i].triggered = true; document.body.classList.add('alarming'); alarmSound.play().catch(function(e) { console.error("Audio Error:", e); }); } });
-}
-function stopAlarm() {
-    alarmSound.pause(); alarmSound.currentTime = 0; document.body.classList.remove('alarming');
-    alarms = alarms.filter(function(a) { return !a.triggered; }); updateAlarmList();
-}
+function checkAlarms() { var t = moment().format('HH:mm'); alarms.forEach(function(a, i) { if (a.time === t && !a.triggered) { alarms[i].triggered = true; alarmSound.play().catch(function(e){}); } }); }
 function addAlarm(t) { if (alarms.length === 0) { alarms.push({ time: t, triggered: false }); updateAlarmList(); } }
 function removeAlarm(i) { alarms.splice(i, 1); updateAlarmList(); }
 function updateAlarmList() {
     var list = document.getElementById('alarmList'), controls = document.querySelector('.alarm-controls');
     if (alarms.length > 0) {
         controls.style.display = 'none';
-        list.innerHTML = alarms.map(function(a, i) { return '<div class="alarm-item"><span>' + a.time + '</span><button ontouchend="removeAlarm(' + i + ')" onclick="removeAlarm(' + i + ')">Cancelar</button></div>'; }).join('');
+        list.innerHTML = alarms.map(function(a, i) { return '<div class="alarm-item"><span>'+a.time+'</span><button ontouchend="removeAlarm('+i+')" onclick="removeAlarm('+i+')">Cancelar</button></div>'; }).join('');
     } else { controls.style.display = 'flex'; list.innerHTML = ''; }
 }
-function updateTimeDisplay() {
-    var h = pad(document.getElementById('hourSlider').value), m = pad(document.getElementById('minuteSlider').value);
-    document.getElementById('selectedTime').textContent = h + ':' + m;
-}
-
+function updateTimeDisplay() { var h = pad(document.getElementById('hourSlider').value), m = pad(document.getElementById('minuteSlider').value); document.getElementById('selectedTime').textContent = h+':'+m; }
 document.getElementById('hourSlider').addEventListener('input', updateTimeDisplay);
 document.getElementById('minuteSlider').addEventListener('input', updateTimeDisplay);
-document.getElementById('setAlarm').addEventListener('click', function() {
-    var h = pad(document.getElementById('hourSlider').value), m = pad(document.getElementById('minuteSlider').value);
-    addAlarm(h + ':' + m);
-});
-document.body.addEventListener('click', function() { if (document.body.classList.contains('alarming')) stopAlarm(); });
+document.getElementById('setAlarm').addEventListener('click', function() { var h = pad(document.getElementById('hourSlider').value), m = pad(document.getElementById('minuteSlider').value); addAlarm(h+':'+m); });
 
-// ----- INICIALIZACIÓN DE LA APLICACIÓN -----
 function init() {
-    updateClock();
-    setInterval(updateClock, 15000);
-    
-    updateQuote();
-    setInterval(updateQuote, 20000);
-
+    updateClock(); setInterval(updateClock, 15000);
+    updateQuote(); setInterval(updateQuote, 20000);
     setInterval(checkAlarms, 1000);
-    getWeather();
-    setInterval(getWeather, 1800000);
+    getWeather(); setInterval(getWeather, 1800000);
     createNewsRotator('generalNews', ['https://e00-elmundo.uecdn.es/elmundo/rss/portada.xml', 'https://www.eldiariomontanes.es/rss/2.0/?section=ultima-hora']);
     createNewsRotator('sportsNews', ['https://e00-marca.uecdn.es/rss/futbol/primera-division.xml', 'https://www.eldiariomontanes.es/rss/2.0/?section=deportes']);
-    updateTimeDisplay();
-    updateAlarmList();
-    console.log("Smart Clock Initialized. Max Compatibility Version.");
+    updateTimeDisplay(); updateAlarmList();
+    console.log("Smart Clock Initialized. Compatibility Mode.");
 }
-
 init();
-
 </script>
 </body>
 </html>
