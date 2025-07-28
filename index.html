@@ -1,0 +1,102 @@
+<html lang="es" style="height: 100%;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>Reloj y Tiempo en Selaya</title>
+    <!-- CDN para Moment.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/locale/es.js"></script>
+    
+    <!-- Enlace a la hoja de estilos externa -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Import Map para módulos ES -->
+    <script type="importmap">
+        {
+            "imports": {
+                "./app.js": "/app.js",
+                "./weather.js": "/weather.js",
+                "./news.js": "/news.js",
+                "./quotes.js": "/quotes.js",
+                "./alarm.js": "/alarm.js",
+                "./slideshow.js": "/slideshow.js"
+            }
+        }
+    </script>
+</head>
+<body ontouchstart="">
+    <!-- Toggle Switch -->
+    <div class="toggle-switch-container">
+        <input type="checkbox" id="slideshowToggle" class="toggle-switch-checkbox">
+        <label for="slideshowToggle" class="toggle-switch-label">
+            <span class="toggle-switch-inner"></span>
+            <span class="toggle-switch-switch"></span>
+        </label>
+    </div>
+
+    <!-- Main Application Content -->
+    <div id="main-app-content">
+        <div class="container">
+            <!-- SECCIÓN SUPERIOR -->
+            <div class="main-display">
+                <div id="current-weather"></div>
+                <div id="clock">00:00</div>
+                <div id="date-temp">
+                    <div id="current-temp">--°C</div>
+                    <div id="current-date">Cargando...</div>
+                </div>
+            </div>
+            <!-- SECCIÓN MEDIA -->
+            <div class="middle-section">
+                <div id="weather"></div>
+                <div class="alarm-container">
+                    <div class="alarm-controls">
+                        <div class="time-picker-container">
+                            <div class="time-input-section">
+                                <div class="time-input-group">
+                                    <label for="hourInput">Horas</label>
+                                    <button class="time-control-button" id="hourUp">▲</button>
+                                    <input type="text" id="hourInput" value="07" readonly>
+                                    <button class="time-control-button" id="hourDown">▼</button>
+                                </div>
+                                <div class="time-input-group">
+                                    <label for="minuteInput">Minutos</label>
+                                    <button class="time-control-button" id="minuteUp">▲</button>
+                                    <input type="text" id="minuteInput" value="30" readonly>
+                                    <button class="time-control-button" id="minuteDown">▼</button>
+                                </div>
+                            </div>
+                            <div class="time-controls">
+                                <div class="time-display" id="selectedTime">07:30</div>
+                                <button class="alarm-button" id="setAlarm">Fijar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="alarm-list" id="alarmList"></div>
+                </div>
+            </div>
+            <!-- SECCIÓN DE NOTICIAS -->
+            <div class="news-panels">
+                <div class="news-container" id="generalNews"><h3>Noticias Generales</h3></div>
+                <div class="news-container" id="sportsNews"><h3>Noticias Deportivas</h3></div>
+            </div>
+            <!-- SECCIÓN DE FRASES CÉLEBRES -->
+            <div id="quote-section">
+                <div class="quote-content">
+                    <div class="quote-text"></div>
+                    <div class="quote-author"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slideshow Display (Initially Hidden) -->
+    <div id="slideshow-display" class="hidden">
+        <img id="slideshow-image" src="" alt="Slideshow Image">
+    </div>
+    
+    <!-- Enlace al script principal de la aplicación como módulo -->
+    <script type="module" src="app.js"></script>
+</body>
+</html>
