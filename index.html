@@ -11,19 +11,8 @@
     <!-- Enlace a la hoja de estilos externa -->
     <link rel="stylesheet" href="style.css">
 
-    <!-- Import Map para módulos ES -->
-    <script type="importmap">
-        {
-            "imports": {
-                "./app.js": "/app.js",
-                "./weather.js": "/weather.js",
-                "./news.js": "/news.js",
-                "./quotes.js": "/quotes.js",
-                "./alarm.js": "/alarm.js",
-                "./slideshow.js": "/slideshow.js"
-            }
-        }
-    </script>
+    <!-- El bloque <script type="importmap"> ha sido eliminado -->
+
 </head>
 <body ontouchstart="">
     <!-- Toggle Switch -->
@@ -96,7 +85,7 @@
         <img id="slideshow-image" src="" alt="Slideshow Image">
     </div>
     
-    <!-- Enlace al script principal de la aplicación como módulo -->
-    <script type="module" src="app.js"></script>
+    <!-- Enlace al script principal de la aplicación como módulo con ruta relativa -->
+    <script type="module" src="./app.js"></script>
 </body>
 </html>
