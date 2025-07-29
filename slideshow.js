@@ -1,52 +1,42 @@
 // Slideshow module
 
-let currentImageIndex = 0;
 let slideshowIntervalId = null;
 let slideshowImageElement = null;
-
-// Variable para guardar las URLs de los objetos de las imágenes locales
 let localImageUrls = [];
+
+// --- MODIFICACIÓN: Añadida variable para recordar la última imagen mostrada ---
+let lastImageIndex = -1;
 
 /**
  * Función que maneja la selección de archivos del input.
- * Se ejecuta cuando el evento 'change' del input se dispara.
- * @param {Event} event - El objeto del evento 'change'.
  */
 function handleFileSelection(event) {
-    // Obtenemos la lista de archivos seleccionados por el usuario.
     const files = event.target.files;
-
     if (!files || files.length === 0) {
         console.log("No se seleccionó ningún archivo.");
         return;
     }
 
-    // Antes de cargar nuevas imágenes, limpiamos las antiguas para liberar memoria.
     localImageUrls.forEach(url => URL.revokeObjectURL(url));
     localImageUrls = [];
+    lastImageIndex = -1; // Resetea el índice al cargar nuevas fotos
 
-    // Iteramos sobre la lista de archivos (que no es un array estándar).
     for (const file of files) {
-        // Nos aseguramos de que solo procesamos archivos de tipo imagen.
         if (file.type.startsWith('image/')) {
-            // Creamos una URL temporal en memoria para el archivo.
             const objectURL = URL.createObjectURL(file);
             localImageUrls.push(objectURL);
         }
     }
     
     if (localImageUrls.length > 0) {
-        // Informa al usuario de que la carga fue exitosa.
         alert(`Se han cargado ${localImageUrls.length} imágenes. Ahora puedes activar el marco de fotos.`);
         console.log(`Se han cargado ${localImageUrls.length} imágenes.`);
         
-        // --- MODIFICACIÓN: Ocultar el botón después de la selección ---
         const photoSelectButton = document.getElementById('photoSelectLabel');
         if (photoSelectButton) {
             photoSelectButton.style.display = 'none';
         }
         
-        // Si el slideshow ya estaba activo, lo reiniciamos con las nuevas fotos.
         if (slideshowIntervalId) {
             stopSlideshow();
             startSlideshow();
@@ -59,8 +49,6 @@ function handleFileSelection(event) {
 
 /**
  * Initializes the slideshow by setting up the image element and the file input.
- * @param {string} imageElementId The ID of the <img> element.
- * @param {string} inputElementId The ID of the <input type="file"> element.
  */
 export function initSlideshow(imageElementId, inputElementId) {
     slideshowImageElement = document.getElementById(imageElementId);
@@ -71,7 +59,6 @@ export function initSlideshow(imageElementId, inputElementId) {
 
     const photoInput = document.getElementById(inputElementId);
     if (photoInput) {
-        // Asigna la función que maneja los archivos al evento 'change' del input.
         photoInput.addEventListener('change', handleFileSelection);
     } else {
         console.error(`Input de fotos con ID '${inputElementId}' no encontrado.`);
@@ -84,14 +71,24 @@ export function initSlideshow(imageElementId, inputElementId) {
 function displayNextImage() {
     if (!slideshowImageElement || localImageUrls.length === 0) return;
 
-    // Efecto de fundido de salida
+    // --- MODIFICACIÓN CLAVE: Lógica para seleccionar una imagen aleatoria ---
+    let randomIndex;
+    // Si hay más de una imagen, busca un índice aleatorio que no sea el último.
+    if (localImageUrls.length > 1) {
+        do {
+            randomIndex = Math.floor(Math.random() * localImageUrls.length);
+        } while (randomIndex === lastImageIndex);
+    } else {
+        // Si solo hay una imagen, el índice siempre será 0.
+        randomIndex = 0;
+    }
+    
+    lastImageIndex = randomIndex; // Guarda el índice de la imagen que vamos a mostrar.
+
     slideshowImageElement.classList.remove('active');
 
-    // Espera a que termine la transición de fundido antes de cambiar la imagen
     setTimeout(() => {
-        currentImageIndex = (currentImageIndex + 1) % localImageUrls.length;
-        slideshowImageElement.src = localImageUrls[currentImageIndex];
-        // Efecto de fundido de entrada
+        slideshowImageElement.src = localImageUrls[lastImageIndex]; // Usa el nuevo índice aleatorio
         slideshowImageElement.classList.add('active');
     }, 1000);
 }
@@ -105,10 +102,10 @@ export function startSlideshow() {
     }
     
     if (localImageUrls.length > 0) {
-        currentImageIndex = 0;
-        slideshowImageElement.src = localImageUrls[currentImageIndex];
-        slideshowImageElement.classList.add('active'); 
+        // Muestra la primera imagen inmediatamente (que será aleatoria)
+        displayNextImage(); 
 
+        // Inicia el intervalo para cambiar de imagen.
         slideshowIntervalId = setInterval(displayNextImage, 8000);
         console.log("Slideshow iniciado con fotos locales.");
     } else {
