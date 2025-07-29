@@ -28,42 +28,50 @@ export function createNewsRotator(containerId, feeds) {
             if (items.length > 0) {
                 allNews = items;
                 currentIndex = 0; // Reset index when news are updated
-                showNextNews();
+                showNextNews(); // Muestra la primera noticia inmediatamente
             }
         });
     }
-
+    
+    // --- FUNCIÓN MODIFICADA Y CORREGIDA ---
     function showNextNews() {
         if (allNews.length === 0) return;
 
-        // Remove old news item with a fade out effect if desired, or just remove immediately
-        const oldNewsItem = container.querySelector('.news-item');
-        if (oldNewsItem) {
-            oldNewsItem.classList.remove('active');
-            // Give a short delay for transition to complete before removal
-            setTimeout(() => {
-                if (oldNewsItem.parentNode) {
-                    oldNewsItem.parentNode.removeChild(oldNewsItem);
-                }
-            }, 500);
+        // Buscamos si ya existe un elemento para las noticias.
+        let newsItem = container.querySelector('.news-item');
+        // Si no existe (es la primera vez), lo creamos.
+        if (!newsItem) {
+            newsItem = document.createElement('div');
+            newsItem.className = 'news-item';
+            container.appendChild(newsItem);
         }
 
+        // 1. Animamos la salida del titular actual.
+        newsItem.classList.remove('active');
+
+        // Obtenemos el nuevo artículo que vamos a mostrar.
         const article = allNews[currentIndex];
-        const newItem = document.createElement('div');
-        newItem.className = 'news-item';
-        newItem.innerHTML = `<a href="${article.link}" target="_blank">${article.title}</a>`;
-        container.appendChild(newItem);
 
-        // Trigger reflow to ensure transition works
-        void newItem.offsetWidth;
-        newItem.classList.add('active');
+        // 2. Esperamos a que la animación de salida termine (500ms) antes de cambiar el contenido.
+        // Esto evita la superposición y asegura que el proceso sea secuencial.
+        setTimeout(() => {
+            // 3. Actualizamos el contenido del MISMO elemento. No creamos uno nuevo.
+            newsItem.innerHTML = `<a href="${article.link}" target="_blank">${article.title}</a>`;
 
+            // Forzamos un 'reflow' del navegador. Es un truco para asegurar que la animación se reinicie.
+            void newsItem.offsetWidth;
+
+            // 4. Animamos la entrada del nuevo titular.
+            newsItem.classList.add('active');
+        }, 500); // IMPORTANTE: Este tiempo debe ser igual a la duración de la transición en style.css
+
+        // 5. Preparamos el índice para la siguiente noticia.
         currentIndex = (currentIndex + 1) % allNews.length;
     }
 
     // Initial fetch and set up intervals
     fetchNews();
+    // No llamamos a showNextNews aquí, fetchNews ya lo hace la primera vez.
     setInterval(fetchNews, 600000); // Fetch new news every 10 minutes
     setInterval(showNextNews, 8000); // Rotate news every 8 seconds
 }
-
