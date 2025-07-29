@@ -18,9 +18,10 @@ html, body {
     top: 50px;
     left: 100px;
 
-    /* Tamaño físico final (18cm x 12cm ≈ 680px x 454px) */
-    width: 680px;
-    height: 454px;
+    /* === MODIFICACIÓN: TAMAÑO AUMENTADO === */
+    /* Tamaño físico final aumentado en un 50% */
+    width: 1020px;  /* Antes: 680px */
+    height: 681px; /* Antes: 454px */
     
     /* Estilos visuales del marco */
     border: 3px solid #555;
@@ -32,13 +33,13 @@ html, body {
 
 /* 2. EL CANVAS INTERIOR (Contiene la app y es el que se escala) */
 #app-canvas {
-    /* Tamaño base para el que el diseño está hecho (ej. tablet) */
+    /* Tamaño base para el que el diseño está hecho (esto no cambia) */
     width: 1280px;
     height: 800px;
     
-    /* La magia: Escala todo el contenido de este div */
+    /* === MODIFICACIÓN: FACTOR DE ESCALA AUMENTADO === */
     transform-origin: 0 0; /* Escala desde la esquina superior izquierda */
-    transform: scale(0.53125); /* (Ancho final / Ancho base) -> (680 / 1280) */
+    transform: scale(0.796875); /* Antes: 0.53125 */
 
     /* Debe ser un contexto de posicionamiento para sus hijos */
     position: relative;
