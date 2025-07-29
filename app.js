@@ -24,7 +24,7 @@ window.removeAlarm = (index) => {
 function init() {
     // Clock
     updateClock();
-    setInterval(updateClock, 15000); // Update clock every 15 seconds
+    setInterval(updateClock, 15000);
 
     // Quotes
     initQuotes();
@@ -32,15 +32,16 @@ function init() {
     // Weather
     const WEATHER_LAT = 43.2;
     const WEATHER_LON = -3.8;
-    const WEATHER_API_KEY = '56463b4abd4cb828b6db3c839dcedbc';
+    // --- CORRECCIÓN 1: REEMPLAZA ESTA CLAVE CON LA TUYA ---
+    const WEATHER_API_KEY = 'TU_NUEVA_API_KEY_AQUI'; 
     updateWeatherDisplay(WEATHER_LAT, WEATHER_LON, WEATHER_API_KEY);
     setInterval(() => updateWeatherDisplay(WEATHER_LAT, WEATHER_LON, WEATHER_API_KEY), 1800000);
 
     // Definition of the news feeds
     const generalNewsFeeds = [
         { name: 'El Mundo', url: 'https://e00-elmundo.uecdn.es/elmundo/rss/portada.xml' },
-        // LA COMA AL FINAL DE LA SIGUIENTE LÍNEA ES LA CORRECCIÓN. ASEGÚRATE DE QUE ESTÁ AHÍ.
-        { name: 'El País', url: 'https://feeds.elpais.com/mrss-s/portada.xml' },
+        // --- CORRECCIÓN 2: URL DEL FEED DE "EL PAÍS" ACTUALIZADA ---
+        { name: 'El País', url: 'https://elpais.com/rss/elpais/portada.xml' },
         { name: 'El Diario Montañés', url: 'https://www.eldiariomontanes.es/rss/2.0/?section=ultima-hora' }
     ];
 
