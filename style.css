@@ -18,10 +18,10 @@ html, body {
     top: 50px;
     left: 100px;
 
-    /* === MODIFICACIÓN: TAMAÑO AUMENTADO === */
-    /* Tamaño físico final aumentado en un 50% */
-    width: 1020px;  /* Antes: 680px */
-    height: 681px; /* Antes: 454px */
+    /* === MODIFICACIÓN: TAMAÑO FINAL AJUSTADO A 18CM === */
+    /* Tamaño físico final de 18cm de ancho, manteniendo la proporción */
+    width: 1080px;  /* Antes: 1020px */
+    height: 721px; /* Antes: 681px */
     
     /* Estilos visuales del marco */
     border: 3px solid #555;
@@ -37,9 +37,9 @@ html, body {
     width: 1280px;
     height: 800px;
     
-    /* === MODIFICACIÓN: FACTOR DE ESCALA AUMENTADO === */
+    /* === MODIFICACIÓN: FACTOR DE ESCALA AJUSTADO === */
     transform-origin: 0 0; /* Escala desde la esquina superior izquierda */
-    transform: scale(0.796875); /* Antes: 0.53125 */
+    transform: scale(0.84375); /* Antes: 0.796875 */
 
     /* Debe ser un contexto de posicionamiento para sus hijos */
     position: relative;
