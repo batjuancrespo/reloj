@@ -3,15 +3,18 @@
 html, body { height: 100%; overflow: hidden; }
 body { font-family: sans-serif; background: #000; color: white; display: flex; flex-direction: column; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
-/* --- NUEVOS ESTILOS PARA CONTROLES DE SLIDESHOW --- */
+/* --- ESTILOS PARA CONTROLES DE SLIDESHOW --- */
 .slideshow-controls-container {
     position: absolute;
     top: 15px;
-    right: 15px;
+    /* MODIFICACIÓN: Posición a la izquierda */
+    left: 15px; 
     z-index: 1000;
     display: flex;
+    /* MODIFICACIÓN: Intercambiado el orden para que el switch vaya primero */
+    flex-direction: row-reverse;
     align-items: center;
-    gap: 15px; /* Espacio entre el botón y el interruptor */
+    gap: 15px;
 }
 
 .select-folder-button {
@@ -30,9 +33,8 @@ body { font-family: sans-serif; background: #000; color: white; display: flex; f
     background-color: #1976D2;
 }
 
-/* Modificación del contenedor del interruptor */
 .toggle-switch-container {
-    position: relative; /* Ya no necesita ser absoluto */
+    position: relative;
     top: auto;
     right: auto;
 }
@@ -45,11 +47,12 @@ body { font-family: sans-serif; background: #000; color: white; display: flex; f
     display: block;
     overflow: hidden;
     cursor: pointer;
-    border: 0 solid #bbb;
-    border-radius: 20px; /* Adjust for desired roundness */
-    height: 30px; /* Height of the switch */
-    width: 60px; /* Width of the switch */
-    background-color: #34495E; /* Default background */
+    border: 1px solid rgba(255, 255, 255, 0.4); /* MODIFICACIÓN: Borde visible */
+    border-radius: 20px;
+    height: 30px;
+    width: 60px;
+    /* MODIFICACIÓN: Fondo neutro y transparente */
+    background-color: rgba(255, 255, 255, 0.1); 
     position: relative;
     transition: background-color 0.3s ease;
 }
@@ -61,51 +64,34 @@ body { font-family: sans-serif; background: #000; color: white; display: flex; f
     transition: margin 0.3s ease-in-out;
 }
 
+/* MODIFICACIÓN: Eliminados los colores y texto de dentro del switch */
 .toggle-switch-inner:before, .toggle-switch-inner:after {
     display: block;
     float: left;
     width: 50%;
-    height: 30px; /* Match label height */
+    height: 30px;
     box-sizing: border-box;
-    content: attr(data-off); /* Use data-off for text */
-    font-size: 14px;
-    font-weight: bold;
-    color: white; /* Text color */
-    font-family: Trebuchet, Arial, sans-serif;
-    text-align: center;
-    padding-top: 6px;
-    background-color: #2ECC71; /* ON color */
-    color: #fff;
-}
-
-.toggle-switch-inner:before {
-    content: attr(data-on);
-    background-color: #2ECC71; /* ON color */
-    color: #fff;
-}
-
-.toggle-switch-inner:after {
-    background-color: #E74C3C; /* OFF color */
-    color: #fff;
-    content: ""; /* No text for OFF state */
+    content: ""; /* Sin texto */
+    background-color: transparent; /* Sin color de fondo */
 }
 
 .toggle-switch-switch {
     display: block;
-    width: 26px; /* Width of the thumb */
-    height: 26px; /* Height of the thumb */
-    margin: 2px; /* Margin around thumb */
+    width: 26px;
+    height: 26px;
+    margin: 1px; /* Ajustado por el borde */
     background: #fff;
     position: absolute;
     top: 0;
     bottom: 0;
-    right: 0px; /* Initial position for OFF */
-    border-radius: 20px; /* Make it circular */
+    right: 30px; /* Ajustado para empezar a la izquierda */
+    border-radius: 20px;
     transition: all 0.3s ease-in-out;
 }
 
+/* MODIFICACIÓN: El fondo cambia a un tono más opaco al activarse */
 .toggle-switch-checkbox:checked + .toggle-switch-label {
-    background-color: #2ECC71; /* Background when checked */
+    background-color: rgba(255, 255, 255, 0.3);
 }
 
 .toggle-switch-checkbox:checked + .toggle-switch-label .toggle-switch-inner {
@@ -113,8 +99,7 @@ body { font-family: sans-serif; background: #000; color: white; display: flex; f
 }
 
 .toggle-switch-checkbox:checked + .toggle-switch-label .toggle-switch-switch {
-    right: calc(100% - 26px - 2px); /* Position when checked (width - thumb_width - margin) */
-    background: #fff; /* Thumb color when checked */
+    right: 1px; /* Posición final a la derecha */
 }
 
 /* New: Slideshow Display Styles */
