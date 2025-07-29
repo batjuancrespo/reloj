@@ -1,33 +1,67 @@
 // Quotes module
-const quotes = [
-    { text: "La vida no es la que uno vivió, sino la que uno recuerda y cómo la recuerda para contarla.", author: "Gabriel García Márquez" },
-    { text: "En la vida no hay nada que temer, solo hay que comprender.", author: "Marie Curie" },
-    { text: "La creatividad es la inteligencia divirtiéndose.", author: "Albert Einstein" },
-    { text: "El secreto de la existencia no consiste solamente en vivir, sino en saber para qué se vive.", author: "Fiódor Dostoievski" },
-    { text: "La verdadera sabiduría está en reconocer la propia ignorancia.", author: "Sócrates" },
-    { text: "El tiempo es el mejor autor: siempre encuentra un final perfecto.", author: "Charles Chaplin" },
-    { text: "La paciencia es amarga, pero sus frutos son dulces.", author: "Jean-Jacques Rousseau" },
-    { text: "La educación es el arma más poderosa que puedes usar para cambiar el mundo.", author: "Nelson Mandela" },
-    { text: "No hay camino para la paz, la paz es el camino.", author: "Mahatma Gandhi" },
-    { text: "El único modo de hacer un gran trabajo es amar lo que haces.", author: "Steve Jobs" }
-];
 
+// Esta variable guardará todas las frases una vez que se carguen del archivo.
+let allQuotes = [];
+
+/**
+ * Función asíncrona para cargar las frases desde el archivo quotes.json
+ */
+async function loadQuotes() {
+    try {
+        const response = await fetch('./quotes.json'); // Petición para obtener el archivo
+        if (!response.ok) {
+            // Si hay un error (ej: archivo no encontrado), lo mostramos en consola.
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        allQuotes = await response.json(); // Convertimos la respuesta en un array de JavaScript
+        console.log(`Se han cargado ${allQuotes.length} frases célebres.`);
+    } catch (error) {
+        console.error("No se pudieron cargar las frases:", error);
+        // Opcional: Mostrar un mensaje de error en la pantalla
+        const quoteTextEl = document.querySelector('.quote-text');
+        quoteTextEl.textContent = "Error al cargar las frases.";
+    }
+}
+
+/**
+ * Función principal para inicializar el sistema de frases.
+ * Carga las frases y luego empieza a mostrarlas.
+ */
+export async function initQuotes() {
+    // Primero, esperamos a que todas las frases se hayan cargado.
+    await loadQuotes();
+
+    // Si se cargaron frases, mostramos la primera y activamos el carrusel.
+    if (allQuotes.length > 0) {
+        updateQuote(); // Muestra la primera frase inmediatamente.
+        setInterval(updateQuote, 20000); // Cambia la frase cada 20 segundos.
+    }
+}
+
+
+/**
+ * Muestra una nueva frase aleatoria en la pantalla.
+ */
 export function updateQuote() {
+    // Si por alguna razón no hay frases cargadas, no hace nada.
+    if (allQuotes.length === 0) {
+        return;
+    }
+
     const contentWrapper = document.querySelector('#quote-section .quote-content');
     const quoteTextEl = document.querySelector('.quote-text');
     const quoteAuthorEl = document.querySelector('.quote-author');
 
-    // Remove animation class to reset it
+    // Reinicia la animación
     contentWrapper.classList.remove('animate');
-    // Trigger reflow to restart animation
     void contentWrapper.offsetWidth;
 
-    const randomIndex = Math.floor(Math.random() * quotes.length);
-    const randomQuote = quotes[randomIndex];
+    // Elige una frase aleatoria del gran listado cargado
+    const randomIndex = Math.floor(Math.random() * allQuotes.length);
+    const randomQuote = allQuotes[randomIndex];
     quoteTextEl.textContent = '"' + randomQuote.text + '"';
     quoteAuthorEl.textContent = '- ' + randomQuote.author;
 
-    // Add animation class to re-trigger
+    // Vuelve a aplicar la animación
     contentWrapper.classList.add('animate');
 }
-
