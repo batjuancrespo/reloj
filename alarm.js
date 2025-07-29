@@ -9,11 +9,11 @@ let currentSource = null; // To keep track of the playing source node
 let currentSelectedHour = 7;
 let currentSelectedMinute = 30;
 
-// Array of images for alarms
+// Array of images for alarms with relative paths
 const alarmImages = [
-    '/alarm_image_1.png',
-    '/alarm_image_2.png',
-    '/alarm_image_3.png'
+    './alarm_image_1.png',
+    './alarm_image_2.png',
+    './alarm_image_3.png'
 ];
 
 // Utility function (duplicated from app.js as it's needed here for displaying time)
