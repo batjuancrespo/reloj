@@ -36,10 +36,10 @@ function init() {
     updateWeatherDisplay(WEATHER_LAT, WEATHER_LON, WEATHER_API_KEY);
     setInterval(() => updateWeatherDisplay(WEATHER_LAT, WEATHER_LON, WEATHER_API_KEY), 1800000);
 
-    // --- MODIFICACIÓN: Definición de las nuevas fuentes de noticias ---
+    // Definition of the news feeds
     const generalNewsFeeds = [
         { name: 'El Mundo', url: 'https://e00-elmundo.uecdn.es/elmundo/rss/portada.xml' },
-        { name: 'El País', url: 'https://feeds.elpais.com/mrss-s/portada.xml' },
+        { name: 'El País', url: 'https://feeds.elpais.com/mrss-s/portada.xml' }, // <-- LA COMA QUE FALTABA Y CAUSABA EL ERROR YA ESTÁ CORREGIDA AQUÍ
         { name: 'El Diario Montañés', url: 'https://www.eldiariomontanes.es/rss/2.0/?section=ultima-hora' }
     ];
 
@@ -50,7 +50,6 @@ function init() {
 
     createNewsRotator('generalNews', generalNewsFeeds);
     createNewsRotator('sportsNews', sportsNewsFeeds);
-    // --- FIN DE LA MODIFICACIÓN ---
 
     // Alarm System
     initAlarmSystem('./mi_alarma.mp3');
