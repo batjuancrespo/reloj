@@ -1,0 +1,2986 @@
+[
+  {
+    "text": "La mayor sabiduría que existe es conocerse a uno mismo.",
+    "author": "Galileo Galilei"
+  },
+  {
+    "text": "Se aprende poco con la victoria, en cambio mucho con la derrota.",
+    "author": "Proverbio japonés"
+  },
+  {
+    "text": "Deja de mirar la puerta que se cerró, pues nunca encontrarás la que se ha abierto frente a ti.",
+    "author": "Proverbio español"
+  },
+  {
+    "text": "Se dice que las mujeres son vanidosas por naturaleza; es cierto, pero les queda bien y por eso mismo nos agradan más.",
+    "author": "Johann Wolfgang von Goethe"
+  },
+  {
+    "text": "Todo hombre es como la Luna: tiene una cara oscura que a nadie enseña.",
+    "author": "Mark Twain"
+  },
+  {
+    "text": "Hay un solo niño bello en el mundo y cada madre lo tiene.",
+    "author": "José Martí"
+  },
+  {
+    "text": "El colmo de la estupidez es aprender lo que luego hay que olvidar.",
+    "author": "Erasmo de Róterdam"
+  },
+  {
+    "text": "Los viajes son en la juventud una parte de educación y, en la vejez, una parte de experiencia.",
+    "author": "Francis Bacon"
+  },
+  {
+    "text": "No abras los labios si no estás seguro de que lo que vas a decir es más hermoso que el silencio.",
+    "author": "Proverbio árabe"
+  },
+  {
+    "text": "Más vale ser un cobarde un minuto que muerto todo el resto de tu vida.",
+    "author": "Proverbio irlandés"
+  },
+  {
+    "text": "Si usted quiere saber lo que una mujer dice realmente, mírela, no la escuche.",
+    "author": "Oscar Wilde"
+  },
+  {
+    "text": "Si el hombre fracasa en conciliar la justicia y la libertad, fracasa en todo.",
+    "author": "Albert Camus"
+  },
+  {
+    "text": "Se necesitan dos años para aprender a hablar y sesenta para aprender a callar.",
+    "author": "Ernest Hemingway"
+  },
+  {
+    "text": "La más ignorante y rústica de las mujeres puede engendrar un hombre de genio.",
+    "author": "Santiago Ramón y Cajal"
+  },
+  {
+    "text": "La justicia es el pan del pueblo; siempre está hambriento de ella.",
+    "author": "Chateaubriand"
+  },
+  {
+    "text": "El silencio es la réplica más aguda.",
+    "author": "Gilbert K. Chesterton"
+  },
+  {
+    "text": "En los momentos de crisis, sólo la imaginación es más importante que el conocimiento.",
+    "author": "Albert Einstein"
+  },
+  {
+    "text": "La sabiduría viene de escuchar; de hablar, el arrepentimiento.",
+    "author": "Proverbio italiano"
+  },
+  {
+    "text": "Saber y no recordar, es lo mismo que ignorar.",
+    "author": "Proverbios españoles"
+  },
+  {
+    "text": "Todas las palabras fueron alguna vez un neologismo.",
+    "author": "Jorge Luis Borges"
+  },
+  {
+    "text": "La gloria es un veneno que hay que tomar en pequeñas dosis.",
+    "author": "Honoré de Balzac"
+  },
+  {
+    "text": "Por nuestra codicia lo mucho es poco; por nuestra necesidad lo poco es mucho.",
+    "author": "Francisco de Quevedo"
+  },
+  {
+    "text": "En la paz se cuelga a los ladrones, en la guerra se les honra.",
+    "author": "Proverbio francés"
+  },
+  {
+    "text": "Un padre que da consejos más que padre es un amigo.",
+    "author": "Del libro:Martín Fierro"
+  },
+  {
+    "text": "Si es bueno vivir, todavía es mejor soñar, y lo mejor de todo, despertar.",
+    "author": "Antonio Machado"
+  },
+  {
+    "text": "La soledad es la gran talladora del espíritu.",
+    "author": "Federico García Lorca"
+  },
+  {
+    "text": "Unos gustan decir lo que saben; otros lo que piensan.",
+    "author": "Joseph Joubert"
+  },
+  {
+    "text": "Cuando un loco parece completamente sensato, es ya el momento de ponerle la camisa de fuerza.",
+    "author": "Edgar Allan Poe"
+  },
+  {
+    "text": "Amo las limitaciones, porque son la causa de la inspiración.",
+    "author": "Susan Sontag"
+  },
+  {
+    "text": "Sólo cerrando las puertas detrás de uno se abren ventanas hacia el porvenir.",
+    "author": "Françoise Sagan"
+  },
+  {
+    "text": "El mentiroso tiene dos males: ni cree ni es creído.",
+    "author": "Baltasar Gracián"
+  },
+  {
+    "text": "Consulta el ojo de tu enemigo, porque es el primero que ve tus defectos.",
+    "author": "Antístenes"
+  },
+  {
+    "text": "La prisa es del diablo; la paciencia es de Dios.",
+    "author": "Charles Lamb"
+  },
+  {
+    "text": "La lucha del hombre contra el poder es la lucha de la memoria contra el olvido.",
+    "author": "Milan Kundera"
+  },
+  {
+    "text": "El libro de la naturaleza alcanza cada año una nueva tirada.",
+    "author": "Hans Christian Andersen"
+  },
+  {
+    "text": "Componer no es difícil, lo complicado es dejar caer bajo la mesa las notas superfluas.",
+    "author": "Johannes Brahms"
+  },
+  {
+    "text": "Tengo un sueño, que mis cuatro hijos pequeños podrán vivir en una nación donde no serán juzgados por el color de su piel, sino por el valor de su carácter.",
+    "author": "Martin Luther King"
+  },
+  {
+    "text": "La televisión es maravillosa. No sólo nos produce dolor de cabeza, sino que además en su publicidad encontramos las pastillas que nos aliviarán.",
+    "author": "Bette Davis"
+  },
+  {
+    "text": "Nunca permitas que el sentido de la moral te impida hacer lo que está bien.",
+    "author": "Isaac Asimov"
+  },
+  {
+    "text": "Sé justo antes de ser generoso, sé humano antes de ser justo.",
+    "author": "Fernán Caballero"
+  },
+  {
+    "text": "Sólo los imbéciles no cambian nunca de opinión.",
+    "author": "Jacques Brel"
+  },
+  {
+    "text": "No hay cosa que haga más daño a una nación como el que la gente astuta pase por inteligente.",
+    "author": "Francis Bacon"
+  },
+  {
+    "text": "En el corazón de todos los inviernos vive una primavera palpitante, y detrás de cada noche viene una aurora sonriente.",
+    "author": "Gibran Jalil Gibran"
+  },
+  {
+    "text": "En un mundo injusto el que clama por la justicia es tomado por loco.",
+    "author": "León Felipe"
+  },
+  {
+    "text": "El vicio que nos impide conocer nuestros defectos se llama amor propio, y es el que da tanto crédito a los aduladores.",
+    "author": "Jacques Bénigne Bossuet"
+  },
+  {
+    "text": "Todos los cerebros del mundo son impotentes contra cualquier estupidez que esté de moda.",
+    "author": "Jean de La Fontaine"
+  },
+  {
+    "text": "En esta vida es fácil morir batirse con la vida es más difícil.",
+    "author": "Vladímir Mayakovski"
+  },
+  {
+    "text": "Desconfío de la incomunicabilidad: es la fuente de toda violencia.",
+    "author": "Jean-Paul Sartre"
+  },
+  {
+    "text": "Un día sin reír es un día perdido.",
+    "author": "Charles Chaplin"
+  },
+  {
+    "text": "Dime y lo olvido, enséñame y lo recuerdo, involúcrame y lo aprendo.",
+    "author": "Benjamin Franklin"
+  },
+  {
+    "text": "Nunca consideres el estudio como una obligación, sino como una oportunidad para penetrar en el bello y maravilloso mundo del saber.",
+    "author": "Albert Einstein"
+  },
+  {
+    "text": "El hombre tiene una tendencia instintiva a hablar, como puede observarse en el balbuceo de los bebés ; sin embargo, ningún niño tiene una tendencia instintiva a hacer cerveza, a hacer pan o a escribir.",
+    "author": "Charles Darwin"
+  },
+  {
+    "text": "No conozco de ninguna organización ecologista en ningún país que no considere a su gobierno su adversario.",
+    "author": "Gro Harlem Brundtland"
+  },
+  {
+    "text": "Puede ser que los especuladores son inofensivos como burbujas en un caudal estable de emprendimiento. Pero la situación se vuelve dramática cuando el emprendimiento se convierte en la burbuja en un remolino de especulación.",
+    "author": "John Maynard Keynes"
+  },
+  {
+    "text": "El andar en tierras y comunicar con diversas gentes, hace a los hombres discretos.",
+    "author": "Miguel de Cervantes"
+  },
+  {
+    "text": "Es mucho más difícil describir que opinar. Infinitamente más. En vista de lo cual todo el mundo opina.",
+    "author": "Josep Pla"
+  },
+  {
+    "text": "Recuerde el alma dormida, avive el seso y despierte contemplando cómo se pasa la vida, cómo se viene la muerte tan callando, cuán presto se va el placer, cómo, después de acordado, da dolor ; cómo, a nuestro parecer, cualquiera tiempo pasado fue mejor.",
+    "author": "Jorge Manrique"
+  },
+  {
+    "text": "Una persona perezosa es un reloj sin agujas, siendo inútil tanto si anda como si está parado.",
+    "author": "William Cowper"
+  },
+  {
+    "text": "Es totalmente evidente que toda poesía comporta una moral. ¡Desgraciado del poeta que busca ante todo la belleza!.",
+    "author": "Vicente Aleixandre"
+  },
+  {
+    "text": "La alegría, cuanto más se gasta, más queda.",
+    "author": "Ralph Waldo Emerson"
+  },
+  {
+    "text": "El diablo es optimista si cree que puede hacer peores a los hombres.",
+    "author": "Karl Kraus"
+  },
+  {
+    "text": "La televisión ha hecho mucho por la psiquiatría : no sólo ha difundido su existencia, sino que ha contribuido a hacerla necesaria.",
+    "author": "Alfred Hitchcock"
+  },
+  {
+    "text": "Errar es humano ; pero perseverar es diabólico.",
+    "author": "Séneca"
+  },
+  {
+    "text": ".",
+    "author": "Desconocido"
+  },
+  {
+    "text": "El que busca la verdad corre el riesgo de encontrarla.",
+    "author": "Isabel Allende"
+  },
+  {
+    "text": "Las estrellas están ahí, solo tienes que mirarlas.",
+    "author": "Kurt Cobain"
+  },
+  {
+    "text": "Solo en la actividad desearás vivir cien años.",
+    "author": "Proverbio japonés"
+  },
+  {
+    "text": "Toma para ti los consejos que das a otro.",
+    "author": "Tales de Mileto"
+  },
+  {
+    "text": "Pese a todo y contra todo, seguimos remando.",
+    "author": "Carlos Saul Menem"
+  },
+  {
+    "text": "Un pequeño paso para un hombre, un gran salto para la humanidad.",
+    "author": "Neil Armstrong"
+  },
+  {
+    "text": "Si deseas que tus sueños se hagan realidad. . . ¡despierta!.",
+    "author": "Ambrose Bierce"
+  },
+  {
+    "text": "La soledad es el imperio de la conciencia.",
+    "author": "Gustavo Adolfo Bécquer"
+  },
+  {
+    "text": "Obedientia et Pax.",
+    "author": "Juan XXIII"
+  },
+  {
+    "text": "He comprendido que hay dos verdades, una de las cuales jamás debe ser dicha.",
+    "author": "Albert Camus"
+  },
+  {
+    "text": "Un libro es como un jardín que se lleva en el bolsillo.",
+    "author": "Proverbio árabe"
+  },
+  {
+    "text": "\"Read my lips: No new taxes. \" (\"Lean mis labios: Impuestos nuevos no. \").",
+    "author": "George H. W. Bush"
+  },
+  {
+    "text": "Libertad política sin igualdad económica es una pretensión, un fraude, una mentira; y los trabajadores no quieren mentiras..",
+    "author": "Mijaíl Bakunin"
+  },
+  {
+    "text": ". . . sean siempre capaces de sentir en lo más hondo cualquier injusticia cometida contra cualquiera en cualquier parte del mundo..",
+    "author": "Ernesto Guevara de la SernaChe"
+  },
+  {
+    "text": "Caracoles de abril para mí, los de mayo para mi hermano y los de junio para ninguno..",
+    "author": "Proverbio español"
+  },
+  {
+    "text": "\"La historia [. . . ] es una pesadilla de la que intento despertar. \".",
+    "author": "James Joyce"
+  },
+  {
+    "text": "Busca rosas en diciembre o hielo en junio; espera encontrar constancia en el viento o grano en la paja; cree en una mujer o en un epitafio, o en cualquier otra cosa que sea falsa, pero no te fíes de los críticos.",
+    "author": "Lord Byron"
+  },
+  {
+    "text": "No me arrepiento de todos aquellos años de provocación. Entonces me motivaba hacerlo, pero ahora cualquiera puede..",
+    "author": "Madonna"
+  },
+  {
+    "text": "Al igual que un niño es en realidad algo que quiere llegar a ser un hombre, así también el poema es sólo una cosa natural que quiere llegar a ser una obra de arte..",
+    "author": "Friedrich Schlegel"
+  },
+  {
+    "text": "De cada diez personas que ven televisión, cinco son la mitad..",
+    "author": "Les Luthiers"
+  },
+  {
+    "text": "::¿Qué es poesía? -dices mientras clavas en mi pupila tu pupila azul-; ¿qué es poesía? ¿Y tú me lo preguntas? ¡Poesía. . . eres tú!.",
+    "author": "Gustavo Adolfo Bécquer"
+  },
+  {
+    "text": "No hay nada repartido de modo más equitativo en el mundo que la razón: todo el mundo está convencido de tener suficiente..",
+    "author": "René Descartes"
+  },
+  {
+    "text": "El agua de San Juan quita aceite, vino y pan..",
+    "author": "Refrán español"
+  },
+  {
+    "text": "Nunca es definitivo el éxito ni perenne el fracaso.",
+    "author": "José María Gabriel y Galán"
+  },
+  {
+    "text": "El silencio es el partido más seguro para el que desconfía de sí mismo.",
+    "author": "François de La Rochefoucauld"
+  },
+  {
+    "text": "Es la fortuna, no la sabiduría, la que gobierna la vida del hombre.",
+    "author": "Cicerón"
+  },
+  {
+    "text": "Si hay alguna posibilidad de que las cosas salgan mal, saldrán mal.",
+    "author": "Murphy"
+  },
+  {
+    "text": "Los más rezan con los mismos labios que usan para mentir.",
+    "author": "José Ingenieros"
+  },
+  {
+    "text": "No se comprende como las mujeres no triunfan todas, no teniendo en casa, como no tienen, a ninguna mujer que se lo impida..",
+    "author": "Noel Clarasó"
+  },
+  {
+    "text": "No existe oca que sea tan gris que no encuentre tarde o temprano un bello ganso por compañero..",
+    "author": "Alexander Pope"
+  },
+  {
+    "text": "Siempre es más valioso tener el respeto que la admiración de las personas.",
+    "author": "Jean-Jacques Rousseau"
+  },
+  {
+    "text": "Olvidemos lo que ya sucedió, pues puede lamentarse, pero no rehacerse.",
+    "author": "Tito Livio"
+  },
+  {
+    "text": "La pena de muerte es signo peculiar de la barbarie.",
+    "author": "Victor Hugo"
+  },
+  {
+    "text": "El dinero da la felicidad, incluso la más sutil.",
+    "author": "Dionisio Rodríguez"
+  },
+  {
+    "text": "Retírate dentro de ti mismo, sobre todo cuando necesites compañía.",
+    "author": "Epicuro de Samos"
+  },
+  {
+    "text": "Si quieres saber el valor del dinero, trata de conseguirlo prestado.",
+    "author": "Benjamin Franklin"
+  },
+  {
+    "text": "Chile le cuesta al Imperio la flor de mis guzmanes.",
+    "author": "Carlos I de España"
+  },
+  {
+    "text": "Los muchachos deben abstenerse de beber vino, pues es un error añadir fuego al fuego.",
+    "author": "Platón"
+  },
+  {
+    "text": "El tiempo es la materia de la que he sido creado.",
+    "author": "Jorge Luis Borges"
+  },
+  {
+    "text": "Que la comida sea tu alimento y el alimento tu medicina.",
+    "author": "Hipócrates"
+  },
+  {
+    "text": "Es adorable, genial. Fue muy amistosa. Fue simplemente como una madre para nosotros.",
+    "author": "Paul McCartney"
+  },
+  {
+    "text": "Que siempre por señales o razones se suelen descubrir las intenciones.",
+    "author": "Alonso de Ercilla"
+  },
+  {
+    "text": "Prefiero un vicio tolerante a una virtud obstinada.",
+    "author": "Molière"
+  },
+  {
+    "text": "Si utilizas al enemigo para derrotar al enemigo, serás poderoso en cualquier lugar a donde vayas.",
+    "author": "El arte de la guerra"
+  },
+  {
+    "text": "Si ayudo a una sola persona a tener esperanza, no habré vivido en vano.",
+    "author": "Martin Luther King"
+  },
+  {
+    "text": "Las manzanas no son peras, y una manzana y una pera no son dos manzanas, son dos peras.",
+    "author": "Ana Botella"
+  },
+  {
+    "text": "La honradez reconocida es el más seguro de los juramentos.",
+    "author": "Benjamin Franklin"
+  },
+  {
+    "text": "El amor es un mototrineo corriendo por la tundra y que de repente se vuelca, atrapándote debajo. Por la noche, vienen las comadrejas del hielo.",
+    "author": "Matt Groening"
+  },
+  {
+    "text": "El comportamiento es un espejo en el que cada uno muestra su imagen.",
+    "author": "Johann Wolfgang von Goethe"
+  },
+  {
+    "text": "Infierno y gloria, dos nombres en discordia.",
+    "author": "Proverbios españoles (I)"
+  },
+  {
+    "text": "No hables mal del puente hasta haber cruzado el río.",
+    "author": "Anónimo"
+  },
+  {
+    "text": "Nunca se dio el caso de conquistar un corazón por la fuerza.",
+    "author": "Molière"
+  },
+  {
+    "text": "Tendí cuerdas de campanario a campanario; guirnaldas de ventana a ventana; cadenas de oro de estrella a estrella, y danzo.",
+    "author": "Arthur Rimbaud"
+  },
+  {
+    "text": "Lo pasado ha huido, lo que esperas está ausente, pero el presente es tuyo.",
+    "author": "Proverbio árabe"
+  },
+  {
+    "text": "Grave es el peso de la propia conciencia.",
+    "author": "Cicerón"
+  },
+  {
+    "text": "Sólo vale la pena luchar y vivir por lo que se esta dispuesto a morir.",
+    "author": "Manuel Clouthier"
+  },
+  {
+    "text": "Creyendo lo peor, casi siempre se acierta.",
+    "author": "Francisco de Quevedo"
+  },
+  {
+    "text": "El mejor diplomático es aquel que habla más y dice menos.",
+    "author": "Oscar Wilde"
+  },
+  {
+    "text": "Sin nuestro sufrimiento, nuestra tarea no diferiría de la asistencia social.",
+    "author": "Madre Teresa de Calcuta"
+  },
+  {
+    "text": "La ciudad de Concepción es una sola ruina. De las manzanas de casas que la formaban, no existe ninguna en pie. Los horrores de la guerra parece que se hubieran aglomerado sobre este infeliz pueblo, para ofrecerse en toda su desnudez, formando un cuadro infernal, propio para conmover a los corazones más empedernidos.",
+    "author": "Manuel F. Horta, corresponsal del diario “El Eco” de Junín"
+  },
+  {
+    "text": "Es preferible la injusticia al desorden.",
+    "author": "Goethe"
+  },
+  {
+    "text": "La manera más desagradable de replicar en una polémica es la de enojarse y la de callar, pues el agresor interpreta ordinariamente el silencio como un desprecio.",
+    "author": "Friedrich Nietzsche"
+  },
+  {
+    "text": "¡Lo terrible no es la altura sino la pendiente!.",
+    "author": "Friedrich Nietzsche"
+  },
+  {
+    "text": "Todo chiste, en el fondo, encubre una verdad.",
+    "author": "Sigmund Freud"
+  },
+  {
+    "text": "En el maravilloso reino de la mente he de ser libre como los demás.",
+    "author": "Helen Keller"
+  },
+  {
+    "text": "Como yerba fui, y no me fumaron.",
+    "author": "Raúl Gómez Jattin"
+  },
+  {
+    "text": "\"¿Tú lees los libros que quemas?\" El interrogado se ríe. \"!Eso es en Contra de la ley!\" \"Oh sí por supuesto\".",
+    "author": "Fahrenheit 451"
+  },
+  {
+    "text": "Tres cosas demando de Dios si me las diese: la tela, el telar y la que teje.",
+    "author": "Proverbio español"
+  },
+  {
+    "text": "Nadie puede herirte sin tu consentimiento.",
+    "author": "Eleanor Roosevelt"
+  },
+  {
+    "text": "Todo culpable es tímido.",
+    "author": "Voltaire"
+  },
+  {
+    "text": "Cuando tú no estás, yo tampoco estoy; nada hay, nadie está cuando tú no estás.",
+    "author": "Ayer"
+  },
+  {
+    "text": "Guarde para su regalo esta sentencia el autor si el sabio no aprueba, ¡malo! si el necio aplaude, ¡peor!.",
+    "author": "Tomás de Iriarte"
+  },
+  {
+    "text": "¿Nada tan estúpido como vencer; el verdadero triunfo está en convencer.",
+    "author": "Victor Hugo"
+  },
+  {
+    "text": "Las grandes almas tienen voluntades; las débiles tan solo deseos.",
+    "author": "Proverbio chino"
+  },
+  {
+    "text": "El que niega su propia vanidad suele poseerla en forma tan brutal, que debe cerrar los ojos si no quiere despreciarse a sí mismo.",
+    "author": "Friedrich Nietzsche"
+  },
+  {
+    "text": "Cualquiera puede hacer historia ; pero sólo un gran hombre puede escribirla.",
+    "author": "Oscar Wilde"
+  },
+  {
+    "text": "¡Sí, borraré de las tabletas de mi memoria todo recuerdo trivial y vano, todas las sentencias de los libros, todas las ideas, todas las impresiones pasadas, que copiaron allí la juventud y la observación! Y sólo tu mandato vivirá en el libro y volumen de mi cerebro, sin mezca de material vil!.",
+    "author": "Hamlet"
+  },
+  {
+    "text": "La guerra es dulce para aquellos que nunca la han experimentado.",
+    "author": "Erasmo de Róterdam"
+  },
+  {
+    "text": "\"Al plato vendrás, guisante, si no es de joven será de viejo.\"",
+    "author": "probervio asturiano"
+  },
+  {
+    "text": "Donde hay soberbia, allí habrá ignorancia; mas donde hay humildad, habrá sabiduría.",
+    "author": "Salomón"
+  },
+  {
+    "text": "La mayor de las faltas, diría yo, es no tener conciencia de ninguna.",
+    "author": "Thomas Carlyle"
+  },
+  {
+    "text": "Aprender sin pensar es inútil. Pensar sin aprender, peligroso.",
+    "author": "Confucio"
+  },
+  {
+    "text": "La vida es mi tortura y la muerte sera mi descanso.",
+    "author": "Romeo y Julieta"
+  },
+  {
+    "text": "Es mejor ser loado por unos pocos sabios, que por muchos necios.",
+    "author": "Miguel de Cervantes"
+  },
+  {
+    "text": "Nuestro carácter es el resultado de nuestra conducta..",
+    "author": "Aristóteles"
+  },
+  {
+    "text": "Los problemas crecen con la edad de los hijos.",
+    "author": "Proverbio alemán"
+  },
+  {
+    "text": "Existen hombres que escuchan sus voces interiores y viven de acuerdo a ellas, tales hombres terminan volviendose locos o convertidos en Leyenda\".",
+    "author": "Anónimo"
+  },
+  {
+    "text": "Los amigos se convierten con frecuencia en ladrones de nuestro tiempo.",
+    "author": "Platón"
+  },
+  {
+    "text": "El hombre teme la muerte porque ama la vida.",
+    "author": "Fiódor Dostoievski"
+  },
+  {
+    "text": "La tierra es un teatro, pero tiene un reparto deplorable.",
+    "author": "Oscar Wilde"
+  },
+  {
+    "text": "No puede ser bueno aquel que nunca ha amado.",
+    "author": "Miguel de Cervantes"
+  },
+  {
+    "text": "Las palabras abren puertas sobre el mar.",
+    "author": "Rafael Alberti"
+  },
+  {
+    "text": "Un sólo vaso de vino en el momento oportuno, vale más que todas las riquezas de la tierra.",
+    "author": "Gustav Mahler"
+  },
+  {
+    "text": "Las críticas son cartas al público que ningún autor tiene que abrir ni leer.",
+    "author": "Rainer María Rilke"
+  },
+  {
+    "text": "Los músicos son terriblemente irrazonables. Siempre quieren que uno sea totalmente mudo en el preciso momento que uno desea ser completamente sordo.",
+    "author": "Oscar Wilde"
+  },
+  {
+    "text": "Clérigo viajero ni mísero ni misero.",
+    "author": "Refrán"
+  },
+  {
+    "text": "Dios ha puesto el placer tan cerca del dolor que muchas veces se llora de alegría.",
+    "author": "George Sand"
+  },
+  {
+    "text": "Lo blando es más fuerte que lo duro; el agua es más fuerte que la roca, el amor es más fuerte que la violencia.",
+    "author": "Hermann Hesse"
+  },
+  {
+    "text": "Generalmente se lee para decir que se ha leído.",
+    "author": "Charles Lamb"
+  },
+  {
+    "text": "Al amor lo pintan ciego y con alas. Ciego para no ver los obstáculos y con alas para salvarlos.",
+    "author": "Jacinto Benavente"
+  },
+  {
+    "text": "No existe tiranía peor que la ejercida a la sombra de las leyes y con apariencias de justicia.",
+    "author": "Montesquieu"
+  },
+  {
+    "text": "La palabra es el espejo de la acción.",
+    "author": "Solón"
+  },
+  {
+    "text": "Todo argot es metáfora, y toda metáfora es poesía.",
+    "author": "Gilbert K. Chesterton"
+  },
+  {
+    "text": "No existen países pequeños. La grandeza de un pueblo no se mide por el número de sus componentes, como no se mide por su estatura la grandeza de un hombre.",
+    "author": "Victor Hugo"
+  },
+  {
+    "text": "En la primera pasión la mujer ama a su amante, en las otras todo lo que ama es al amor.",
+    "author": "Lord Byron"
+  },
+  {
+    "text": "Lo peor es cuando has terminado un capítulo y la máquina de escribir no aplaude.",
+    "author": "Orson Welles"
+  },
+  {
+    "text": "La verdad es lo más valioso que tenemos, economicémosla.",
+    "author": "Mark Twain"
+  },
+  {
+    "text": "Abre los ojos, apaga la Televisión.",
+    "author": "Proverbio frances"
+  },
+  {
+    "text": "Según yo lo veo, si quieres el arco iris, tienes que aguantar la lluvia.",
+    "author": "Dolly Parton"
+  },
+  {
+    "text": "Dijo la rana al mosquito desde una tinaja: más quiero morir en el vino que vivir en el agua. . . .",
+    "author": "Francisco de Quevedo"
+  },
+  {
+    "text": "Roger no tiene derecho a decirme qué debo hacer con mi vida, aunque él cree que sí, y no va a arruinar mi carrera, aunque últimamente lo está intentando.",
+    "author": "David Gilmour"
+  },
+  {
+    "text": "La alegría consiste en tener salud y la mollera vacía.",
+    "author": "Antonio Machado"
+  },
+  {
+    "text": "Despacito y buena letra, que el hacer las cosas bien, importa más que el hacerlas.",
+    "author": "Antonio Machado"
+  },
+  {
+    "text": "El poeta debe escuchar con respeto la crítica ajena, porque el libro lanzado a la publicidad ya no le pertenece. Él lo entregó al juicio de los hombres, sin que nadie le obligase a ello. Asístele, sin embargo, el derecho de no ser demasiado dócil a admoniciones y consejos, y le conviene, sobre todo, desconfiar aun de sus propias definiciones.",
+    "author": "Antonio Machado"
+  },
+  {
+    "text": "Para dialogar, preguntad primero; después. . . escuchad.",
+    "author": "Antonio Machado"
+  },
+  {
+    "text": "Todas las familias felices se parecen, pero las infelices son todas distintas a su manera.",
+    "author": "Ana Karenina"
+  },
+  {
+    "text": "Es imposible despertar a aquel que simula estar dormido.",
+    "author": "Proverbio navajo"
+  },
+  {
+    "text": "Un terreno rocoso no necesita una plegaria, necesita un hacha puntiaguda.",
+    "author": "Proverbio navajo"
+  },
+  {
+    "text": "Los oídos no sirven de nada a un cerebro ciego.",
+    "author": "Proverbio árabe"
+  },
+  {
+    "text": "Sólo se tiran piedras al árbol cargado de frutos..",
+    "author": "Proverbio árabe"
+  },
+  {
+    "text": "Adán comió la manzana y todavía nos duelen las muelas.",
+    "author": "Proverbio húngaro"
+  },
+  {
+    "text": "No hay cosa que más avive el amor que el temor de perder al ser amado.",
+    "author": "Francisco de Quevedo"
+  },
+  {
+    "text": "Bien acierta quien sospecha que siempre yerra.",
+    "author": "Francisco de Quevedo"
+  },
+  {
+    "text": "La vida de los muertos está en la memoria de los vivos.",
+    "author": "Cicerón"
+  },
+  {
+    "text": "Para acercarse a la perfección, el hombre debiera obrar siempre como si tuviera testigos de su conducta y pensar como si se pudiera leer en el fondo de su alma.",
+    "author": "Séneca"
+  },
+  {
+    "text": "Las casas son para habitar y no para contemplar.",
+    "author": "Francis Bacon"
+  },
+  {
+    "text": "Un partido es una locura de muchos en beneficio de unos pocos.",
+    "author": "Alexander Pope"
+  },
+  {
+    "text": "No escuches a los amigos cuando el amigo interior dice: ¡Haz esto!.",
+    "author": "Mahatma Gandhi"
+  },
+  {
+    "text": "Lo mejor es salir de la vida como de una fiesta, ni sediento ni bebido..",
+    "author": "Aristóteles"
+  },
+  {
+    "text": "Un estado es gobernado mejor por un hombre bueno que por unas buenas leyes.",
+    "author": "Aristóteles"
+  },
+  {
+    "text": "La esperanza es el sueño del hombre despierto.",
+    "author": "Aristóteles"
+  },
+  {
+    "text": "Un error mínimo al principio puede ser máximo al final.",
+    "author": "Aristóteles"
+  },
+  {
+    "text": "No hay un gran genio sin mezcla de locura.",
+    "author": "Aristóteles"
+  },
+  {
+    "text": "No se goza de la posesión de ningún bien si no es en compañía.",
+    "author": "Séneca"
+  },
+  {
+    "text": "El buen predicador es el que sigue sus propios preceptos.",
+    "author": "William Shakespeare"
+  },
+  {
+    "text": "Las mayores dificultades están donde no las esperamos.",
+    "author": "Johann Wolfgang von Goethe"
+  },
+  {
+    "text": "Hay que batir el hierro mientras está caliente.",
+    "author": "Oscar Wilde"
+  },
+  {
+    "text": "La imbecilidad es una roca inexpugnable: todo el choca contra ella se despedaza.",
+    "author": "Gustave Flaubert"
+  },
+  {
+    "text": "Las obras de la Naturaleza, no inferiores a las del genio, se imponen por cuanto participan de lo absoluto.",
+    "author": "Victor Hugo"
+  },
+  {
+    "text": "Nada existe tan agradable a un autor como el encontrar citas de su propia obra en los libros de otros doctos autores.",
+    "author": "Benjamin Franklin"
+  },
+  {
+    "text": "Tu libertad para agitar los brazos termina en donde comienza mi nariz.",
+    "author": "Stuart Chase"
+  },
+  {
+    "text": "Ni el nacionalismo ni el clericalismo han aportado nada a esta tierra.",
+    "author": "Tomás Meabe"
+  },
+  {
+    "text": "Busco un hombre honesto.",
+    "author": "Diógenes de Sínope"
+  },
+  {
+    "text": "El que quiere interesar a los demás tiene que provocarlos.",
+    "author": "Salvador Dalí"
+  },
+  {
+    "text": "La raza humana tiene un arma verdaderamente eficaz: la risa.",
+    "author": "Mark Twain"
+  },
+  {
+    "text": "Corazón, no te aflijas. Descansaré en paz junto a mis queridos padres y te esperaré.",
+    "author": "Harry Houdini"
+  },
+  {
+    "text": "Jabón e hilo negro, todo es para la ropa.",
+    "author": "Proverbio español"
+  },
+  {
+    "text": "La Primera regla del Club de la lucha es: Nadie habla sobre el Club de la lucha.",
+    "author": "El club de la lucha"
+  },
+  {
+    "text": "La Segunda regla del Club de la lucha es: NADIE habla sobre el Club de la lucha.",
+    "author": "El club de la lucha"
+  },
+  {
+    "text": "La Tercera regla es: La pelea termina cuando uno de los contendientes grita \"alto\", pierde la vertical o hace una señal.",
+    "author": "El club de la lucha"
+  },
+  {
+    "text": "La Cuarta: Solo dos personas por pelea.",
+    "author": "El club de la lucha"
+  },
+  {
+    "text": "La Quinta: Solo una pelea a la vez.",
+    "author": "El club de la lucha"
+  },
+  {
+    "text": "Sexta: Sin camisa y sin zapatos.",
+    "author": "El club de la lucha"
+  },
+  {
+    "text": "Septima: Cada pelea dura lo que tiene que durar.",
+    "author": "El club de la lucha"
+  },
+  {
+    "text": "Octava: Si esta es tu primera noche en El Club de la lucha. . . entonces TIENES que pelear.",
+    "author": "El club de la lucha"
+  },
+  {
+    "text": "Ávaro es el que no gasta en lo que debe, ni lo que debe, ni cuanto debe..",
+    "author": "Aristóteles"
+  },
+  {
+    "text": "La vida debe ser una continua educación.",
+    "author": "Gustave Flaubert"
+  },
+  {
+    "text": "La paciencia es virtud vencedora. La impaciencia es vicio del demonio.",
+    "author": "Francisco de Quevedo"
+  },
+  {
+    "text": "El diablo sabe por diablo, pero más sabe por viejo.",
+    "author": "José Hernández"
+  },
+  {
+    "text": "Cuando el mar está en calma todo el mundo puede ser timonel.",
+    "author": "Publio Siro"
+  },
+  {
+    "text": "Difícil es decir cuánto concilia los ánimos humanos la cortesía y la afabilidad al hablar.",
+    "author": "Cicerón"
+  },
+  {
+    "text": "Justicia, cosa muy buena; pero no en mi casa, en la ajena.",
+    "author": "Proverbio español"
+  },
+  {
+    "text": "Dichoso el mes que entra con Todos los Santos y sale por San Andrés..",
+    "author": "Refrán español"
+  },
+  {
+    "text": "Me gustaría tener algún tipo de mensaje positivo que dejarles. Pero no lo tengo. ¿Aceptarían dos mensajes negativos?.",
+    "author": "Woody Allen"
+  },
+  {
+    "text": "Si puedes soñarlo, puedes lograrlo.",
+    "author": "Walt Disney"
+  },
+  {
+    "text": "Amor no es mirarse el uno al otro, sino mirar los dos en la misma dirección.",
+    "author": "Antoine de Saint-Exupéry"
+  },
+  {
+    "text": "El cristianismo dio de beber veneno a Eros: este, ciertamente, no murió, pero degeneró convirtiéndose en un vicio.",
+    "author": "Friedrich Nietzsche"
+  },
+  {
+    "text": "La naturaleza está a menudo escondida, a veces dominada, raramente extinguida.",
+    "author": "Francis Bacon"
+  },
+  {
+    "text": "La mentira es un triste sustituto de la verdad, pero es el único que se ha descubierto hasta ahora.",
+    "author": "Elbert Hubbard"
+  },
+  {
+    "text": "El que confió sus secretos a otro, hízose esclavo de él.",
+    "author": "Baltasar Gracián"
+  },
+  {
+    "text": "La medicina es el arte de acompañar al sepulcro con palabras griegas.",
+    "author": "Enrique Jardiel Poncela"
+  },
+  {
+    "text": "Aquel que esté libre de pecado que arroje la primera piedra.",
+    "author": "Jesús de Nazaret"
+  },
+  {
+    "text": "Para vivir una vida desprendida, no debemos considerar nada como de nuestra propiedad.",
+    "author": "Siddhartha Gautama"
+  },
+  {
+    "text": "Toda religión que no afirme que Dios está oculto, no es verdadera.",
+    "author": "Blaise Pascal"
+  },
+  {
+    "text": "Dar hasta que duela y cuando duela dar todavía más.",
+    "author": "Madre Teresa de Calcuta"
+  },
+  {
+    "text": "[. . . ] me gustaría tener algún tipo de mensaje positivo que dejarles. Pero no lo tengo. ¿Aceptarían dos mensajes negativos?.",
+    "author": "Woody Allen"
+  },
+  {
+    "text": "No es la pobreza la que aflige, sino la avaricia; así como no son las riquezas las que preservan de todo temor, sino la razón.",
+    "author": "Epicteto"
+  },
+  {
+    "text": "Huid del país donde uno solo ejerce todos los poderes: es un país de esclavos.",
+    "author": "Simón Bolívar"
+  },
+  {
+    "text": "No es la escuela la que nos enseña, sino la vida.",
+    "author": "Séneca"
+  },
+  {
+    "text": "La reputación es una vida imaginaria en la vida de los demás; una cosa fuera de nosotros antes de nuestra muerte.",
+    "author": "Alexander Pope"
+  },
+  {
+    "text": "Todo pasa. Sólo el verdadero arte es eterno..",
+    "author": "Téophile Gautier"
+  },
+  {
+    "text": "Con una naturaleza confortable, la humanidad no hubiera inventado nunca la arquitectura.",
+    "author": "Oscar Wilde"
+  },
+  {
+    "text": "Propio de todo hombre es el errar. Pero de nadie, sino del necio, el mantenerse en el error.",
+    "author": "Juan Luis Vives"
+  },
+  {
+    "text": "Esta es la última conclusión de la sabiduría : la libertad y la vida se merecen si se las conquista todos los días.",
+    "author": "Johann Wolfgang von Goethe"
+  },
+  {
+    "text": "Pero el ángel les dijo: 'No tengáis miedo. Mirad que os traigo buenas noticias que serán motivo de mucha alegría para todo el pueblo'.",
+    "author": "Evangelio según Lucas 2, 10"
+  },
+  {
+    "text": "El matrimonio es, sin duda alguna, el estado de perfección social.",
+    "author": "Napoleón Bonaparte"
+  },
+  {
+    "text": "La gran bendicion de la vida es el mañana y hacer realidad tus sueños.",
+    "author": "Paulo Coelho"
+  },
+  {
+    "text": "Bromas pesadas sólo al que las da le agradan.",
+    "author": "Refrán español"
+  },
+  {
+    "text": "[. . . ] me gustaría tener algún tipo de mensaje positivo que dejarles. Pero no lo tengo. ¿Aceptarían dos mensajes negativos?\".",
+    "author": "Woody Allen"
+  },
+  {
+    "text": "En general, el sarcasmo es el lenguaje del diablo.",
+    "author": "Thomas Carlyle"
+  },
+  {
+    "text": "Se ama más a los nietos que a los hijos. Es que uno sabe con bastante exactitud la ayuda que consigue de su hijo, la suerte y el mérito que tiene; pero espera y confía en su nieto.",
+    "author": "Montesquieu"
+  },
+  {
+    "text": "América Latina es una consecuencia y un producto, de la geopolítica del conocimiento, esto es, del conocimiento geopolítico fabricado e impuesto por la “modernidad”, en su autodefinición como modernidad. En este sentido, “América Latina” se fue fabricando como algo desplazado de la modernidad, un desplazamiento que asumieron los intelectuales y estadistas latinoamericanos y se esforzaron por llegar a ser “modernos” como si la “modernidad” fuera un punto de llegada y no la justificación de la colonialidad del poder.",
+    "author": "Walter Mignolo"
+  },
+  {
+    "text": "Estar a solas con un buen libro es ser capaz de comprenderte más a ti mismo.",
+    "author": "Harold Bloom"
+  },
+  {
+    "text": "No hay distinción firme entre lo real y lo irreal; ni entre lo verdadero y lo falso. Una cosa no es necesariamente o verdadera o falsa, sino que puede ser ambas verdadera y falsa.",
+    "author": "Harold Pinter"
+  },
+  {
+    "text": "Viviendo los Apóstoles, se celebró ya un Concilio, donde los fieles iban a determinar algunos puntos de fe y disciplina; y los cánones proclamados en él adquirieron fuerza de ley. Así repudiábanse las herejías, aclarábanse mejor las creencias reveladas, a medida que se veían mal interpretadas, y se adaptaba la disciplina a los tiempos y lugares.",
+    "author": "Cesar Cantú"
+  },
+  {
+    "text": "Entonces Leví habló y dijo a Pedro: “Pedro, siempre fuiste impulsivo. Ahora te veo ejercitándote contra una mujer como si fuera un adversario. Sin embargo, si el Salvador la hizo digna, ¿quién eres tú para rechazarla? Bien cierto es que el Salvador la conoce perfectamente; por esto la amó más que a nosotros. Más bien, pues, avergoncémonos y revistámonos del hombre perfecto, partamos tal como nos lo ordenó y prediquemos el evangelio, sin establecer otro precepto ni otra ley fuera de lo que dijo el Salvador”.",
+    "author": "Desconocido"
+  },
+  {
+    "text": "Sea la inexistencia Que mi ser todo desaparezca ( Voluntad del Juglar ).",
+    "author": "Jaime García Maffla"
+  },
+  {
+    "text": "La figura de la muerte, en cualquier traje que venga, es espantosa.",
+    "author": "Miguel de Cervantes"
+  },
+  {
+    "text": "No hay verdadero amor donde hay alguna sospecha.",
+    "author": "Francisco de Quevedo"
+  },
+  {
+    "text": "Cuando quieres algo, todo el Universo conspira para que realices tu deseo.",
+    "author": "Paulo Coelho"
+  },
+  {
+    "text": "El que piensa en la muerte está ya muerto a medias.",
+    "author": "Heinrich Heine"
+  },
+  {
+    "text": "La marihuana causa amnesia y. . . otras cosas que no recuerdo.",
+    "author": "Woody Allen"
+  },
+  {
+    "text": "Las ventajas del nudismo saltan a la vista.",
+    "author": "Woody Allen"
+  },
+  {
+    "text": "El mayor delito es el suicidio, porque es el único que no da lugar al arrepentimiento.",
+    "author": "Alejandro Dumas"
+  },
+  {
+    "text": "El fin justifica los tedios.",
+    "author": "Cita de usuario"
+  },
+  {
+    "text": "La sabiduría nos llega cuando ya no nos sirve de nada.",
+    "author": "Gabriel García Márquez"
+  },
+  {
+    "text": "Desde San Antón, una hora más de sol. Para San Antón, busca la perdiz al perdigón. Para San Antón, gallinita pon. Por San Antón, gallinita pon; y por la Candelaria, la buena y la mala. Por San Antón, media hora más de sol. Por San Antón, pon gallinita pon.",
+    "author": "Refrán español"
+  },
+  {
+    "text": "Inocente es quien no necesita explicarse.",
+    "author": "Albert Camus"
+  },
+  {
+    "text": "Para la mayoría de los hombres la guerra es el fin de la soledad. Para mí es la soledad infinita.",
+    "author": "Albert Camus"
+  },
+  {
+    "text": "San Antón mete las mozas en un rincón y San Sebastián las saca a pasear.",
+    "author": "Refrán español"
+  },
+  {
+    "text": "¿Sufre más aquel que esperó siempre que aquel que nunca esperó a nadie?.",
+    "author": "Pablo Neruda"
+  },
+  {
+    "text": "Hay que ser infiel, pero nunca desleal.",
+    "author": "Gabriel García Márquez"
+  },
+  {
+    "text": "Para San Vicente, enero pierde un diente.",
+    "author": "Refrán español"
+  },
+  {
+    "text": "Yo no sé si Dios existe, pero si existe, sé que no le va a molestar mi duda.",
+    "author": "Mario Benedetti"
+  },
+  {
+    "text": "Podrán cortar todas las flores, pero no podrán detener la primavera.",
+    "author": "Pablo Neruda"
+  },
+  {
+    "text": "Me desconcierta tanto pensar que Dios existe, como que no existe.",
+    "author": "Gabriel García Márquez"
+  },
+  {
+    "text": "La palabra no es para encubrir la verdad, sino para decirla.",
+    "author": "José Martí"
+  },
+  {
+    "text": "Mejor quemarse que apagarse lentamente.",
+    "author": "Kurt Cobain"
+  },
+  {
+    "text": "Las guerras seguirán mientras el color de la piel siga siendo más importante que el de los ojos.",
+    "author": "Bob Marley"
+  },
+  {
+    "text": "Mejor que mil frases compuestas de palabras vanas, vale una sola palabra que oída da paz.",
+    "author": "Anónimo"
+  },
+  {
+    "text": "Culto es aquel que sabe donde encontrar lo que no sabe.",
+    "author": "Woody Allen"
+  },
+  {
+    "text": "Un partido nunca tiene razón absoluta precisamente por ser un partido.",
+    "author": "Johann Wolfgang von Goethe"
+  },
+  {
+    "text": "Cuando mi voz calle con la muerte, mi corazón te seguirá hablando.",
+    "author": "Rabindranath Tagore"
+  },
+  {
+    "text": "No tiene sentido decir que los hombres son iguales ante la ley, cuando es la ley mantenedora de su desigualdad.",
+    "author": "Ramiro de Maeztu"
+  },
+  {
+    "text": "Un buen libro es el mejor de los amigos, lo mismo hoy que siempre.",
+    "author": "Rubén Darío"
+  },
+  {
+    "text": "La ley es poderosa, pero más poderosa es la miseria.",
+    "author": "Johann Wolfgang von Goethe"
+  },
+  {
+    "text": "Todo lo que una persona puede imaginar, otras podrán hacerlo realidad.",
+    "author": "Julio Verne"
+  },
+  {
+    "text": "Nada es tan variado en la naturaleza como el cubrecabeza de una señora.",
+    "author": "Joseph Addison"
+  },
+  {
+    "text": "La música japonesa es una tortura china.",
+    "author": "Woody Allen"
+  },
+  {
+    "text": "En este triste país, si a un zapatero se le antoja hacer una botella y le sale mal, después ya no le dejan hacer zapatos.",
+    "author": "Mariano José de Larra"
+  },
+  {
+    "text": "El arte de la música es que el más cercano se halla de las lágrimas y los recuerdos.",
+    "author": "Oscar Wilde"
+  },
+  {
+    "text": "El pueblo no es verdaderamente libre mientras que la libertad no esté arraigada en sus costumbres e identificada con ellas.",
+    "author": "Mariano José de Larra"
+  },
+  {
+    "text": "El amor tiene fácil la entrada y difícil la salida.",
+    "author": "Lope de Vega"
+  },
+  {
+    "text": "Nunca he encontrado una persona tan ignorante que no se pueda aprender algo de ella.",
+    "author": "Galileo Galilei"
+  },
+  {
+    "text": "Mi padre vendió la farmacia porque no había más remedio.",
+    "author": "Woody Allen"
+  },
+  {
+    "text": "No todos los hombres son iguales. . . ¡Hay unos peores que otros!.",
+    "author": "Cita de usuario"
+  },
+  {
+    "text": "La literatura no puede reflejar todo lo negro de la vida. La razón principal es que la literatura escoge y la vida no.",
+    "author": "Pío Baroja"
+  },
+  {
+    "text": "En los aviones el tiempo se pasa volando.",
+    "author": "Woody Allen"
+  },
+  {
+    "text": "El diabético no puede ir de luna de miel.",
+    "author": "Woody Allen"
+  },
+  {
+    "text": "Los ojos porque suspiras, sábelo bien, los ojos en que te miras son ojos porque te ven.",
+    "author": "Antonio Machado"
+  },
+  {
+    "text": "En esta España de los pantalones lleva la voz el macho; mas si un negocio importa lo resuelven las faldas a escobazos.",
+    "author": "Antonio Machado"
+  },
+  {
+    "text": "Coge el día presente y fíate lo menos posible el mañana.",
+    "author": "Ángel Ganivet"
+  },
+  {
+    "text": "Si en la televisión pusieran mejor música, la gente tendría mejores gustos.",
+    "author": "Kurt Cobain"
+  },
+  {
+    "text": "No olvides tu historia ni tu destino.",
+    "author": "Bob Marley"
+  },
+  {
+    "text": "La amistad es como la mayonesa: cuesta un huevo y hay que tratar de que no se corte.",
+    "author": "Woody Allen"
+  },
+  {
+    "text": "La contemplación es un lujo; la acción, una necesidad.",
+    "author": "Thomas Carlyle"
+  },
+  {
+    "text": "Las excusas, junto con las mentiras, son el peor enemigo de la comunicación.",
+    "author": "Sebastián Melgar"
+  },
+  {
+    "text": "El ojo que ves no es ojo porque tú lo veas; es ojo porque te ve.",
+    "author": "Antonio Machado"
+  },
+  {
+    "text": "Cuando un médico se equivoca, lo mejor es echarle tierra al asunto.",
+    "author": "Woody Allen"
+  },
+  {
+    "text": "Es curioso que se le denomine sexo oral a la práctica sexual en la que menos se puede hablar.",
+    "author": "Woody Allen"
+  },
+  {
+    "text": "El sueño de la razón produce monstruos.",
+    "author": "Francisco de Goya"
+  },
+  {
+    "text": "Las canas ya no se respetan. Se tiñen.",
+    "author": "Woody Allen"
+  },
+  {
+    "text": "En el desprecio de la ambición se encuentra uno de los principios esenciales de la felicidad sobre la tierra.",
+    "author": "Voltaire"
+  },
+  {
+    "text": "La ambición jamás se detiene, ni siquiera en la cima de la grandeza.",
+    "author": "Napoleón Bonaparte"
+  },
+  {
+    "text": "No seas ambicioso y tacaño; la justa medida es excelente en tales casos.",
+    "author": "Pitágoras"
+  },
+  {
+    "text": "La mucha alegría es presagio de tristeza.",
+    "author": "Alonso de Ercilla"
+  },
+  {
+    "text": "Se debe morir orgullosamente cuando ya no es posible vivir con orgullo.",
+    "author": "Friedrich Nietzsche"
+  },
+  {
+    "text": "Que una cosa sea verdad no significa que sea convincente, ni en la vida, ni en el arte.",
+    "author": "Truman Capote"
+  },
+  {
+    "text": "La mujer no existe. Sólo hay mujeres cuyos tipos varían al infinito.",
+    "author": "George Sand"
+  },
+  {
+    "text": "¡Soy un triste juguete del destino!.",
+    "author": "Romeo y Julieta"
+  },
+  {
+    "text": "No se puede probar nada en el reino del pensamiento; pero el pensamiento puede explicar muchas cosas.",
+    "author": "Martin Heidegger"
+  },
+  {
+    "text": "Cuando el sol se eclipsa para desaparecer, se ve mejor su grandeza.",
+    "author": "Séneca"
+  },
+  {
+    "text": "Más da el duro que el desnudo.",
+    "author": "El Lazarillo de Tormes"
+  },
+  {
+    "text": "Las cualidades sublimes infunden respeto; las bellas, amor.",
+    "author": "Immanuel Kant"
+  },
+  {
+    "text": "Todo idealismo frente a la necesidad es un engaño.",
+    "author": "Friedrich Nietzsche"
+  },
+  {
+    "text": "En abril, va la vieja a veril.",
+    "author": "Proverbio canario"
+  },
+  {
+    "text": "A algunos hombres los disfraces no los disfrazan, sino los revelan. Cada uno se disfraza de aquello que es por dentro.",
+    "author": "Gilbert K. Chesterton"
+  },
+  {
+    "text": "Todos los hombres pueden ser tiranos si quisieran.",
+    "author": "Daniel Defoe"
+  },
+  {
+    "text": "Los hombres creen divina a la epilepsia simplemente porque no la entienden. Pero si llamaran divino a todo lo que no entienden, bueno, no habría final para las cosas divinas.",
+    "author": "Hipócrates"
+  },
+  {
+    "text": "Cartujos en casa y apóstoles fuera de ella.",
+    "author": "Giuseppe Marello Viale"
+  },
+  {
+    "text": "Si quieres oír cantar a tu alma, haz el silencio a tu alrededor.",
+    "author": "Arturo Graf"
+  },
+  {
+    "text": "La palabra progreso no tiene ningún sentido mientras haya niños infelices.",
+    "author": "Albert Einstein"
+  },
+  {
+    "text": "La rapidez que es una virtud, engendra un vicio, que es la prisa.",
+    "author": "Gregorio Marañón"
+  },
+  {
+    "text": "En abril aguas mil, al entrar pero no al salir.",
+    "author": "lluvia"
+  },
+  {
+    "text": "Es un hombre que sabe de todo, ¡qué tonto será!.",
+    "author": "Miguel de Unamuno"
+  },
+  {
+    "text": "No hay hombre tan cobarde a quien el amor no haga valiente y transforme en héroe.",
+    "author": "Platón"
+  },
+  {
+    "text": "El amor es una enfermedad inevitable, dolorosa y fortuita.",
+    "author": "Marcel Proust"
+  },
+  {
+    "text": "Siempre he observado que para triunfar en la vida hay que ser entendido, pero aparecer como tonto.",
+    "author": "Michel de Montaigne"
+  },
+  {
+    "text": "Caballo manco no sube escalera..",
+    "author": "Proverbios españoles (C)"
+  },
+  {
+    "text": "Siente el pensamiento, piensa el sentimiento.",
+    "author": "Miguel de Unamuno"
+  },
+  {
+    "text": "La felicidad no depende de lo que uno no tiene, sino del buen uso que hace de lo que tiene.",
+    "author": "Thomas Hardy"
+  },
+  {
+    "text": "Lo verdadero es demasiado sencillo, pero siempre se llega a ello por lo más complicado.",
+    "author": "George Sand"
+  },
+  {
+    "text": "Si quieres ser bueno, cree primero que eres malo.",
+    "author": "Epicteto"
+  },
+  {
+    "text": "Nadie más muerto que el olvidado.",
+    "author": "Gregorio Marañón"
+  },
+  {
+    "text": "De mica en mica s'omple la pica i de gota en gota s'omple la bóta.",
+    "author": "Proverbios en catalán"
+  },
+  {
+    "text": "El hombre voluptuoso es el único que puede ser feliz.",
+    "author": "Giacomo Casanova"
+  },
+  {
+    "text": "Nuestras buenas y nuestras malas acciones nos siguen como una sombra.",
+    "author": "Siddhartha Gautama"
+  },
+  {
+    "text": "Afirmaciones extraordinarias requieren pruebas extraordinarias.",
+    "author": "David Hume"
+  },
+  {
+    "text": "No hay nada, sin duda, que calme el espíritu tanto como el ron y la verdadera religión.",
+    "author": "Lord Byron"
+  },
+  {
+    "text": "Sean realistas, pidan lo imposible..",
+    "author": "Proverbios en francés"
+  },
+  {
+    "text": "Homo sum; humani nihil a me alienum puto.",
+    "author": "Terencio"
+  },
+  {
+    "text": "El hombre a quien no conmueve el acorde de los sonidos armoniosos, es capaz de toda clase de traiciones, estratagemas y depravaciones.",
+    "author": "William Shakespeare"
+  },
+  {
+    "text": "El hombre desdichado busca un consuelo en la amalgama de su pena con la pena de otro.",
+    "author": "Milan Kundera"
+  },
+  {
+    "text": "Eres una zorra maldita. Me gustaría apuñalarte hasta la muerte y luego chapotear en tu sangre.",
+    "author": "American Psycho"
+  },
+  {
+    "text": "Debo encontrar una verdad que sea verdad para mí..",
+    "author": "Søren Kierkegaard"
+  },
+  {
+    "text": "Sólo quien no excluya nada de su existencia, ni lo que sea enigmático y misterioso, logrará sentir hondamente sus relaciones con otro ser como algo vivo, y sólo él estará en condiciones de apurar por sí mismo su propia vida.",
+    "author": "Rainer María Rilke"
+  },
+  {
+    "text": "Se puede ofender a una persona honrada, o a una mujer honrada; pero decir a un ladrón que lo es significa sólo la constatation d'un fait.",
+    "author": "Ana Karenina"
+  },
+  {
+    "text": "Las mujeres están para ser gustadas. Después, unas se dejan, otras no. . . Eso va ya por provincias.",
+    "author": "Camilo José Cela"
+  },
+  {
+    "text": "Ámame cuando menos lo merezca, ya que es cuando más lo necesito..",
+    "author": "Proverbio chino"
+  },
+  {
+    "text": "Vivo en un mundo libre pero atado a mis sueños.",
+    "author": "Cita de los usuarios"
+  },
+  {
+    "text": "Si el dinero va delante, todos los caminos se abren.",
+    "author": "William Shakespeare"
+  },
+  {
+    "text": "Tú no buscas la verdad. Tú fabricas tu propia verdad.",
+    "author": "Memento"
+  },
+  {
+    "text": "El que niega su propia vanidad suele poseerla en forma tan brutal, que debe cerrar los ojos si no quiere despreciarse a sí mismo..",
+    "author": "Friedrich Nietzsche"
+  },
+  {
+    "text": "¿Para qué repetir los errores antiguos habiendo tantos errores nuevos que cometer?.",
+    "author": "Bertrand Russell"
+  },
+  {
+    "text": "Sed modestos en vuestra juventud para ser honrados en vuestra vejez.",
+    "author": "Anónimo"
+  },
+  {
+    "text": "Recuerda que la mejor relación es aquella en la que el amor por cada uno excede la necesidad por el otro..",
+    "author": "Dalai Lama"
+  },
+  {
+    "text": "No se puede enseñar nada a un hombre; sólo se le puede ayudar a encontrar la respuesta dentro de sí msmo.",
+    "author": "Galileo Galilei"
+  },
+  {
+    "text": "El debate es masculino; la conversación es femenina.",
+    "author": "Louisa May Alcott"
+  },
+  {
+    "text": "Es fácil morir por una mujer; lo difícil es vivir con ella.",
+    "author": "Lord Byron"
+  },
+  {
+    "text": "Cualquiera que no esté impactado con la teoría cuántica no la ha entendido.",
+    "author": "Niels Bohr"
+  },
+  {
+    "text": "La sociedad es tan tiránica como el Estado, si no más. Esto es porque entre la coerción estatal y la coerción social no hay más que una diferencia de grado..",
+    "author": "Georges Palante"
+  },
+  {
+    "text": "¿Que mas se puede agregar que no se haya dicho ya?. . . O que si se haya dicho.",
+    "author": "Les Luthiers"
+  },
+  {
+    "text": "Jabón e hilo negro, todo es para la ropa.",
+    "author": "Proverbios españoles (J)"
+  },
+  {
+    "text": "El saber y la razón hablan, la ignorancia y el error gritan.",
+    "author": "Arturo Graf"
+  },
+  {
+    "text": "Hay que endurecerse sin perder jamás la ternura..",
+    "author": "Che Guevara"
+  },
+  {
+    "text": "No hay talento más valioso que el de no usar dos palabras cuando basta una.",
+    "author": "Thomas Jefferson"
+  },
+  {
+    "text": "La vida no es más que una broma macabra. Cuando todo acabe, sabremos quien es el bromista. Y estará en inferioridad numérica.",
+    "author": "Citas de usuarios:Arkaninger"
+  },
+  {
+    "text": "Hazlo bien y no mires con quien.",
+    "author": "Woody Allen"
+  },
+  {
+    "text": "El secreto del alma de las mujeres consiste en carecer de ella en absoluto.",
+    "author": "Enrique Jardiel Poncela"
+  },
+  {
+    "text": "El tiempo es muy lento para los que esperan, muy rápido para los que temen, muy largo para los que sufren, muy corto para los que gozan; pero para quienes aman, el tiempo es eternidad.",
+    "author": "William Shakespeare"
+  },
+  {
+    "text": "Al envejecer, el hombre construye su rostro y la mujer lo destruye.",
+    "author": "Johann Wolfgang von Goethe"
+  },
+  {
+    "text": "La conmiseración con los animales está íntimamente unida con la bondad de carácter; de tal manera que se puede afirmar, de seguro, que quien es cruel con los animales no puede ser buena persona.",
+    "author": "Arthur Schopenhauer"
+  },
+  {
+    "text": "Jesucristo, te damos gracias porque no fuiste prudente ni diplomático. Porque no callaste para escapar de la cruz. Porque fustigaste a los poderosos sabiendo que te jugabas la vida. Los que te mataron, ésos fueron los prudentes.",
+    "author": "Luis Espinal Camps"
+  },
+  {
+    "text": "La libertad no la tienen los que no tienen su sed..",
+    "author": "Rafael Alberti"
+  },
+  {
+    "text": "Dios está en los detalles.",
+    "author": "Mies Van der Rohe"
+  },
+  {
+    "text": "Cuando hables de Dios o de sus atributos, hazlo con toda seriedad y reverencia\".",
+    "author": "George Washington"
+  },
+  {
+    "text": "Quien es capaz de vivir en sociedad y no tiene necesidad de ella, porque se basta a sí mismo, tiene que ser un animal o un dios.",
+    "author": "Aristóteles"
+  },
+  {
+    "text": "Imagine un mundo en que cada persona pueda tener libre acceso para la suma de todo el conocimiento humano. Esto es lo que estamos haciendo.",
+    "author": "Wikimedia"
+  },
+  {
+    "text": "El poder: la más completa de las servidumbres.",
+    "author": "George Clemenceau"
+  },
+  {
+    "text": "Lo esencial es invisible a los ojos.",
+    "author": "El Principito"
+  },
+  {
+    "text": "Morir es como dormir, pero sin levantarse a hacer pis.",
+    "author": "Woody Allen"
+  },
+  {
+    "text": "Sólo vemos lo que conocemos.",
+    "author": "Johann Wolfgang von Goethe"
+  },
+  {
+    "text": "¿Amas la vida? No desperdicies el tiempo porque es la sustancia de que está hecha..",
+    "author": "Benjamin Franklin"
+  },
+  {
+    "text": "El agua de San Juan quita vino y no da pan..",
+    "author": "Refrán español"
+  },
+  {
+    "text": "El que tiene dos túnicas, dé al que no tiene; y el que tiene qué comer, haga lo mismo..",
+    "author": "Evangelio de Lucas 3, 11"
+  },
+  {
+    "text": "La Voz del que clama en el desierto: Preparad el camino de el Señor, enderezad sus sendas. Todo valle se rellenará y se bajará todo monte y collado; los caminos torcidos serán enderezados, y los caminos ásperos allanados, y verá toda carne la salvación de Dios.",
+    "author": "Evangelio de Lucas 3, 4-6"
+  },
+  {
+    "text": "Sin camisa y sin zapatos: sin salvación.",
+    "author": "Los Simpson"
+  },
+  {
+    "text": "Toda la historia del progreso humano se puede reducir a la lucha de la ciencia contra la superstición.",
+    "author": "Gregorio Marañón"
+  },
+  {
+    "text": "El rayo y la maldición dejan sana la ropa y queman el corazón..",
+    "author": "Rayo"
+  },
+  {
+    "text": "Durante miles de años, en todas partes del mundo habitado, innumerables sacrificios han sido realizados a la quimera de los precios justos y razonables..",
+    "author": "Ludwig von Mises"
+  },
+  {
+    "text": "La justicia sin la fuerza es irrisoria; la fuerza sin justicia es tiranía.",
+    "author": "Blaise Pascal"
+  },
+  {
+    "text": "Mi gato nunca se ríe o se lamenta, siempre está razonando.",
+    "author": "Miguel de Unamuno"
+  },
+  {
+    "text": "Los que utilizan mal su tiempo son los primeros en quejarse de su brevedad.",
+    "author": "Jean de la Bruyère"
+  },
+  {
+    "text": "Amar no es solamente querer, es sobre todo comprender.",
+    "author": "Françoise Sagan"
+  },
+  {
+    "text": "La justicia es el pan del pueblo; siempre está hambriento de ella.",
+    "author": "François-René de Chateaubriand"
+  },
+  {
+    "text": "Hombre, pueblo, Nación, Estado, todo: todo está en los humildes bancos de la escuela.",
+    "author": "Domingo Faustino Sarmiento"
+  },
+  {
+    "text": "El Evangelio es un libro feminista pero no se entiende así.",
+    "author": "Dario Fo"
+  },
+  {
+    "text": "Los mosquitos mueren entre aplausos.",
+    "author": "Woody Allen"
+  },
+  {
+    "text": "El silencio del envidioso está lleno de ruidos..",
+    "author": "Khalil Gibran"
+  },
+  {
+    "text": "Las fuerzas que se asocian para el bien no se suman, se multiplican.",
+    "author": "Concepción Arenal"
+  },
+  {
+    "text": "Ningún hombre debería tratar de obtener beneficio a costa de la ignorancia de otra persona.",
+    "author": "Confucio"
+  },
+  {
+    "text": "No hay mejor venganza de una injuria que olvidarla.",
+    "author": "Juan Luis Vives"
+  },
+  {
+    "text": "Bueno, pero no se enoje.",
+    "author": "El Chavo del 8"
+  },
+  {
+    "text": "Soy apátrida por triplicado: nativo de Bohemia en Austria, austríaco entre los alemanes y judío en todo el mundo. Siempre un intruso, nunca bienvenido.",
+    "author": "Gustav Mahler"
+  },
+  {
+    "text": "Junio, Julio y Agosto, ni dan vino ni mosto.",
+    "author": "Proverbios españoles (J)"
+  },
+  {
+    "text": "Julio el mes más corto cuando hay peculio.",
+    "author": "Proverbios españoles (J)"
+  },
+  {
+    "text": "Una verdad sin interés puede ser eclipsada por una falsedad emocionante.",
+    "author": "Aldous Huxley"
+  },
+  {
+    "text": "Pocas cosas son más difíciles de soportar que la molestia de un buen ejemplo.",
+    "author": "Mark Twain"
+  },
+  {
+    "text": "El destino baraja las cartas, nosotros las jugamos.",
+    "author": "Iósif Stalin"
+  },
+  {
+    "text": "Algunos matrimonios acaban bien, otros duran toda la vida.",
+    "author": "Woody Allen"
+  },
+  {
+    "text": "Escribir en Madrid es llorar, es buscar voz sin encontrarla, como en una pesadilla abrumadora y violenta..",
+    "author": "Mariano José de Larra"
+  },
+  {
+    "text": "El hombre sólo inventa la eternidad de su existencia en los sentimientos que comparte.",
+    "author": "Marc Levy"
+  },
+  {
+    "text": "La gente a la que le va bien en la vida es la gente que va en busca de las circunstancias que quiere, y si no las encuentra, se las hace, se las fabrica.",
+    "author": "George Bernard Shaw"
+  },
+  {
+    "text": "Las verdades elementales caben en el ala de un colibrí..",
+    "author": "José Martí"
+  },
+  {
+    "text": "Escoger el momento es ahorrar tiempo.",
+    "author": "Francis Bacon"
+  },
+  {
+    "text": "Las personas felices no tienen historia.",
+    "author": "Simone de Beauvoir"
+  },
+  {
+    "text": "Ser internacionalista es saldar nuestra propia deuda con la humanidad. Quien no sea capaz de luchar por otros, no será nunca suficientemente capaz de luchar por sí mismo.",
+    "author": "Fidel Castro"
+  },
+  {
+    "text": "¿Habéis visto la violencia inherente al sistema? ¿Eh? ¿La habéis visto?.",
+    "author": "Los Caballeros de la Mesa Cuadrada"
+  },
+  {
+    "text": "De lo que no se puede hablar, hay que callar la boca.",
+    "author": "Ludwig Wittgenstein"
+  },
+  {
+    "text": "El sexo forma parte de la naturaleza, y yo me llevo de maravilla con la naturaleza.",
+    "author": "Marilyn Monroe"
+  },
+  {
+    "text": "La verdad no está de parte de quién grite más.",
+    "author": "Rabindranath Tagore"
+  },
+  {
+    "text": "El tiempo no se detiene para admirar la gloria; se sirve de ella y sigue adelante.",
+    "author": "François-René de Chateaubrian"
+  },
+  {
+    "text": "El objetivo final de toda actividad figurativa es la obra. Los arquitectos, escultores y pintores tenemos que volver a la artesanía.",
+    "author": "Walter Gropius"
+  },
+  {
+    "text": "No sabrás todo lo que valgo hasta que no pueda ser junto a ti todo lo que soy.",
+    "author": "Gregorio Marañón"
+  },
+  {
+    "text": "El poema sólo se culmina cuando se hace canto, palabra y música a la vez..",
+    "author": "Léopold Sédar Senghor"
+  },
+  {
+    "text": "A diferencia de cualquier otra nación, aquí gobierna el pueblo, y su voluntad es la ley suprema.",
+    "author": "William McKinley"
+  },
+  {
+    "text": "La desvalorización del mundo humano crece en razón directa de la valorización del mundo de las cosas.",
+    "author": "Karl Marx"
+  },
+  {
+    "text": "Salvar el mundo es la cosa más simple del mundo. Todo lo que uno tiene que hacer es pensar.",
+    "author": "Leonard Peikoff"
+  },
+  {
+    "text": "Para millones y millones de seres humanos el verdadero infierno es la tierra.",
+    "author": "Arthur Schopenhauer"
+  },
+  {
+    "text": "La acción no debe ser una reacción sino una creación.",
+    "author": "Mao Tse Tung"
+  },
+  {
+    "text": "Buscando el bien de nuestros semejantes, encontramos el nuestro.",
+    "author": "Platón"
+  },
+  {
+    "text": "Obra de tal manera que trates a los demás como un fin y no como medio para lograr tus objetivos.",
+    "author": "Immanuel Kant"
+  },
+  {
+    "text": "El hombre vale lo que vale el concepto que tenga de la felicidad.",
+    "author": "Arturo Graf"
+  },
+  {
+    "text": "Estamos aqui para tornar imperecedero lo perecedero; y esto puede suceder solo si se saben valorar ambas cosas.",
+    "author": "Johann Wolfgang von Goethe"
+  },
+  {
+    "text": "El arte, cuando es bueno, es siempre entretenimiento.",
+    "author": "Bertolt Brecht"
+  },
+  {
+    "text": "Quien en agosto ara, riqueza prepara.",
+    "author": "Refrán español"
+  },
+  {
+    "text": "Lo más razonable que se ha dicho sobre el matrimonio y sobre el celibato es esto: hagas lo que hagas te arrepentirás.",
+    "author": "Agatha Christie"
+  },
+  {
+    "text": "¿Acaso no destruimos a nuestros enemigos cuando los hacemos amigos nuestros?.",
+    "author": "Abraham Lincoln"
+  },
+  {
+    "text": "En la cárcel y en la cama, verás bien quien te ama.",
+    "author": "Refrán español"
+  },
+  {
+    "text": "La pobreza no viene por la disminución de las riquezas, sino por la multiplicación de los deseos..",
+    "author": "Platón"
+  },
+  {
+    "text": "Al hombre perverso se le conoce en un solo día; para conocer al hombre justo hace falta más tiempo.",
+    "author": "Sófocles"
+  },
+  {
+    "text": "Un anarquista es un apasionado amante de la libertad, ‭ ‬considerándola como la única condición bajo la cual la inteligencia, ‭ ‬la dignidad y la felicidad humana pueden desarrollarse y crecer‭.",
+    "author": "Mijaíl Bakunin"
+  },
+  {
+    "text": "Uno no se mata por el amor de una mujer. Uno se mata porque un amor, cualquier amor, nos revela nuestra desnudez, nuestra miseria, nuestro desamparo, la nada].",
+    "author": "Cesare Pavese"
+  },
+  {
+    "text": "Septiembre, o seca las fuentes o se lleva los puentes.",
+    "author": "Refrán español"
+  },
+  {
+    "text": "La vida es hermosa. Que las futuras generaciones la libren de todo mal, opresión y violencia y la disfruten plenamente.",
+    "author": "León Trotsky"
+  },
+  {
+    "text": "Todos los hombres nacen iguales, pero es la última vez que lo son.",
+    "author": "Abraham Lincoln"
+  },
+  {
+    "text": "Los hombres engañan más que las mujeres; las mujeres, mejor.",
+    "author": "Joaquín Sabina"
+  },
+  {
+    "text": "Nuestra existencia no es más que un cortocircuito de luz entre dos eternidades de oscuridad.",
+    "author": "Vladimir Nabokov"
+  },
+  {
+    "text": "El sentimiento debe ser sólo el servidor de la evidencia, y abandonado a sí mismo, puede ser igualmente el servidor de la locura.",
+    "author": "Henri Barbusse"
+  },
+  {
+    "text": "Para guardar las fronteras, los mejores santos son los cañones.",
+    "author": "Gaspar Rodríguez de Francia"
+  },
+  {
+    "text": "Con hombres razonables, razonaré ; con humanos alegaré; pero con los tiranos no daré coartada, y no gastaré argumentos en donde ciertamente se perderían.",
+    "author": "William Lloyd Garrison"
+  },
+  {
+    "text": "Hay algunos chilenos que quisieran que en sus casas les instalaran por lo menos tres cañerías: una de agua fría, otra de agua caliente y una tercera de tinto. Y eso es inaceptable y contra ello debemos combatir.",
+    "author": "Salvador Allende Gossens"
+  },
+  {
+    "text": "Sólo se combate por lo que se ama ; solo se ama lo que se estima, y para estimar es necesario al menos conocer.",
+    "author": "Adolf Hitler"
+  },
+  {
+    "text": "Todos necesitamos espejos para recordarnos a nosotros mismos quienes somos. Yo no soy diferente..",
+    "author": "Leonard"
+  },
+  {
+    "text": "El fuego del infierno es fuego frío.",
+    "author": "Octavio Paz"
+  },
+  {
+    "text": "Si el sabio no aprueba, ¡malo! si el necio aplaude, ¡peor!.",
+    "author": "Tomás de Iriarte"
+  },
+  {
+    "text": "La vida cobra sentido cuando se hace de ella una aspiración a no renunciar a nada.",
+    "author": "José Ortega y Gasset"
+  },
+  {
+    "text": "La naturaleza no es ni moral ni inmoral, es radiantemente, gloriosamente amoral.",
+    "author": "Théodore Monod"
+  },
+  {
+    "text": "¿Cuántos robles roería un roedor si los roedores royesen robles.",
+    "author": "Guybrush Threepwood"
+  },
+  {
+    "text": "Hombre que vive de amor y vino, que no se queje de su destino.",
+    "author": "Hombre"
+  },
+  {
+    "text": "Saca tu cruz a la calle, y verás otras más grandes.",
+    "author": "Proverbios españoles (S)"
+  },
+  {
+    "text": "El que no lleva la belleza dentro del alma no la encontrará en ninguna parte.",
+    "author": "Alma"
+  },
+  {
+    "text": "Dónde está la voluntad, allí está la pierna ( Non gogoa, han zangoa ).",
+    "author": "Proverbio vasco"
+  },
+  {
+    "text": "En la vida hay algo peor que el fracaso: el no haber intentado nada.",
+    "author": "Franklin Delano Roosevelt"
+  },
+  {
+    "text": "El arte es sobre todo un estado del alma.",
+    "author": "B. B. King"
+  },
+  {
+    "text": "Todos anhelamos llegar a viejos y todos hemos negado que ya hemos llegado.",
+    "author": "Francisco de Quevedo"
+  },
+  {
+    "text": "El fútbol no es solo una cuestión de vida o muerte. Es algo más importante que todo eso.",
+    "author": "Bill Shankly"
+  },
+  {
+    "text": "El refrán que no viene a propósito antes es disparate que sentencia.",
+    "author": "don Quijote de la Mancha"
+  },
+  {
+    "text": "Envejecer es obligatorio, madurar es opcional.",
+    "author": "Citas de usuarios"
+  },
+  {
+    "text": "La cultura, desgraciadamente, es, sigue siendo, un monopolio de la izquierda convencional, muy inalterable, que disfruta de privilegios y se permite satanizar a quienes no comparten sus ideales.",
+    "author": "Mario Vargas Llosa"
+  },
+  {
+    "text": "Nunca des explicaciones. Tus amigos no las necesitan. Tus enemigos no las creen.",
+    "author": "Oscar Wilde"
+  },
+  {
+    "text": "Otoño entrante, barriga tirante..",
+    "author": "Proverbios españoles (O)"
+  },
+  {
+    "text": "Si en medio de las adversidades persevera el corazón con serenidad, con gozo y con paz, esto es amor..",
+    "author": "Teresa de Jesús"
+  },
+  {
+    "text": "Si Dios existe, desde luego está en la Tierra, no en el espacio.",
+    "author": "Mark Shuttleworth"
+  },
+  {
+    "text": "Lo complicado no es escribir poesía, sino que se lea.",
+    "author": "José Corredor-Matheos"
+  },
+  {
+    "text": "Por mi raza hablará el espíritu.",
+    "author": "José Vasconcelos"
+  },
+  {
+    "text": "Es detestable esa avaricia espiritual que tienen los que sabiendo algo, no procuran la transmisión de esos conocimientos.",
+    "author": "Miguel de Unamuno"
+  },
+  {
+    "text": "¡Qué insípido hubiera sido ser feliz!.",
+    "author": "Marguerite Yourcenar"
+  },
+  {
+    "text": "Los buenos tiempos de hoy son los malos pensamientos de mañana.",
+    "author": "Bob Marley"
+  },
+  {
+    "text": "La diferencia entre el pasado, el presente y el futuro es sólo una ilusión persistente.",
+    "author": "Albert Einstein"
+  },
+  {
+    "text": "Los cuervos arrancan los ojos a los muertos cuando ya no les hacen falta; pero los aduladores destruyen las almas de los vivos cegándoles los ojos.",
+    "author": "Epicteto"
+  },
+  {
+    "text": "Lo característico de la vida actual no son la inseguridad y la crueldad, sino el desasosiego y la pobreza.",
+    "author": "George Orwell"
+  },
+  {
+    "text": "El que parece sabio entre los tontos, parece tonto entre los sabios.",
+    "author": "Marco Fabio Quintiliano"
+  },
+  {
+    "text": "\"bAr-e kaj ba manzel na-mErasa. \" ¡Una carga inclinada no va a llegar a su destino. !.",
+    "author": "Proverbios afganos"
+  },
+  {
+    "text": "El patriotismo es la disposición de matar y dejarse matar por razones trivales.",
+    "author": "Bertrand Russell"
+  },
+  {
+    "text": "Una de las principales enfermedades del hombre es su inquieta curiosidad por conocer lo que no puede llegar a saber.",
+    "author": "Blaise Pascal"
+  },
+  {
+    "text": "El Pensamiento muere en la boca.",
+    "author": "Nicanor Parra"
+  },
+  {
+    "text": "Las drogas son malas porque si las tomas eres un hippie y los hippies son unos apestosos.",
+    "author": "Eric Cartman"
+  },
+  {
+    "text": "Hay que trabajar ocho horas y dormir ocho horas, pero no las mismas.",
+    "author": "Woody Allen"
+  },
+  {
+    "text": "El amor es como el fuego, que si no se comunica se apaga.",
+    "author": "Giovanni Papini"
+  },
+  {
+    "text": "Bárbara reina, bárbaro gusto, bárbara obra, bárbaro gasto.",
+    "author": "Dicho popular español"
+  },
+  {
+    "text": "La cultura no puede ser ni gratis, porque los creadores tienen que vivir de ella, ni cara, para que todos podamos acceder a ella.",
+    "author": "Carmen Calvo"
+  },
+  {
+    "text": "No se puede desatar un nudo sin saber cómo está hecho.",
+    "author": "Aristóteles"
+  },
+  {
+    "text": "Al arquitecto la piedra, y la casa al empedrador.",
+    "author": "Dicho popular español"
+  },
+  {
+    "text": "Es un show acerca de nada. . . ¿Cómo es que termina?.",
+    "author": "Cosmos"
+  },
+  {
+    "text": "No te rindas al destino, sigue buscando no más mirando lejos y adentro un día lo has de encontrar.",
+    "author": "Atahualpa Yupanqui"
+  },
+  {
+    "text": "Difíciles barrancos de escaleras, calladas cataratas de ascensores, ¡qué impresión de vacío!, ocupaban el puesto de mis flores, los aires de mis aires y mi río.",
+    "author": "Miguel Hernández"
+  },
+  {
+    "text": "¿Qué sentido tiene correr cuando estamos en la carretera equivocada?.",
+    "author": "Proverbio alemán"
+  },
+  {
+    "text": "Al que madruga, encuentra todo cerrado.",
+    "author": "Citas de usuarios"
+  },
+  {
+    "text": "La gente mas educada del mundo se puede convertir en aztecas o nazis.",
+    "author": "Neal Stephenson"
+  },
+  {
+    "text": "Si hacéis amistad con un cojo, aprended a cojear.",
+    "author": "Plutarco"
+  },
+  {
+    "text": "Si tuviera un tumor lo llamaria Marla.",
+    "author": "Fight Club"
+  },
+  {
+    "text": "(Los jefes de Estado) vamos de cumbre en cumbre mientras que el pueblo va de abismo en abismo.",
+    "author": "Hugo Chávez"
+  },
+  {
+    "text": "Homo sum; humani nihil a me alienum puto (Hombre soy; nada humano me es ajeno).",
+    "author": "Terencio"
+  },
+  {
+    "text": "No tenemos vida, sino \"estilo de vida\"- una abstracción de la vida, basada en el sagrado simbolismo de la Comodidad..",
+    "author": "Hakim Bey"
+  },
+  {
+    "text": "Empezar como grande y acabar como chico, corrida de caballo y parada de borrico.",
+    "author": "Proverbios"
+  },
+  {
+    "text": "\"Cállate lo que sepas\"..",
+    "author": "Solón"
+  },
+  {
+    "text": "Bolivia es el mejor país para hacer guerra de guerrillas en América.",
+    "author": "Ernesto \"Che\" Guevara"
+  },
+  {
+    "text": "Confía en unos pocos, teme al resto.",
+    "author": "X-men"
+  },
+  {
+    "text": "No sé donde voy, no sé, solo sé que aquí no puedo estar.",
+    "author": "Kurt Cobain"
+  },
+  {
+    "text": "Cuanto más larga es la hierba, mejor se corta.",
+    "author": "Atila"
+  },
+  {
+    "text": "Quien mucho vino cena, poco pan almuerza.",
+    "author": "Refrán español"
+  },
+  {
+    "text": "Algún día en cualquier parte, en cualquier lugar indefectiblemente te encontrarás a ti mismo, y ésa, sólo ésa, puede ser la más feliz o la más amarga de tus horas.",
+    "author": "Pablo Neruda"
+  },
+  {
+    "text": "La paz necesita y merece tiempo, necesita y merece prudencia, necesita y merece paciencia.",
+    "author": "José Luis Rodríguez Zapatero"
+  },
+  {
+    "text": "Deja la cama al ser de día, y vivirás con alegría.",
+    "author": "Refrán español"
+  },
+  {
+    "text": "Debo encontrar una verdad que sea verdad para mí.",
+    "author": "Søren Kierkegaard"
+  },
+  {
+    "text": "La rosa tiene espinas, pero, ¿tiene pétalos el atún?.",
+    "author": "Roberto Fontanarrosa"
+  },
+  {
+    "text": "El valor es a menudo una carencia de conocimiento, mientras que la cobardía a menudo se basa en buenas informaciones.",
+    "author": "Peter Ustinov"
+  },
+  {
+    "text": "¿Puede un hombre sensato darse el lujo de ser pesimista? Eso era un lujo para tiempos menos complicados.",
+    "author": "Peter Ustinov"
+  },
+  {
+    "text": "Los japoneses quieren abrirle los ojos al mundo.",
+    "author": "Woody Allen"
+  },
+  {
+    "text": "En lo que toca al estilo prejuiciado, ciertamente me he salido algo del tono enciclopédico. Pero hubiera sido pasarse de la raya querer presentar como Napoleón I al canalla más cobarde, brutal y miserable. Bolívar es el verdadero Soulouque.",
+    "author": "Carlos Marx"
+  },
+  {
+    "text": "Tu desconfianza me inquieta y tu silencio me ofende.",
+    "author": "Miguel de Unamuno"
+  },
+  {
+    "text": "La esperanza es un árbol en flor que se balancea dulcemente al soplo de las ilusiones.",
+    "author": "Severo Catalina"
+  },
+  {
+    "text": "De todos los sueños que tuve fue el único que no murió al cobrar realidad..",
+    "author": "Lo que el viento se llevó"
+  },
+  {
+    "text": "Nadie me dijo que habría días como estos, días extraños sin duda.",
+    "author": "John Lennon"
+  },
+  {
+    "text": "La injusticia en cualquier parte es una amenaza a la justicia de cualquiera.",
+    "author": "Martin Luther King"
+  },
+  {
+    "text": "Cómo tener confianza en una mujer que le dice a uno su verdadera edad. Una mujer capaz de decir esto es capaz de decirlo todo.",
+    "author": "Oscar Wilde"
+  },
+  {
+    "text": "Non scholæ, sed vitae discimus ( Aprendemos de la vida, no de la escuela ).",
+    "author": "Proverbio latino"
+  },
+  {
+    "text": "¿Cuál es el animal que después de muerto da muchas vueltas? El pollo asado.",
+    "author": "Woody Allen"
+  },
+  {
+    "text": "Hay que asumir la convicción de que el facilismo pertenece para siempre al pasado.",
+    "author": "Eduardo Angeloz"
+  },
+  {
+    "text": "El que se guarda un elogio, se queda con algo ajeno.",
+    "author": "Pablo Picasso"
+  },
+  {
+    "text": "A chi un arrisica Un arrùzzica. (Quien no arriesga nada, no tiene nada que roer).",
+    "author": "Proverbios corsos"
+  },
+  {
+    "text": "Escucha bien el consejo de quien sabe mucho, pero escucha sobre todo el consejo de quien te quiere mucho.",
+    "author": "Arturo Graf"
+  },
+  {
+    "text": "Si se quitara al hombre la facultad con que comete sus primeros errores, se le privaría sin duda de la que produce después los grandes hechos.",
+    "author": "José Antonio Páez"
+  },
+  {
+    "text": "Diciembre tiritando, buen enero y mejor año.",
+    "author": "refrán"
+  },
+  {
+    "text": "Sólo salgo para renovar la necesidad de estar solo.",
+    "author": "Lord Byron"
+  },
+  {
+    "text": "Nuestra patria dejara de ser colonia, o la bandera flameara sobre sus ruinas.",
+    "author": "Eva Perón"
+  },
+  {
+    "text": "Dar el ejemplo no es la principal manera de influir sobre los demás; es la única manera.",
+    "author": "Albert Einstein"
+  },
+  {
+    "text": "He probado todos los idiomas y me quedo con el francés, es fantástico, especialmente para insultar. . . Nom de dieu de putain de bordel de merde de saloperie de connard d'enculé de ta mère. . . es como si te limpiaras el trasero con seda, me encanta..",
+    "author": "Merovingio"
+  },
+  {
+    "text": "Las cualidades sublimes infunden respeto; las bellas, amor..",
+    "author": "Immanuel Kant"
+  },
+  {
+    "text": "Si tu única oportunidad es ser igual, entonces, no es oportunidad.",
+    "author": "Margaret Thatcher"
+  },
+  {
+    "text": "Los curas se consuelan de no haberse casado cuando oyen las confesiones de las mujeres.",
+    "author": "Armand Salacrou"
+  },
+  {
+    "text": "Por mucho que un hombre valga, nunca tendrá valor más alto que el de ser hombre.",
+    "author": "Antonio Machado"
+  },
+  {
+    "text": "El concepto de “causa” es inaplicable al Universo; Por definición, no hay nada fuera de la totalidad que actúe como su causa. El Universo simplemente es ; es un primario irreducible.",
+    "author": "Leonard Peikoff"
+  },
+  {
+    "text": "Si dicen mal de ti con fundamento, corrígete; de lo contrario, échate a reír.",
+    "author": "Epicteto"
+  },
+  {
+    "text": "No se recuerdan los días, se recuerdan los momentos.",
+    "author": "Cesare Pavese"
+  },
+  {
+    "text": "A veces sentimos que lo que hacemos es tan solo una gota en el mar, pero el mar sería menos si le faltara una gota.",
+    "author": "Teresa de Calcuta"
+  },
+  {
+    "text": "Hasta 1919, la mujer que iba al ginecólogo se sentía, ella misma, una adúltera.",
+    "author": "Nelson Rodrigues"
+  },
+  {
+    "text": "La parte contratante de la primera parte, será considerada como la parte contratante de la primera parte.",
+    "author": "Groucho Marx"
+  },
+  {
+    "text": "El secreto de la felicidad es darse cuenta que la vida es horrible, horrible, horrible.",
+    "author": "Bertrand Russell"
+  },
+  {
+    "text": "A veces sentimos que lo que hacemos es tan solo una gota en el mar, pero el mar sería menos si le faltara una gota.",
+    "author": "Madre Teresa de Calcuta"
+  },
+  {
+    "text": "La curiosidad se atreve más contra lo que más se prohíbe.",
+    "author": "Diego de Saavedra Fajardo"
+  },
+  {
+    "text": "No me siento viejo, porque tenga años tras de mi, sino por los pocos que tengo por delante.",
+    "author": "Ephrain Kishon"
+  },
+  {
+    "text": "El infierno está lleno de buenas intenciones y el cielo de buenas obras.",
+    "author": "Proverbio español"
+  },
+  {
+    "text": "La lengua es en cierto modo la manifestación externa del espíritu de los pueblos.",
+    "author": "Wilhelm von Humboldt"
+  },
+  {
+    "text": "Así como el hierro se oxida por falta de uso, también la inactividad destruye el intelecto.",
+    "author": "Leonardo da Vinci"
+  },
+  {
+    "text": "De hombres es equivocarse; de locos persistir en el error.",
+    "author": "Cicerón"
+  },
+  {
+    "text": "El deseo y la felicidad no pueden vivir juntos.",
+    "author": "Epicteto"
+  },
+  {
+    "text": "No tengo verdades, apenas convicciones.",
+    "author": "Jean Rostand"
+  },
+  {
+    "text": "El genio se descubre en la fortuna adversa; en la prosperidad se oculta.",
+    "author": "Homero"
+  },
+  {
+    "text": "La causa de la libertad se convierte en una burla si el precio a pagar es la destrucción de quienes deberían disfrutar la libertad.",
+    "author": "Mahatma Gandhi"
+  },
+  {
+    "text": "Si tienes un solo clavo, tiendes a ver a los martillos como un problema.",
+    "author": "Larry Wall"
+  },
+  {
+    "text": "El sentido común es esa colección de prejuicios que se adquieren cuando cumples 18.",
+    "author": "Albert Einstein"
+  },
+  {
+    "text": "Pensar contra la corriente del tiempo es heroico; decirlo, una locura.",
+    "author": "Eugène Ionesco"
+  },
+  {
+    "text": "Haz de tu vida un sueño, y de tu sueño una realidad.",
+    "author": "Antoine de Saint-Exupéry"
+  },
+  {
+    "text": "El pudor es un sólido que sólo se disuelve en alcohol o en dinero.",
+    "author": "Enrique Jardiel Poncela"
+  },
+  {
+    "text": "Los políticos se han convertido en una casta para sí misma, unos profesionales de la nómina.",
+    "author": "Pablo Castellano"
+  },
+  {
+    "text": "El obrero tiene más necesidad de respeto que de pan.",
+    "author": "Karl Marx"
+  },
+  {
+    "text": "El hombre nunca debe avergonzarse de reconocer que se ha equivocado, puesto que hacerlo corresponde a decir que hoy sabe más que lo sabía ayer.",
+    "author": "Alexander Pope"
+  },
+  {
+    "text": "Todo fracaso es condimiento que da sabor al éxito.",
+    "author": "Truman Capote"
+  },
+  {
+    "text": "El bueno será siempre libre aunque sea esclavo; y el malo será esclavo aunque sea rey.",
+    "author": "Marcial"
+  },
+  {
+    "text": "Cristo tuvo esperanza y esa esperanza somos nosotros.",
+    "author": "Alberto Hurtado"
+  },
+  {
+    "text": "A la vista de suficientes ojos, todos los errores resultan evidentes.",
+    "author": "Linus Torvalds"
+  },
+  {
+    "text": "México va a cambiar, contigo, sin tí o a pesar de tí.",
+    "author": "Manuel Clouthier"
+  },
+  {
+    "text": "Por simple sentido común no creo en Dios, en ninguno.",
+    "author": "Charlie Chaplin"
+  },
+  {
+    "text": "Educad a los niños y no será necesario castigar a los hombres.",
+    "author": "Pitágoras"
+  },
+  {
+    "text": "Las personas que piensan que no son capaces de hacer algo, no lo harán nunca, aunque tengan las aptitudes.",
+    "author": "Indira Gandhi"
+  },
+  {
+    "text": "La experiencia no consiste en lo que se ha vivido, sino en lo que se ha reflexionado.",
+    "author": "José María de Pereda"
+  },
+  {
+    "text": "El éxito siempre fue hijo de la audacia.",
+    "author": "Prosper Jolyot de Crébillon"
+  },
+  {
+    "text": "El problema del hombre no está en la bomba atómica, sino en su corazón.",
+    "author": "Albert Einstein"
+  },
+  {
+    "text": "Nadie es tan viejo que no pueda vivir un año más, ni tan mozo que hoy no pudiese morir.",
+    "author": "Fernando de Rojas"
+  },
+  {
+    "text": "El dinero es tan poco importante que hay que tenerlo para no preocuparse por él.",
+    "author": "Anónimo"
+  },
+  {
+    "text": "La mentira mayor es el ego. . . .",
+    "author": "Alejandro Jodorowsky"
+  },
+  {
+    "text": "Cuando odiamos a alguien, odiamos en su imagen algo que está dentro de nosotros.",
+    "author": "Hermann Hesse"
+  },
+  {
+    "text": "En la política el arrepentimiento no existe. Uno se equivoca o acierta, pero no cabe el arrepentimiento.",
+    "author": "Santiago Carrillo"
+  },
+  {
+    "text": "El buen salario, la comida abundante, el buen vestir y la libertad educan a un adulto como la escuela a un niño.",
+    "author": "Domingo Faustino Sarmiento"
+  },
+  {
+    "text": "¿Casarse con la cabeza? ¿Casarse con el corazón? ¿Y por qué ese dilema? ¡Con la cabeza y con el corazón!.",
+    "author": "Sofía de Grecia"
+  },
+  {
+    "text": "¿Cómo es que, siendo tan inteligentes los niños, son tan estúpidos la mayor parte de los hombres? Debe ser fruto de la educación.",
+    "author": "Alexandre Dumas"
+  },
+  {
+    "text": "Creemos, sobre todo porque es más fácil creer que dudar, y además porque la fe es la hermana de la esperanza y de la caridad.",
+    "author": "Alexandre Dumas"
+  },
+  {
+    "text": "Si los ciudadanos practicasen entre sí la amistad, no tendrían necesidad de la justicia.",
+    "author": "Aristóteles"
+  },
+  {
+    "text": "La muerte es una quimera: porque mientras yo existo, no existe la muerte; y cuando existe la muerte, ya no existo yo.",
+    "author": "Epicuro de Samos"
+  },
+  {
+    "text": "En la máquina social hay que ser motor, no rueda, personalidad, no persona.",
+    "author": "Santiago Ramón y Cajal"
+  },
+  {
+    "text": "El baile es escultura en movimiento.",
+    "author": "Walter Sorell"
+  },
+  {
+    "text": "No seas humilde, no eres tan grande.",
+    "author": "Golda Meir"
+  },
+  {
+    "text": "Quizá la obra educativa que más urge en el mundo sea la de convencer a los pueblos de que su mayores enemigos son los hombres que les prometen imposibles.",
+    "author": "Ramiro de Maeztu"
+  },
+  {
+    "text": "Con audacia se puede intentar todo; mas no se puede conseguir todo.",
+    "author": "Napoleón Bonaparte"
+  },
+  {
+    "text": "¿ Miedo a la muerte ? Uno debe temerle a la vida, no a la muerte.",
+    "author": "Marlene Dietrich"
+  },
+  {
+    "text": "Para mí, Mozart es la culminación de toda la belleza en la esfera de la música.",
+    "author": "Piotr Ilich Chaikovski"
+  },
+  {
+    "text": "Donde reina el orgullo no hay más dios que uno mismo.",
+    "author": "José María Pemán"
+  },
+  {
+    "text": "En las grandes adversidades toda alma noble aprende a conocerse mejor.",
+    "author": "Friedrich von Schiller"
+  },
+  {
+    "text": "Como el agua a los campos, es necesaria la educación a nuestros secos y endurecidos entendimientos.",
+    "author": "Benito Pérez Galdós"
+  },
+  {
+    "text": "Hay dos clases de hombres; quienes hacen la historia y quienes la padecen.",
+    "author": "Camilo José Cela"
+  },
+  {
+    "text": "La educación de la mujer no puede llamarse tal educación, sino doma, pues se propone por fin la obediencia, la pasividad y la sumisión.",
+    "author": "Emilia Pardo Bazán"
+  },
+  {
+    "text": "Solo unos pocos prefieren la libertad ; la mayoría de los hombres no busca más que buenos amos.",
+    "author": "Salustio"
+  },
+  {
+    "text": "No se puede tener otra tarea en cuanto a la vida que la de conservarla hasta morir.",
+    "author": "August Strindberg"
+  },
+  {
+    "text": "El verdadero artista no refleja la realidad : añade algo nuevo a la realidad.",
+    "author": "Carlos Fuentes"
+  },
+  {
+    "text": "El águila vuela sola; el cuervo en bandadas. El necio tiene necesidad de compañía y el sabio de soledad.",
+    "author": "Friedrich Rückert"
+  },
+  {
+    "text": "Uno no siempre hace lo que quiere pero tiene el derecho de no hacer lo que no quiere.",
+    "author": "Mario Benedetti"
+  },
+  {
+    "text": "La cebolla nos hace llorar. Pero aún no se ha inventado el vegetal que nos haga reir.",
+    "author": "Frank Capra"
+  },
+  {
+    "text": "Ayudar al que lo necesita no sólo es parte del deber, sino de la felicidad.",
+    "author": "José Martí"
+  },
+  {
+    "text": "A veces hablamos mucho y decimos poco. Para expresar más, conviene pensar más.",
+    "author": "Honoré de Balzac"
+  },
+  {
+    "text": "La inteligencia fue concedida al hombre para dudar.",
+    "author": "Émile Verhaeren"
+  },
+  {
+    "text": "El agua que no corre se estanca. La mente que no trabaja, también.",
+    "author": "Victor Hugo"
+  },
+  {
+    "text": "En todo fracaso hay una oportunidad nueva.",
+    "author": "John D. Rockefeller"
+  },
+  {
+    "text": "La naturaleza no hace nada superfluo, nada inútil, y sabe sacar múltiples efectos de una sola causa.",
+    "author": "Nicolás Copérnico"
+  },
+  {
+    "text": "La razón debe conocer las razones del corazón y cualquier otra razón.",
+    "author": "Leonora Carrington"
+  },
+  {
+    "text": "Si tuviera que explicar la historia del jazz en cuatro palabras diría: Louis Armstrong - Charlie Parker.",
+    "author": "Miles Davis"
+  },
+  {
+    "text": "Si la historia cuenta cosas buenas de los buenos, el oyente solícito se ve instigado a hacer el bien.",
+    "author": "Beda el Venerable"
+  },
+  {
+    "text": "Sigue a tu corazón pero lleva tu cerebro contigo.",
+    "author": "Alfred Adler"
+  },
+  {
+    "text": "Si elaboramos demasiado nuestra limpieza humana y divina, nos quedaremos fuera de los dos paraísos. Oler, saber, tocar un poco a hombre y mujer, a diosa y dios, es agradable y necesario.",
+    "author": "Juan Ramón Jiménez"
+  },
+  {
+    "text": "En el vasto océano de la vida de diversas formas navegamos, la razón es la carta, pero la pasión son los vientos.",
+    "author": "Alexander Pope"
+  },
+  {
+    "text": "Cada nueva esperanza que sentimos nos hace ver de manera distinta el pasado.",
+    "author": "Luis Rosales"
+  },
+  {
+    "text": "Lo que mueve el mundo no son los potentes brazos de los héroes, sino la suma de los pequeños empujones de cada trabajador honrado.",
+    "author": "Helen Keller"
+  },
+  {
+    "text": "Yo no quiero mentir, ni puedo disimular, y creo que el decir la verdad francamente es la prenda más digna de un hombre de bien.",
+    "author": "Leandro Fernández de Moratín"
+  },
+  {
+    "text": "El mal conoce el bien, pero el bien no conoce el mal.",
+    "author": "Franz Kafka"
+  },
+  {
+    "text": "La falta de curiosidad o inapetencia por las culturas ajenas es un índice de decadencia y pasividad, porque la cultura afectada por ese síndrome se convierte en mero objeto de contemplación.",
+    "author": "Juan Goytisolo"
+  },
+  {
+    "text": "Como no me he preocupado de nacer, no me preocupo de morir.",
+    "author": "Federico García Lorca"
+  },
+  {
+    "text": "La tragedia es una herramienta que aporta sabiduría a los vivos, no una guía para vivir.",
+    "author": "Robert F. Kennedy"
+  },
+  {
+    "text": "La imaginación es la voz del atrevimiento.",
+    "author": "Henry Miller"
+  },
+  {
+    "text": "La moral es una convención privada; la decencia, una cuestión pública.",
+    "author": "Marguerite Yourcenar"
+  },
+  {
+    "text": "Cada fracaso enseña al hombre algo que necesita aprender.",
+    "author": "Charles Dickens"
+  },
+  {
+    "text": "La afluencia separa a las personas. La pobreza las une.",
+    "author": "Ray Charles"
+  },
+  {
+    "text": "Somos agua de mar organizada.",
+    "author": "Jacques-Yves Cousteau"
+  },
+  {
+    "text": "Nunca creeré que los poderosos, los políticos y los capitalistas sean los únicos responsables de la guerra. No, el hombre común y corriente, también se alegra de hacerla. Si así no fuera, hace tiempo que los pueblos se habrían rebelado.",
+    "author": "Ana Frank"
+  },
+  {
+    "text": "Lo primero no es ser de su siglo ni de su patria, lo primero es ser de todo el tiempo. Más que a España, amo yo al mundo, y más que a mi tiempo, a toda la historia de esta pobre, interesante humanidad, que viene de las tinieblas y se esfuerza, incansable, por llegar a la luz.",
+    "author": "Leopoldo Alas, Clarín"
+  },
+  {
+    "text": "Hay quienes no pueden imaginar un mundo sin pájaros ; hay quienes no pueden imaginar un mundo sin agua ; en lo que a mí se refiere, soy incapaz de imaginar un mundo sin libros.",
+    "author": "Jorge Luis Borges"
+  },
+  {
+    "text": "No hay Dios, los seres de la naturaleza se sostienen por sí mismos.",
+    "author": "Ignacio Ramírez"
+  },
+  {
+    "text": "Los individuos. . . no tratan de promover el interés público ni saben cuánto lo están promoviendo. Solo buscan su propia seguridad, su propia ganancia, para la cual se ven llevados por una mano invisible a promover un fin que no estaba en sus intenciones. Buscando su interés personal suelen promover el de la sociedad más eficazmente que cuando pretenden promoverlo realmente.",
+    "author": "Adam Smith"
+  },
+  {
+    "text": "Nada tan esencial en los negocios como ser expeditivo.",
+    "author": "Joseph Addison"
+  },
+  {
+    "text": "Me niego a admitir que Alonso Quijano estuviera loco. Lo que estaba era harto y por eso eligió otra vida. Lo mismo hace Rimbaud al escribir que la vida auténtica está en otra parte. Yo creo que Cervantes escribió el Quijote para que Rimbaud lo leyera y nos regalara esa maravillosa frase.",
+    "author": "José Saramago"
+  },
+  {
+    "text": "Prueba en dar algo a tu prójimo, que puede ser que te sepa mejor distribuir que amontonar.",
+    "author": "Diego de Torres Villarroel"
+  },
+  {
+    "text": "Siempre tenemos la impresión de que podríamos hacer mejor lo que los otros hacen. Desgraciadamente, no tenemos el mismo sentimiento hacia lo que nosotros mismos hacemos.",
+    "author": "Emil Cioran"
+  },
+  {
+    "text": "No puede haber grandes dificultades cuando abunda la buena voluntad.",
+    "author": "Nicolás Maquiavelo"
+  },
+  {
+    "text": "La ciencia es ante todo una destructora de mitos.",
+    "author": "Norbert Elias"
+  },
+  {
+    "text": "Y vino una noche que no conoció la aurora.",
+    "author": "Anna Ajmátova"
+  },
+  {
+    "text": "Donde no hay amor, poned amor y encontraréis amor.",
+    "author": "Juan de la Cruz"
+  },
+  {
+    "text": "Lo más fácil es escribir de manera alambicada, lo que es verdaderamente difícil es hacerlo de una manera sencilla, clara y expresiva.",
+    "author": "Ana María Matute"
+  },
+  {
+    "text": "La educación musical es, en realidad, la educación del hombre.",
+    "author": "Claudio Abbado"
+  },
+  {
+    "text": "El cambio es el proceso en que el futuro invade nuestras vidas. . . .",
+    "author": "Alvin Toffler"
+  },
+  {
+    "text": "La paz es amenazada por un orden económico, social y político injusto; por ausencia de democracia ; por degradación del medio ambiente y ausencia de derechos humanos.",
+    "author": "Muhammad Yunus"
+  },
+  {
+    "text": "Ya sabes lo que hay que hacer en este mundo : andar, como un arado, andar entre la tierra.",
+    "author": "Blas de Otero"
+  },
+  {
+    "text": "El cinismo es una manera desagradable de decir la verdad.",
+    "author": "Lillian Hellman"
+  },
+  {
+    "text": "Encuentra bello todo lo que puedas.",
+    "author": "Vincent van Gogh"
+  },
+  {
+    "text": "Un cliente puede tener su automóvil del color que desee, siempre y cuando desee que sea negro..",
+    "author": "Henry Ford"
+  },
+  {
+    "text": "La Compañía de Jesús y la República de Chile son las dos grandes hazañas del pueblo vascongado..",
+    "author": "Miguel de Unamuno"
+  },
+  {
+    "text": "Los ingleses tienen sólo tres cosas buenas: el té, que viene de la India, y Oscar Wilde y yo que somos irlandeses.",
+    "author": "George Bernard Shaw"
+  },
+  {
+    "text": "♥ D'amore non si muore. ♥ ( De amor no se muere. ).",
+    "author": "Proverbio italiano"
+  },
+  {
+    "text": "El hombre inteligente no orina contra el viento..",
+    "author": "Erasmo de Róterdam"
+  },
+  {
+    "text": "Agua de Agosto, azafrán, miel y mosto.",
+    "author": "Refrán español"
+  },
+  {
+    "text": "La amistad es animal de compañía, no de rebaño..",
+    "author": "Plutarco"
+  },
+  {
+    "text": "El tiempo es invención o no es nada en absoluto..",
+    "author": "Henri Bergson"
+  },
+  {
+    "text": "La educación, si la aprovecháis al máximo, estudiáis duro, hacéis vuestros deberes y hacéis un esfuerzo para ser listos, os puede ir bien. Si no lo hacéis, acabaréis atrapados en Irak..",
+    "author": "John Kerry"
+  },
+  {
+    "text": "Osasuna munduko ondasuna» « La salud (es) la riqueza del mundo.",
+    "author": "Proverbio vasco"
+  },
+  {
+    "text": "Un actor es una persona que no te escucha a menos que estés hablando de él..",
+    "author": "Marlon Brando"
+  },
+  {
+    "text": "El que tiene fe en sí mismo no necesita que los demás crean en él..",
+    "author": "Miguel de Unamuno"
+  },
+  {
+    "text": "La mente no es un vaso para llenar, sino una lámpara para encender..",
+    "author": "Plutarco"
+  },
+  {
+    "text": "Nuestras horas son minutos cuando esperamos saber, y siglos cuando sabemos lo que se puede aprender..",
+    "author": "Antonio Machado"
+  },
+  {
+    "text": "El político que nunca cometió una equivocación nunca tomó una decisión..",
+    "author": "John Major"
+  },
+  {
+    "text": "En combate cercano, la victoria es del que tiene una bala más en el cargador.",
+    "author": "Erwin Rommel"
+  },
+  {
+    "text": "El dinero corrompe, sobre todo a aquellos que no lo tienen..",
+    "author": "Peter Ustinov"
+  },
+  {
+    "text": "Quien en Agosto ara, riqueza prepara..",
+    "author": "Refrán español"
+  },
+  {
+    "text": "Si hay algo más infame que unos representantes corrompidos son unos representados que asumen sin duelo las fechorías de sus elegidos..",
+    "author": "Federico Jiménez Losantos"
+  },
+  {
+    "text": ". . . una nación nunca será libre si sus hijos no quieren arriesgar su vida en su libertad y defensa..",
+    "author": "Lluís Maria Xirinacs"
+  },
+  {
+    "text": ". . . se abrirán de nuevo las grandes alamedas por donde pase el hombre libre, para construir una sociedad mejor..",
+    "author": "Salvador Allende"
+  },
+  {
+    "text": "Siempre a la juventud le ha gustado ser incendiaria y después llamar a los bomberos..",
+    "author": "Augusto Pinochet"
+  },
+  {
+    "text": "En cuanto alguien comprende que obedecer leyes injustas es contrario a su dignidad de hombre, ninguna tiranía puede dominarle..",
+    "author": "MohandasMahatmaGandhi"
+  },
+  {
+    "text": ". . . en la guerra, los padres entierran a sus hijos..",
+    "author": "Heródoto"
+  },
+  {
+    "text": "Si no estás preparado para morir por ella, saca la palabra « libertad » de tu vocabulario.",
+    "author": "Malcolm X"
+  },
+  {
+    "text": "Septiembre, o seca las fuentes o se lleva los puentes..",
+    "author": "Refrán español"
+  },
+  {
+    "text": "No necesito amigos que cambian cuando yo cambio, y asienten cuando yo asiento. Mi sombra lo hace mucho mejor..",
+    "author": "Plutarco"
+  },
+  {
+    "text": "Desde la aurora del hombre todas las naciones han tenido gobierno, y todas se han avergonzado de sus gobiernos..",
+    "author": "Gilbert K. Chesterton"
+  },
+  {
+    "text": "E l propósito de la democracia es asegurarse de que los ricos no tienen una influencia proporcional a su riqueza. Y si tienen más influencia que tú o que yo, eso significa que la democracia está fallando..",
+    "author": "Richard Stallman"
+  },
+  {
+    "text": "A mame cuando menos lo merezca, ya que es cuando más lo necesito..",
+    "author": "Desconocido"
+  },
+  {
+    "text": "La perfección no consiste en la multiplicidad de cosas hechas, sino en el hecho de que estén bien hechas..",
+    "author": "Vicente de Paul"
+  },
+  {
+    "text": "El amor es un camino que de repente aparece, y de tanto caminarlo se te pierde..",
+    "author": "Víctor Jara"
+  },
+  {
+    "text": "El modo de dar una vez en el clavo es dar cien veces en la herradura.",
+    "author": "Miguel de Unamuno"
+  },
+  {
+    "text": "No puedo cambiar la dirección del viento, pero sí ajustar mis velas para llegar siempre a mi destino..",
+    "author": "James Dean"
+  },
+  {
+    "text": "El labrador para Octubre sus deudas cubre.",
+    "author": "Refrán español"
+  },
+  {
+    "text": "Askoren mina, tontoen atsegina » « Mal de muchos, placer de tontos.",
+    "author": "Proverbio vasco"
+  },
+  {
+    "text": "El conocimiento se adquiere leyendo la letra pequeña de un contrato; la experiencia, no leyéndola..",
+    "author": "Francis Bacon"
+  },
+  {
+    "text": "La política se hace en la plaza pública. Interesa a los ciudadanos saber lo que sus representantes piensan en todo momento, no sólo cuando les pedimos el voto..",
+    "author": "Rosa Díez"
+  },
+  {
+    "text": "No habrá para ti otros dioses delante de mí..",
+    "author": "Éxodo 20, 3"
+  },
+  {
+    "text": "El verdadero patriotismo no es encerrarse entre cuatro paredes y tenerle miedo al mundo, sino por el contrario, conquistar el mundo. Que nuestros productos lleguen a todos los rincones de la Tierra para que nuestra Patria sea más poderosa y más rica..",
+    "author": "Lourdes Flores Nano"
+  },
+  {
+    "text": "E spaña es una nación desde siempre, es el pueblo más viejo de Europa. \".",
+    "author": "Mariano Rajoy"
+  },
+  {
+    "text": "La experiencia no se fía de la apariencia.",
+    "author": "Refrán español"
+  },
+  {
+    "text": "Un país es como una pintura: de lejos se distingue mejor.",
+    "author": "Daína Chaviano"
+  },
+  {
+    "text": "España no está aquí, está en América. En México está la esencia más pura de España\".",
+    "author": "Ramón María del Valle-Inclán"
+  },
+  {
+    "text": "No tendrás otro Dios frente a mí. No harás escultura ni imagen alguna de lo que hay arriba en el cielo, o aquí abajo en la tierra o en el agua bajo tierra..",
+    "author": "Éxodo 20, 3 y 4"
+  },
+  {
+    "text": "Benevolencia no quiere decir tolerancia de lo ruin, o conformidad con lo inepto, sino voluntad de bien..",
+    "author": "Antonio Machado"
+  },
+  {
+    "text": "Con una naturaleza confortable, la humanidad no hubiera inventado nunca la arquitectura..",
+    "author": "Oscar Wilde"
+  },
+  {
+    "text": "No te harás escultura ni imagen alguna ni de lo que hay arriba en los cielos, ni de lo que hay abajo en la tierra, ni de lo que hay en las aguas debajo de la tierra..",
+    "author": "Éxodo 20, 4"
+  },
+  {
+    "text": "El hombre es la criatura que Dios hizo al final de una semana de trabajo, cuando ya estaba cansado..",
+    "author": "Samuel Langhorne Clemens,Mark Twain"
+  },
+  {
+    "text": "Trece y martes, ni te cases ni te embarques.",
+    "author": "Refrán español"
+  },
+  {
+    "text": "La revolución empieza por casa.",
+    "author": "Vladímir Ilich Uliánov,Lenin"
+  },
+  {
+    "text": "Los miles de criminales que he visto en cuarenta años de aplicación de la ley, han tenido una cosa en común: todos y cada uno de ellos era un mentiroso.",
+    "author": "J. Edgar Hoover"
+  },
+  {
+    "text": "Llora como mujer lo que no has sabido defender como hombre.",
+    "author": "Aixa"
+  },
+  {
+    "text": "Ni el más sabio conoce el fin de todos los caminos.",
+    "author": "J. R. R. Tolkien"
+  },
+  {
+    "text": "Sin una organización dirigente la energía de las masas se disiparía, como se disipa el vapor no contenido en una caldera. Pero sea como fuere, lo que impulsa el movimiento no es la caldera ni el pistón, sino el vapor.",
+    "author": "León Trotsky"
+  },
+  {
+    "text": ". . . A nadie se le obligó nunca a hablar en castellano. . . .",
+    "author": "Juan Carlos de Borbón"
+  },
+  {
+    "text": "Aléjame de la sabiduría que no llora, la filosofía que no ríe y la grandeza que no se inclina ante los niños.",
+    "author": "Khalil Gibrán"
+  },
+  {
+    "text": "Abstente de hablar mal no solamente de tus amigos, sino también de tus enemigos.",
+    "author": "Pitaco de Mitilene"
+  },
+  {
+    "text": "No me siento obligado a creer que un dios que nos ha dotado de inteligencia, sentido común y raciocinio, tuviera como objetivo privarnos de su uso.",
+    "author": "Galileo Galilei"
+  },
+  {
+    "text": "El más elevado honor que la historia puede conceder a un hombre es el título de pacificador.",
+    "author": "Richard Nixon"
+  },
+  {
+    "text": "El poeta es un pequeño Dios.",
+    "author": "Vicente Huidobro"
+  },
+  {
+    "text": "Es intentando lo imposible como se realiza lo posible.",
+    "author": "Henri Barbusse"
+  },
+  {
+    "text": "Una nación que gasta más dinero en armamento militar que en programas sociales se acerca a la muerte espiritual.",
+    "author": "Martin Luther King"
+  },
+  {
+    "text": "No codiciarás la casa de tu prójimo, ni codiciarás la mujer de tu prójimo, ni su siervo, ni su sierva, ni su buey, ni su asno, ni nada que sea de tu prójimo.",
+    "author": "Éxodo, 20:17 y Deuteronomio, 5:21"
+  },
+  {
+    "text": "En ocasiones pienso que el premio de quienes escribimos duerme, tímido y virginal, en el confuso corazón del lector más lejano.",
+    "author": "Camilo José Cela"
+  },
+  {
+    "text": "Estoy en desacuerdo con lo que dices, pero defenderé hasta la muerte tu derecho a decirlo.",
+    "author": "Evelyn Beatrice Hall"
+  },
+  {
+    "text": "No creo en la tiranía del director de orquesta.",
+    "author": "Plácido Domingo"
+  },
+  {
+    "text": "Quien se niega a aplicar remedios nuevos, debe aprestarse a sufrir nuevos males, porque el tiempo es el mayor innovador.",
+    "author": "Francis Bacon"
+  },
+  {
+    "text": "Un libro es un espejo que pasea por una gran avenida.",
+    "author": "Stendhal"
+  },
+  {
+    "text": "Un mago nunca llega tarde, ni pronto; llega justo cuando se lo propone.",
+    "author": "J. R. R. Tolkien enEl Señor de los Anillos"
+  },
+  {
+    "text": "Hubiera preferido mil veces ser una de esas personas, como Richard, que hacían las cosas por las cosas mismas.",
+    "author": "Virginia Woolf"
+  },
+  {
+    "text": "El algodón no engaña.",
+    "author": "Eslogan"
+  },
+  {
+    "text": "Para mí el sentido y la razón son más importantes que un centenar de manuscritos.",
+    "author": "Richard Bentley"
+  },
+  {
+    "text": "Los terroristas no tendrán la última palabra, sino la democracia.",
+    "author": "Nicolas Sarkozy"
+  },
+  {
+    "text": "Yo he nacido para contar historias. Siento la necesidad de crear novelas, tan imperiosamente como necesito comer y beber.",
+    "author": "Vicente Blasco Ibáñez"
+  },
+  {
+    "text": "Una mitad del mundo está compuesta de gente que tienen algo que decir y no pueden, y la otra mitad que tienen nada que decir y siguen diciéndolo.",
+    "author": "Robert Frost"
+  },
+  {
+    "text": "La causa de la libertad se convierte en una burla si el precio a pagar es la destrucción de quienes deberían disfrutar la libertad.",
+    "author": "Mohandas Gandhi"
+  },
+  {
+    "text": "Hay un rostro bajo esta máscara pero no soy yo. Ese rostro no me representa más que los músculos y los huesos que hay debajo.",
+    "author": "V de Vendetta"
+  },
+  {
+    "text": "Febrero, siete capas y un sombrero.",
+    "author": "Refrán español"
+  }
+]
