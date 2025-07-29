@@ -12,16 +12,17 @@
     <link rel="stylesheet" href="style.css">
 
 </head>
-<body ontouchstart="">
-    <!-- ===== INICIO DE LA MODIFICACIÓN ===== -->
-    <div id="app-frame"> 
-        <!-- Todo el contenido anterior del body ahora va aquí dentro -->
+<body>
+
+    <!-- === INICIO DE LA MODIFICACIÓN === -->
+    <!-- Todo el contenido de la aplicación ahora está dentro de este 'frame' -->
+    <div id="app-frame">
 
         <!-- Contenedor para los controles del slideshow -->
         <div class="slideshow-controls-container">
             <!-- Input de archivo real, pero oculto. Se activa con el label. -->
             <input type="file" id="photoInput" multiple accept="image/*" style="display: none;">
-            <!-- MODIFICACIÓN: Añadido un id="photoSelectLabel" para poder ocultarlo -->
+            <!-- Este label parece un botón y es lo que el usuario ve y pulsa. -->
             <label for="photoInput" id="photoSelectLabel" class="select-folder-button">Seleccionar Fotos</label>
             
             <div class="toggle-switch-container">
@@ -93,10 +94,11 @@
         <div id="slideshow-display" class="hidden">
             <img id="slideshow-image" src="" alt="Slideshow Image">
         </div>
+
+    </div>
+    <!-- === FIN DE LA MODIFICACIÓN === -->
     
-    </div> <!-- ===== FIN DE LA MODIFICACIÓN (cierre del div #app-frame) ===== -->
-    
-    <!-- Enlace al script principal de la aplicación como módulo -->
+    <!-- El script principal se queda fuera del frame -->
     <script type="module" src="./app.js"></script>
 </body>
 </html>
