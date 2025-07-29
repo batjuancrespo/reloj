@@ -5,11 +5,11 @@ let audioCtx;
 let alarmBuffer;
 let currentSource = null; // To keep track of the playing source node
 
+// --- MODIFICACIÓN: Hora de alarma por defecto ---
 // Internal state for time selection
-let currentSelectedHour = 7;
-let currentSelectedMinute = 30;
+let currentSelectedHour = 6;
+let currentSelectedMinute = 42;
 
-// --- MODIFICACIÓN AQUÍ ---
 // Generar dinámicamente la lista de 16 imágenes de alarma
 const alarmImages = [];
 for (let i = 1; i <= 16; i++) {
