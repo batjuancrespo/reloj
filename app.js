@@ -27,26 +27,37 @@ function init() {
     setInterval(updateClock, 15000); // Update clock every 15 seconds
 
     // Quotes
-    initQuotes(); // Esta función ahora se encarga de todo el sistema de frases
+    initQuotes();
 
     // Weather
     const WEATHER_LAT = 43.2;
     const WEATHER_LON = -3.8;
-    const WEATHER_API_KEY = '56463b4abd4cb828b6db3c8395dcedbc'; // Keep your API key private in production
+    const WEATHER_API_KEY = '56463b4abd4cb828b6db3c8395dcedbc';
     updateWeatherDisplay(WEATHER_LAT, WEATHER_LON, WEATHER_API_KEY);
-    setInterval(() => updateWeatherDisplay(WEATHER_LAT, WEATHER_LON, WEATHER_API_KEY), 1800000); // Update weather every 30 minutes
+    setInterval(() => updateWeatherDisplay(WEATHER_LAT, WEATHER_LON, WEATHER_API_KEY), 1800000);
 
-    // News
-    createNewsRotator('generalNews', ['https://e00-elmundo.uecdn.es/elmundo/rss/portada.xml', 'https://www.eldiariomontanes.es/rss/2.0/?section=ultima-hora']);
-    createNewsRotator('sportsNews', ['https://e00-marca.uecdn.es/rss/futbol/primera-division.xml', 'https://www.eldiariomontanes.es/rss/2.0/?section=deportes']);
+    // --- MODIFICACIÓN: Definición de las nuevas fuentes de noticias ---
+    const generalNewsFeeds = [
+        { name: 'El Mundo', url: 'https://e00-elmundo.uecdn.es/elmundo/rss/portada.xml' },
+        { name: 'El País', url: 'https://feeds.elpais.com/mrss-s/portada.xml' },
+        { name: 'El Diario Montañés', url: 'https://www.eldiariomontanes.es/rss/2.0/?section=ultima-hora' }
+    ];
 
-    // --- MODIFICACIÓN: Ruta al archivo de sonido de la alarma ---
+    const sportsNewsFeeds = [
+        { name: 'Marca', url: 'https://e00-marca.uecdn.es/rss/portada.xml' },
+        { name: 'AS', url: 'https://as.com/rss/futbol/primera.xml' }
+    ];
+
+    createNewsRotator('generalNews', generalNewsFeeds);
+    createNewsRotator('sportsNews', sportsNewsFeeds);
+    // --- FIN DE LA MODIFICACIÓN ---
+
     // Alarm System
-    initAlarmSystem('./mi_alarma.mp3'); // Usa tu archivo MP3 local
-    setInterval(checkAlarms, 1000); // Check alarms every second
-    updateTimeDisplay(); // Initial display of selected alarm time
+    initAlarmSystem('./mi_alarma.mp3');
+    setInterval(checkAlarms, 1000);
+    updateTimeDisplay();
 
-    // Alarm UI Event Listeners for new tactile controls
+    // Alarm UI Event Listeners
     document.getElementById('hourUp').addEventListener('click', incrementHour);
     document.getElementById('hourDown').addEventListener('click', decrementHour);
     document.getElementById('minuteUp').addEventListener('click', incrementMinute);
@@ -74,12 +85,10 @@ function init() {
 
     slideshowToggle.addEventListener('change', (event) => {
         if (event.target.checked) {
-            // Switch to slideshow mode
             mainAppContent.classList.add('hidden');
             slideshowDisplay.classList.remove('hidden');
             startSlideshow();
         } else {
-            // Switch back to main app mode
             slideshowDisplay.classList.add('hidden');
             mainAppContent.classList.remove('hidden');
             stopSlideshow();
