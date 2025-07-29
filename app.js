@@ -1,6 +1,7 @@
 import { updateWeatherDisplay } from './weather.js';
 import { createNewsRotator } from './news.js';
-import { updateQuote } from './quotes.js';
+// MODIFICACIÓN: Importamos initQuotes en lugar de updateQuote
+import { initQuotes } from './quotes.js'; 
 import { initAlarmSystem, addAlarm, removeAlarm, updateTimeDisplay, checkAlarms, stopAlarmSound, incrementHour, decrementHour, incrementMinute, decrementMinute } from './alarm.js';
 import { initSlideshow, startSlideshow, stopSlideshow } from './slideshow.js';
 
@@ -26,9 +27,9 @@ function init() {
     updateClock();
     setInterval(updateClock, 15000); // Update clock every 15 seconds
 
+    // --- MODIFICACIÓN ---
     // Quotes
-    updateQuote();
-    setInterval(updateQuote, 20000); // Change quote every 20 seconds
+    initQuotes(); // Esta función ahora se encarga de todo el sistema de frases
 
     // Weather
     const WEATHER_LAT = 43.2;
@@ -67,7 +68,6 @@ function init() {
     });
 
     // Slideshow System
-    // MODIFICACIÓN: Pasamos el ID del input de fotos a initSlideshow
     initSlideshow('slideshow-image', 'photoInput');
     const slideshowToggle = document.getElementById('slideshowToggle');
     const mainAppContent = document.getElementById('main-app-content');
