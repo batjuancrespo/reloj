@@ -9,12 +9,13 @@ let currentSource = null; // To keep track of the playing source node
 let currentSelectedHour = 7;
 let currentSelectedMinute = 30;
 
-// Array of images for alarms with relative paths
-const alarmImages = [
-    './alarm_image_1.png',
-    './alarm_image_2.png',
-    './alarm_image_3.png'
-];
+// --- MODIFICACIÓN AQUÍ ---
+// Generar dinámicamente la lista de 16 imágenes de alarma
+const alarmImages = [];
+for (let i = 1; i <= 16; i++) {
+    // La ruta sigue el formato: ./alarm_image_ (1).png, ./alarm_image_ (2).png, etc.
+    alarmImages.push(`./alarm_image_ (${i}).png`);
+}
 
 // Utility function (duplicated from app.js as it's needed here for displaying time)
 function pad(num) { return ('0' + num).slice(-2); }
@@ -97,6 +98,7 @@ export function checkAlarms() {
 export function addAlarm(time) {
     // In this simplified version, only one alarm can be set
     if (alarms.length === 0) {
+        // La lógica para seleccionar una imagen aleatoria no cambia, ahora simplemente funciona con una lista más grande.
         const randomImage = alarmImages[Math.floor(Math.random() * alarmImages.length)];
         alarms.push({ time: time, triggered: false, imageUrl: randomImage });
         updateAlarmList();
