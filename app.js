@@ -40,7 +40,7 @@ function init() {
     const generalNewsFeeds = [
         { name: 'El Mundo', url: 'https://e00-elmundo.uecdn.es/elmundo/rss/portada.xml' },
         { name: 'El País', url: 'https://feeds.elpais.com/mrss-s/portada.xml' },
-        { name: 'El Diario Montañés', url: 'https://www.eldiariomontanes.es/rss/2.0/?section=ultima-hora' }
+        { name: 'El Diario Montañés', url: 'https://www.eldiariomontanes.es/rss/2.0/portada/ }
     ];
 
     const sportsNewsFeeds = [
