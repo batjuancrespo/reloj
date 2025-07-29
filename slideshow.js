@@ -1,8 +1,8 @@
 // Slideshow module
 const slideshowImages = [
-    '/slideshow_image_1.png',
-    '/slideshow_image_2.png',
-    '/slideshow_image_3.png'
+    './slideshow_image_1.png',
+    './slideshow_image_2.png',
+    './slideshow_image_3.png'
 ];
 
 let currentImageIndex = 0;
