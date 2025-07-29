@@ -1,170 +1,402 @@
 /* RESET BÁSICO Y ESTILOS GLOBALES */
 * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
-html { height: 100%; }
-body { 
-    font-family: sans-serif; 
-    background: #333; /* Un fondo gris oscuro para ver el marco */
-    color: white; 
-    height: 100%;
-    overflow: hidden;
 
-    /* --- NUEVO: Centrar el marco en la pantalla --- */
-    display: flex;
-    justify-content: center; /* Centrado horizontal */
-    align-items: center;   /* Centrado vertical */
+/* MODIFICACIÓN: El html y el body ahora son solo el lienzo de fondo */
+html, body { 
+    height: 100%; 
+    width: 100%;
+    overflow: hidden; 
+    background: #333; /* Un fondo para ver el frame, puedes cambiarlo o quitarlo */
 }
 
-/* --- NUEVO: El contenedor maestro o "marco" de la aplicación --- */
+/* === INICIO DE LA MODIFICACIÓN PRINCIPAL: El Frame de la Aplicación === */
 #app-frame {
-    /* 1. Definimos la proporción 12x18 cm (que es 2:3) */
-    aspect-ratio: 2 / 3;
+    /* --- 1. POSICIÓN Y TAMAÑO FINAL --- */
+    /* Posicionamos el frame donde queramos en la pantalla */
+    position: absolute;
+    top: 50px;  /* Ejemplo: A 50px del borde superior. ¡AJUSTA ESTO! */
+    left: 100px; /* Ejemplo: A 100px del borde izquierdo. ¡AJUSTA ESTO! */
 
-    /* 2. Definimos el tamaño del marco. 
-       height: 95vh; significa que ocupará el 95% de la altura de la pantalla.
-       El ancho se calculará automáticamente para mantener la proporción.
-       Puedes cambiar este valor para hacerlo más grande o pequeño. */
-    height: 95vh; 
-    max-width: 95vw; /* Para evitar que se salga de la pantalla en monitores anchos */
+    /* El tamaño físico (18x12 cm) se traduce a píxeles. 
+       Supondremos una pantalla estándar (96 DPI) para el cálculo.
+       18cm ≈ 680px  /  12cm ≈ 454px */
+    width: 680px;
+    height: 454px;
     
-    /* 3. Estilo visual del marco */
-    background: #000;
-    border: 3px solid #555; /* Un borde para simular el marco físico */
-    border-radius: 10px;    /* Bordes redondeados */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5); /* Sombra para darle profundidad */
-
-    /* 4. Magia para la escalabilidad: Definimos un tamaño de fuente base relativo
-       a la altura del marco. Ahora, 1rem dentro de este marco será el 1.5% 
-       de su altura. Si el marco se hace grande, el rem se hace grande. */
-    font-size: 1.5vh; 
-    
-    /* 5. Propiedades para que el contenido se organice bien dentro */
-    position: relative; /* Necesario para los elementos absolutos de dentro */
-    display: flex;
-    overflow: hidden; /* Recorta cualquier cosa que se salga del marco */
+    /* Para que se vea como un marco */
+    border: 3px solid #555;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    overflow: hidden; /* Muy importante para que nada se salga */
 }
 
+/* El contenido DENTRO del frame se dibujará en un tamaño base y luego se escalará */
+#app-frame > * {
+    /* --- 2. TAMAÑO BASE (ANTES DE ESCALAR) --- */
+    /* Definimos una resolución de tablet estándar para la que el diseño original funciona bien */
+    width: 1280px;
+    height: 800px; /* Esto mantiene una proporción similar a 18x12 (es 16:10) */
+    
+    /* --- 3. LA MAGIA DEL AUTOESCALADO --- */
+    /* Calculamos el factor de escala: 
+       Ancho final / Ancho base = 680 / 1280 = 0.53125 */
+    transform-origin: 0 0; /* Escala desde la esquina superior izquierda */
+    transform: scale(0.53125);
 
-/* --- MODIFICACIÓN DE ESTILOS EXISTENTES --- */
-/* A partir de aquí, la mayoría de unidades 'px' y 'em' se cambian a 'rem' 
-   para que escalen proporcionalmente con el tamaño del marco. */
+    /* Mantenemos el fondo y la fuente originales para el contenido */
+    font-family: sans-serif; 
+    background: #000; 
+    color: white; 
+    display: flex; 
+    flex-direction: column; 
+}
+/* === FIN DE LA MODIFICACIÓN PRINCIPAL === */
 
+
+body { 
+    /* Se han movido la mayoría de los estilos de aquí al frame */
+    -webkit-font-smoothing: antialiased; 
+    -moz-osx-font-smoothing: grayscale; 
+}
+
+/* Contenedor para los controles del slideshow */
 .slideshow-controls-container {
     position: absolute;
-    top: 1.5rem;
-    left: 1.5rem; 
+    top: 15px;
+    left: 15px; 
     z-index: 1000;
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
-    gap: 1.5rem;
+    gap: 15px;
 }
 
+/* ... (el resto del archivo style.css sigue exactamente igual que antes) ... */
 .select-folder-button {
-    border: none;
-    border-radius: 0.8rem;
-    padding: 0.8rem 1.2rem;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
     background-color: #2196F3;
     color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.toggle-switch-container { position: relative; }
-.toggle-switch-checkbox { display: none; }
+.select-folder-button:hover {
+    background-color: #1976D2;
+}
+
+.toggle-switch-container {
+    position: relative;
+    top: auto;
+    right: auto;
+}
+
+.toggle-switch-checkbox {
+    display: none;
+}
+
 .toggle-switch-label {
     display: block;
+    overflow: hidden;
     cursor: pointer;
-    border: 0.1rem solid rgba(255, 255, 255, 0.4);
-    border-radius: 2rem;
-    height: 3rem;
-    width: 6rem;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 20px;
+    height: 30px;
+    width: 60px;
     background-color: rgba(255, 255, 255, 0.1); 
     position: relative;
     transition: background-color 0.3s ease;
 }
-.toggle-switch-inner { display: block; width: 200%; margin-left: -100%; transition: margin 0.3s ease-in-out; }
-.toggle-switch-inner:before, .toggle-switch-inner:after { display: block; float: left; width: 50%; height: 3rem; box-sizing: border-box; content: ""; background-color: transparent; }
-.toggle-switch-switch { display: block; width: 2.6rem; height: 2.6rem; margin: 0.1rem; background: #fff; position: absolute; top: 0; bottom: 0; right: 3rem; border-radius: 2rem; transition: all 0.3s ease-in-out; }
-.toggle-switch-checkbox:checked + .toggle-switch-label { background-color: rgba(255, 255, 255, 0.3); }
-.toggle-switch-checkbox:checked + .toggle-switch-label .toggle-switch-switch { right: 0.1rem; }
 
-#slideshow-display { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; background-color: #000; overflow: hidden; }
-#slideshow-display.hidden { display: none; }
-#slideshow-image { width: 100%; height: 100%; object-fit: contain; opacity: 0; transition: opacity 1s ease-in-out; }
-#slideshow-image.active { opacity: 1; }
+.toggle-switch-inner {
+    display: block;
+    width: 200%;
+    margin-left: -100%;
+    transition: margin 0.3s ease-in-out;
+}
 
-#main-app-content { display: flex; flex-direction: column; flex-grow: 1; width: 100%; height: 100%; }
-#main-app-content.hidden { display: none; }
+.toggle-switch-inner:before, .toggle-switch-inner:after {
+    display: block;
+    float: left;
+    width: 50%;
+    height: 30px;
+    box-sizing: border-box;
+    content: "";
+    background-color: transparent;
+}
 
-.container { display: flex; flex-direction: column; flex-grow: 1; padding: 1.5rem; width: 100%; height: 100%; }
+.toggle-switch-switch {
+    display: block;
+    width: 26px;
+    height: 26px;
+    margin: 1px;
+    background: #fff;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 30px;
+    border-radius: 20px;
+    transition: all 0.3s ease-in-out;
+}
 
-.main-display { display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; }
+.toggle-switch-checkbox:checked + .toggle-switch-label {
+    background-color: rgba(255, 255, 255, 0.3);
+}
 
-#current-weather { text-align: center; font-size: 2.2rem; flex: 1; }
-#current-weather img { width: 12rem; height: 12rem; }
+.toggle-switch-checkbox:checked + .toggle-switch-label .toggle-switch-inner {
+    margin-left: 0;
+}
+
+.toggle-switch-checkbox:checked + .toggle-switch-label .toggle-switch-switch {
+    right: 1px;
+}
+
+#slideshow-display {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    overflow: hidden;
+}
+
+#slideshow-display.hidden {
+    display: none;
+}
+
+#slideshow-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+#slideshow-image.active {
+    opacity: 1;
+}
+
+#main-app-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    width: 100%;
+    height: 100%;
+}
+
+#main-app-content.hidden {
+    display: none;
+}
+
+.container { display: flex; flex-direction: column; flex-grow: 1; padding: 15px; width: 100%; height: 100%; }
+
+.main-display { display: flex; align-items: center; justify-content: center; margin-bottom: 10px; }
+
+#current-weather { text-align: center; font-size: 2.2em; flex: 1; }
+#current-weather img { width: 120px; height: 120px; }
 
 #clock {
-    font-size: 13rem;
+    font-size: 13em;
     font-weight: 700;
     text-align: center;
     flex-shrink: 0;
-    padding: 0 2rem;
+    padding: 0 20px;
     line-height: 1;
 }
 
-#date-temp { text-align: center; font-size: 2rem; flex: 1; }
-#current-temp { font-size: 3.5rem; margin-bottom: 0.8rem; font-weight: bold; }
-#current-date { font-size: 1.8rem; color: #ccc; }
+#date-temp { text-align: center; font-size: 2em; flex: 1; }
+#current-temp { font-size: 3.5em; margin-bottom: 8px; font-weight: bold; }
+#current-date { font-size: 1.8em; color: #ccc; }
 
-.middle-section { display: flex; height: 22rem; margin-top: 1rem; }
+.middle-section { display: flex; height: 220px; margin-top: 10px; }
 
-#weather { flex-basis: 50%; margin-right: 1rem; background: rgba(255, 255, 255, 0.05); padding: 1rem; border-radius: 1rem; display: flex; justify-content: space-around; }
+#weather { flex-basis: 50%; margin-right: 10px; background: rgba(255, 255, 255, 0.05); padding: 10px; border-radius: 10px; display: flex; justify-content: space-around; }
 .weather-card { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
-.weather-card .day-name { font-size: 1.4rem; font-weight: bold; }
-.weather-card img { width: 9rem; height: 9rem; margin: 0.8rem 0; }
-.weather-card .temp { font-size: 1.8rem; font-weight: bold; }
+.weather-card .day-name { font-size: 1.4em; font-weight: bold; }
+.weather-card img { width: 90px; height: 90px; margin: 8px 0; }
+.weather-card .temp { font-size: 1.8em; font-weight: bold; }
 
-.alarm-container { flex-basis: 50%; margin-left: 1rem; background: rgba(255, 255, 255, 0.05); padding: 1rem; border-radius: 1rem; display: flex; flex-direction: column; overflow: hidden; }
+.alarm-container {
+    flex-basis: 50%;
+    margin-left: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
 .alarm-controls { display: flex; flex-direction: column; }
 .time-picker-container { display: flex; flex-grow: 1; align-items: center; }
 
-.time-input-section { display: flex; flex-grow: 1; justify-content: space-around; align-items: center; }
-.time-input-group { display: flex; flex-direction: column; align-items: center; text-align: center; margin: 0 0.5rem; }
-.time-input-group label { font-size: 1.1rem; margin-bottom: 0.2rem; }
+.time-input-section {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-around;
+    align-items: center;
+}
 
-.time-control-button { background: rgba(255, 255, 255, 0.1); border: 0.1rem solid rgba(255, 255, 255, 0.2); border-radius: 0.5rem; color: white; font-size: 1.8rem; padding: 0.5rem 1.5rem; margin: 0.3rem 0; cursor: pointer; width: 6rem; text-align: center; }
-.time-input-group input[type="text"][readonly] { background: rgba(0, 0, 0, 0.3); border: 0.1rem solid rgba(255, 255, 255, 0.2); border-radius: 0.5rem; color: white; font-size: 2.5rem; width: 8rem; text-align: center; padding: 0.5rem 0; -moz-appearance: textfield; }
-.time-input-group input[type="text"][readonly]::-webkit-outer-spin-button, .time-input-group input[type="text"][readonly]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+.time-input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 0 5px;
+}
 
-.time-controls { display: flex; flex-direction: column; justify-content: center; align-items: center; margin-left: 2rem; }
-.time-display { font-size: 2.2rem; font-weight: bold; text-align: center; margin-bottom: 0.5rem; }
-.alarm-button { padding: 1rem 1.5rem; font-size: 1.1rem; font-weight: bold; border-radius: 0.8rem; border: none; background: #2196F3; color: white; width: 100%; }
+.time-input-group label {
+    font-size: 1.1em;
+    margin-bottom: 2px;
+}
+
+.time-control-button {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    color: white;
+    font-size: 1.8em;
+    padding: 5px 15px;
+    margin: 3px 0;
+    cursor: pointer;
+    width: 60px;
+    text-align: center;
+}
+
+.time-input-group input[type="text"][readonly] {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    color: white;
+    font-size: 2.5em;
+    width: 80px;
+    text-align: center;
+    padding: 5px 0;
+    -moz-appearance: textfield;
+}
+.time-input-group input[type="text"][readonly]::-webkit-outer-spin-button,
+.time-input-group input[type="text"][readonly]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.time-controls { display: flex; flex-direction: column; justify-content: center; align-items: center; margin-left: 20px; }
+.time-display { font-size: 2.2em; font-weight: bold; text-align: center; margin-bottom: 5px; }
+.alarm-button {
+    padding: 10px 15px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 8px;
+    border: none;
+    background: #2196F3;
+    color: white;
+    width: 100%;
+}
 .alarm-list { flex-grow: 1; display: flex; justify-content: center; align-items: center; }
 
-.alarm-item { display: flex; justify-content: space-between; align-items: center; width: 100%; height: 100%; overflow: hidden; }
-.alarm-image-container { flex-shrink: 0; width: 50%; padding: 0.2rem; display: flex; justify-content: center; align-items: center; }
-.alarm-image-container img { max-width: 100%; max-height: 100%; object-fit: contain; border: 0.1rem solid white; border-radius: 0.5rem; }
-.alarm-info { flex-grow: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding-left: 1rem; }
-.alarm-info span { font-size: 2.5rem; font-weight: bold; margin-bottom: 1rem; line-height: 1.2; }
-.alarm-info button { padding: 1.2rem 2rem; font-size: 1.2rem; background: rgba(255, 0, 0, 0.6); color: white; border: none; border-radius: 0.8rem; cursor: pointer; }
+.alarm-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
 
-.news-panels { display: flex; margin-top: 1.5rem; height: 12rem; }
-.news-container { flex: 1; background: rgba(255, 255, 255, 0.05); padding: 1rem 1.5rem; border-radius: 1rem; position: relative; overflow: hidden; }
-.news-container:first-child { margin-right: 1rem; }
-.news-container h3 { font-size: 1rem; margin-bottom: 0.8rem; }
-.news-item { position: absolute; opacity: 0; transition: opacity 0.5s; width: calc(100% - 3rem); }
+.alarm-image-container {
+    flex-shrink: 0;
+    width: 50%;
+    padding: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.alarm-image-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+.alarm-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-left: 10px;
+}
+
+.alarm-info span {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.alarm-info button {
+    padding: 12px 20px;
+    font-size: 1.2em;
+    background: rgba(255, 0, 0, 0.6);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.news-panels { display: flex; margin-top: 15px; height: 120px; }
+.news-container { flex: 1; background: rgba(255, 255, 255, 0.05); padding: 10px 15px; border-radius: 10px; position: relative; overflow: hidden; }
+.news-container:first-child { margin-right: 10px; }
+.news-container h3 { font-size: 1em; margin-bottom: 8px; }
+.news-item { position: absolute; opacity: 0; transition: opacity 0.5s; width: calc(100% - 30px); }
 .news-item.active { opacity: 1; }
-.news-item a { color: white; text-decoration: none; font-size: 1.1rem; }
+.news-item a { color: white; text-decoration: none; font-size: 1.1em; }
 
 @keyframes alarm-flash { 50% { background: rgba(255, 0, 0, 0.4); } }
 .alarming { animation: alarm-flash 1s infinite; }
 
-#quote-section { width: 100%; margin-top: 1.5rem; padding: 2rem; background: rgba(255, 255, 255, 0.08); border-radius: 1rem; text-align: center; overflow: hidden; color: rgba(255, 255, 255, 0.9); }
-.quote-text { font-size: 1.5rem; font-style: italic; margin-bottom: 1rem; line-height: 1.3; }
-.quote-author { font-size: 1.3rem; font-weight: bold; }
+#quote-section {
+    width: 100%;
+    margin-top: 15px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    text-align: center;
+    overflow: hidden;
+    color: rgba(255, 255, 255, 0.9);
+}
+.quote-text {
+    font-size: 1.5em;
+    font-style: italic;
+    margin-bottom: 10px;
+    line-height: 1.3;
+}
+.quote-author {
+    font-size: 1.3em;
+    font-weight: bold;
+}
 
-@keyframes slideInFromBottom { from { transform: translateY(100%); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-.quote-content.animate { -webkit-animation: slideInFromBottom 1.2s ease-out forwards; animation: slideInFromBottom 1.2s ease-out forwards; }
+@keyframes slideInFromBottom {
+    from { transform: translateY(100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+.quote-content.animate {
+    -webkit-animation: slideInFromBottom 1.2s ease-out forwards;
+    animation: slideInFromBottom 1.2s ease-out forwards;
+}
 
-.news-source { display: block; margin-top: 0.4rem; font-size: 0.8rem; color: #aaa; text-align: right; font-style: italic; }
+.news-source {
+    display: block;
+    margin-top: 4px;
+    font-size: 0.8em;
+    color: #aaa;
+    text-align: right;
+    font-style: italic;
+}
