@@ -67,8 +67,8 @@ function init() {
     });
 
     // Slideshow System
-    // MODIFICACIÓN: Pasamos el ID del nuevo botón a initSlideshow
-    initSlideshow('slideshow-image', 'selectFolderBtn');
+    // MODIFICACIÓN: Pasamos el ID del input de fotos a initSlideshow
+    initSlideshow('slideshow-image', 'photoInput');
     const slideshowToggle = document.getElementById('slideshowToggle');
     const mainAppContent = document.getElementById('main-app-content');
     const slideshowDisplay = document.getElementById('slideshow-display');
