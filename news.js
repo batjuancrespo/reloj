@@ -1,77 +1,90 @@
 // News module
-export function createNewsRotator(containerId, feeds) {
+export function createNewsRotator(containerId, feedSources) {
     const container = document.getElementById(containerId);
     let allNews = [];
-    let currentIndex = 0;
+    let lastNewsIndex = -1; // Para evitar repetir la misma noticia dos veces seguidas
 
     function fetchNews() {
-        const promises = feeds.map(feedUrl =>
-            fetch('https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(feedUrl))
+        // Creamos una promesa para cada feed que nos han pasado
+        const promises = feedSources.map(source =>
+            fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(source.url)}`)
                 .then(response => response.json())
+                .then(data => ({ ...data, sourceName: source.name })) // Añadimos el nombre de la fuente a la respuesta
                 .catch(error => {
-                    console.error(`Error fetching news from ${feedUrl}:`, error);
-                    return null;
+                    console.error(`Error fetching news from ${source.name}:`, error);
+                    return null; // Si un feed falla, no detenemos los demás
                 })
         );
 
+        // Cuando todas las promesas se resuelvan...
         Promise.all(promises).then(results => {
             const items = [];
             results.forEach(data => {
+                // Comprobamos que el feed haya funcionado y tenga noticias
                 if (data && data.status === 'ok' && data.items) {
-                    // Take the first 5 items from each feed to prevent too many news
-                    data.items.slice(0, 5).forEach(item => {
-                        items.push({ title: item.title, link: item.link });
+                    // Cogemos los 10 primeros titulares y les añadimos el nombre de la fuente
+                    data.items.slice(0, 10).forEach(item => {
+                        items.push({ 
+                            title: item.title, 
+                            link: item.link,
+                            source: data.sourceName // Guardamos la fuente
+                        });
                     });
                 }
             });
 
             if (items.length > 0) {
-                allNews = items;
-                currentIndex = 0; // Reset index when news are updated
-                showNextNews(); // Muestra la primera noticia inmediatamente
+                allNews = items; // Actualizamos nuestro listado completo de noticias
+                console.log(`Cargadas ${allNews.length} noticias para ${containerId}`);
+                // Si es la primera carga, mostramos la primera noticia
+                if (lastNewsIndex === -1) {
+                    showNextNews(); 
+                }
             }
         });
     }
-    
-    // --- FUNCIÓN MODIFICADA Y CORREGIDA ---
+
+    // --- FUNCIÓN DE MOSTRAR NOTICIA MODIFICADA PARA SER ALEATORIA ---
     function showNextNews() {
         if (allNews.length === 0) return;
 
-        // Buscamos si ya existe un elemento para las noticias.
         let newsItem = container.querySelector('.news-item');
-        // Si no existe (es la primera vez), lo creamos.
         if (!newsItem) {
             newsItem = document.createElement('div');
             newsItem.className = 'news-item';
             container.appendChild(newsItem);
         }
 
-        // 1. Animamos la salida del titular actual.
         newsItem.classList.remove('active');
 
-        // Obtenemos el nuevo artículo que vamos a mostrar.
-        const article = allNews[currentIndex];
+        // Lógica para elegir un titular aleatorio sin repetir el anterior
+        let randomIndex;
+        if (allNews.length > 1) {
+            do {
+                randomIndex = Math.floor(Math.random() * allNews.length);
+            } while (randomIndex === lastNewsIndex);
+        } else {
+            randomIndex = 0;
+        }
+        lastNewsIndex = randomIndex;
+        
+        const article = allNews[lastNewsIndex];
 
-        // 2. Esperamos a que la animación de salida termine (500ms) antes de cambiar el contenido.
-        // Esto evita la superposición y asegura que el proceso sea secuencial.
         setTimeout(() => {
-            // 3. Actualizamos el contenido del MISMO elemento. No creamos uno nuevo.
-            newsItem.innerHTML = `<a href="${article.link}" target="_blank">${article.title}</a>`;
-
-            // Forzamos un 'reflow' del navegador. Es un truco para asegurar que la animación se reinicie.
+            // Actualizamos el contenido para mostrar el titular y la fuente
+            newsItem.innerHTML = `
+                <a href="${article.link}" target="_blank">${article.title}</a>
+                <span class="news-source">${article.source}</span>
+            `;
+            
             void newsItem.offsetWidth;
-
-            // 4. Animamos la entrada del nuevo titular.
             newsItem.classList.add('active');
-        }, 500); // IMPORTANTE: Este tiempo debe ser igual a la duración de la transición en style.css
+        }, 500);
 
-        // 5. Preparamos el índice para la siguiente noticia.
-        currentIndex = (currentIndex + 1) % allNews.length;
     }
 
-    // Initial fetch and set up intervals
+    // Carga inicial y configuración de los intervalos
     fetchNews();
-    // No llamamos a showNextNews aquí, fetchNews ya lo hace la primera vez.
-    setInterval(fetchNews, 600000); // Fetch new news every 10 minutes
-    setInterval(showNextNews, 8000); // Rotate news every 8 seconds
+    setInterval(fetchNews, 600000); // 600000 ms = 10 minutos
+    setInterval(showNextNews, 8000); // Cambia de noticia cada 8 segundos
 }
