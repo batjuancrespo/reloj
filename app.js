@@ -1,6 +1,5 @@
 import { updateWeatherDisplay } from './weather.js';
 import { createNewsRotator } from './news.js';
-// MODIFICACIÓN: Importamos initQuotes en lugar de updateQuote
 import { initQuotes } from './quotes.js'; 
 import { initAlarmSystem, addAlarm, removeAlarm, updateTimeDisplay, checkAlarms, stopAlarmSound, incrementHour, decrementHour, incrementMinute, decrementMinute } from './alarm.js';
 import { initSlideshow, startSlideshow, stopSlideshow } from './slideshow.js';
@@ -27,7 +26,6 @@ function init() {
     updateClock();
     setInterval(updateClock, 15000); // Update clock every 15 seconds
 
-    // --- MODIFICACIÓN ---
     // Quotes
     initQuotes(); // Esta función ahora se encarga de todo el sistema de frases
 
@@ -42,8 +40,9 @@ function init() {
     createNewsRotator('generalNews', ['https://e00-elmundo.uecdn.es/elmundo/rss/portada.xml', 'https://www.eldiariomontanes.es/rss/2.0/?section=ultima-hora']);
     createNewsRotator('sportsNews', ['https://e00-marca.uecdn.es/rss/futbol/primera-division.xml', 'https://www.eldiariomontanes.es/rss/2.0/?section=deportes']);
 
+    // --- MODIFICACIÓN: Ruta al archivo de sonido de la alarma ---
     // Alarm System
-    initAlarmSystem('https://assets.mixkit.co/sfx/preview/mixkit-alarm-digital-clock-beep-989.mp3');
+    initAlarmSystem('./mi_alarma.mp3'); // Usa tu archivo MP3 local
     setInterval(checkAlarms, 1000); // Check alarms every second
     updateTimeDisplay(); // Initial display of selected alarm time
 
