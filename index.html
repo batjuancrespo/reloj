@@ -17,8 +17,8 @@
     <div class="slideshow-controls-container">
         <!-- Input de archivo real, pero oculto. Se activa con el label. -->
         <input type="file" id="photoInput" multiple accept="image/*" style="display: none;">
-        <!-- Este label parece un botón y es lo que el usuario ve y pulsa. -->
-        <label for="photoInput" class="select-folder-button">Seleccionar Fotos</label>
+        <!-- MODIFICACIÓN: Añadido un id="photoSelectLabel" para poder ocultarlo -->
+        <label for="photoInput" id="photoSelectLabel" class="select-folder-button">Seleccionar Fotos</label>
         
         <div class="toggle-switch-container">
             <input type="checkbox" id="slideshowToggle" class="toggle-switch-checkbox">
