@@ -1,62 +1,60 @@
 /* RESET BÁSICO Y ESTILOS GLOBALES */
 * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
 
-/* MODIFICACIÓN: El html y el body ahora son solo el lienzo de fondo */
+/* El body ahora es solo el lienzo de fondo */
 html, body { 
     height: 100%; 
     width: 100%;
     overflow: hidden; 
-    background: #333; /* Un fondo para ver el frame, puedes cambiarlo o quitarlo */
+    background: #333; /* Un fondo gris para ver el frame, puedes cambiarlo */
 }
 
-/* === INICIO DE LA MODIFICACIÓN PRINCIPAL: El Frame de la Aplicación === */
-#app-frame {
-    /* --- 1. POSICIÓN Y TAMAÑO FINAL --- */
-    /* Posicionamos el frame donde queramos en la pantalla */
-    position: absolute;
-    top: 50px;  /* Ejemplo: A 50px del borde superior. ¡AJUSTA ESTO! */
-    left: 100px; /* Ejemplo: A 100px del borde izquierdo. ¡AJUSTA ESTO! */
+/* === INICIO DE LA ESTRUCTURA DE ESCALADO CORREGIDA === */
 
-    /* El tamaño físico (18x12 cm) se traduce a píxeles. 
-       Supondremos una pantalla estándar (96 DPI) para el cálculo.
-       18cm ≈ 680px  /  12cm ≈ 454px */
+/* 1. EL FRAME EXTERIOR (Controla la posición y el tamaño final) */
+#app-frame {
+    /* Posición en la pantalla (¡ajústala a tu gusto!) */
+    position: absolute;
+    top: 50px;
+    left: 100px;
+
+    /* Tamaño físico final (18cm x 12cm ≈ 680px x 454px) */
     width: 680px;
     height: 454px;
     
-    /* Para que se vea como un marco */
+    /* Estilos visuales del marco */
     border: 3px solid #555;
     box-shadow: 0 0 20px rgba(0,0,0,0.5);
-    overflow: hidden; /* Muy importante para que nada se salga */
-}
-
-/* El contenido DENTRO del frame se dibujará en un tamaño base y luego se escalará */
-#app-frame > * {
-    /* --- 2. TAMAÑO BASE (ANTES DE ESCALAR) --- */
-    /* Definimos una resolución de tablet estándar para la que el diseño original funciona bien */
-    width: 1280px;
-    height: 800px; /* Esto mantiene una proporción similar a 18x12 (es 16:10) */
     
-    /* --- 3. LA MAGIA DEL AUTOESCALADO --- */
-    /* Calculamos el factor de escala: 
-       Ancho final / Ancho base = 680 / 1280 = 0.53125 */
-    transform-origin: 0 0; /* Escala desde la esquina superior izquierda */
-    transform: scale(0.53125);
-
-    /* Mantenemos el fondo y la fuente originales para el contenido */
-    font-family: sans-serif; 
-    background: #000; 
-    color: white; 
-    display: flex; 
-    flex-direction: column; 
+    /* Importante: Oculta cualquier cosa que la escala pudiera desbordar */
+    overflow: hidden;
 }
-/* === FIN DE LA MODIFICACIÓN PRINCIPAL === */
 
+/* 2. EL CANVAS INTERIOR (Contiene la app y es el que se escala) */
+#app-canvas {
+    /* Tamaño base para el que el diseño está hecho (ej. tablet) */
+    width: 1280px;
+    height: 800px;
+    
+    /* La magia: Escala todo el contenido de este div */
+    transform-origin: 0 0; /* Escala desde la esquina superior izquierda */
+    transform: scale(0.53125); /* (Ancho final / Ancho base) -> (680 / 1280) */
 
-body { 
-    /* Se han movido la mayoría de los estilos de aquí al frame */
+    /* Debe ser un contexto de posicionamiento para sus hijos */
+    position: relative;
+    overflow: hidden; /* Seguridad extra */
+
+    /* El fondo y estilos base de la aplicación se aplican aquí */
+    background: #000;
+    color: white;
+    font-family: sans-serif; 
     -webkit-font-smoothing: antialiased; 
     -moz-osx-font-smoothing: grayscale; 
+    display: flex; /* Para que los hijos se posicionen correctamente */
+    flex-direction: column;
 }
+/* === FIN DE LA ESTRUCTURA DE ESCALADO CORREGIDA === */
+
 
 /* Contenedor para los controles del slideshow */
 .slideshow-controls-container {
@@ -70,7 +68,6 @@ body {
     gap: 15px;
 }
 
-/* ... (el resto del archivo style.css sigue exactamente igual que antes) ... */
 .select-folder-button {
     background-color: #2196F3;
     color: white;
