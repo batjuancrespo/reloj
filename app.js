@@ -1,6 +1,6 @@
 import { updateWeatherDisplay } from './weather.js';
 import { createNewsRotator } from './news.js';
-import { initQuotes } from './quotes.js'; 
+import { initQuotes } from './quotes.js';
 import { initAlarmSystem, addAlarm, removeAlarm, updateTimeDisplay, checkAlarms, stopAlarmSound, incrementHour, decrementHour, incrementMinute, decrementMinute } from './alarm.js';
 import { initSlideshow, startSlideshow, stopSlideshow } from './slideshow.js';
 
@@ -32,17 +32,16 @@ function init() {
     // Weather
     const WEATHER_LAT = 43.2;
     const WEATHER_LON = -3.8;
-    // --- CORRECCIÓN 1: REEMPLAZA ESTA CLAVE CON LA TUYA ---
-    const WEATHER_API_KEY = 'eb97d51260c240df0fd20bf9a8c7a8c4'; 
+    // Recuerda poner aquí tu API Key de OpenWeatherMap si la que tienes deja de funcionar.
+    const WEATHER_API_KEY = '509d6e285322730dccee6fe6f659ec68';
     updateWeatherDisplay(WEATHER_LAT, WEATHER_LON, WEATHER_API_KEY);
     setInterval(() => updateWeatherDisplay(WEATHER_LAT, WEATHER_LON, WEATHER_API_KEY), 1800000);
 
-    // Definition of the news feeds
+    // Definition of the news feeds with the latest requested URLs
     const generalNewsFeeds = [
         { name: 'El Mundo', url: 'https://e00-elmundo.uecdn.es/elmundo/rss/portada.xml' },
-        // --- CORRECCIÓN 2: URL DEL FEED DE "EL PAÍS" ACTUALIZADA ---
-        { name: 'El País', url: 'https://elpais.com/rss/elpais/portada.xml' },
-        { name: 'El Diario Montañés', url: 'https://www.eldiariomontanes.es/rss/2.0/?section=ultima-hora' }
+        { name: 'El País', url: 'https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/section/ultimas-noticias/portada' },
+        { name: 'El Diario Montañés', url: 'https://www.eldiariomontanes.es/rss/2.0/portada/' }
     ];
 
     const sportsNewsFeeds = [
