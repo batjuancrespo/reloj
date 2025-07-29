@@ -40,6 +40,12 @@ function handleFileSelection(event) {
         alert(`Se han cargado ${localImageUrls.length} imágenes. Ahora puedes activar el marco de fotos.`);
         console.log(`Se han cargado ${localImageUrls.length} imágenes.`);
         
+        // --- MODIFICACIÓN: Ocultar el botón después de la selección ---
+        const photoSelectButton = document.getElementById('photoSelectLabel');
+        if (photoSelectButton) {
+            photoSelectButton.style.display = 'none';
+        }
+        
         // Si el slideshow ya estaba activo, lo reiniciamos con las nuevas fotos.
         if (slideshowIntervalId) {
             stopSlideshow();
