@@ -33,7 +33,7 @@ function init() {
     const WEATHER_LAT = 43.2;
     const WEATHER_LON = -3.8;
     // --- CORRECCIÓN 1: REEMPLAZA ESTA CLAVE CON LA TUYA ---
-    const WEATHER_API_KEY = '509d6e285322730dccee6fe6f659ec68'; 
+    const WEATHER_API_KEY = 'eb97d51260c240df0fd20bf9a8c7a8c4'; 
     updateWeatherDisplay(WEATHER_LAT, WEATHER_LON, WEATHER_API_KEY);
     setInterval(() => updateWeatherDisplay(WEATHER_LAT, WEATHER_LON, WEATHER_API_KEY), 1800000);
 
