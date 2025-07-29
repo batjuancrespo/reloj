@@ -3,12 +3,38 @@
 html, body { height: 100%; overflow: hidden; }
 body { font-family: sans-serif; background: #000; color: white; display: flex; flex-direction: column; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
-/* New: Toggle Switch Styles */
-.toggle-switch-container {
+/* --- NUEVOS ESTILOS PARA CONTROLES DE SLIDESHOW --- */
+.slideshow-controls-container {
     position: absolute;
     top: 15px;
     right: 15px;
-    z-index: 1000; /* Ensure it's above other content */
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espacio entre el botón y el interruptor */
+}
+
+.select-folder-button {
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.select-folder-button:hover {
+    background-color: #1976D2;
+}
+
+/* Modificación del contenedor del interruptor */
+.toggle-switch-container {
+    position: relative; /* Ya no necesita ser absoluto */
+    top: auto;
+    right: auto;
 }
 
 .toggle-switch-checkbox {
@@ -259,7 +285,6 @@ body { font-family: sans-serif; background: #000; color: white; display: flex; f
 .alarm-image-container {
     flex-shrink: 0;
     width: 50%;
-    /* Se elimina la altura de aquí para dejar que el contenido la defina */
     padding: 2px;
     display: flex;
     justify-content: center;
@@ -267,7 +292,6 @@ body { font-family: sans-serif; background: #000; color: white; display: flex; f
 }
 
 .alarm-image-container img {
-    /* Estas reglas son mucho más seguras y flexibles */
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
