@@ -118,7 +118,6 @@ body { font-family: sans-serif; background: #000; color: white; display: flex; f
 #slideshow-image {
     width: 100%;
     height: 100%;
-    /* MODIFICACIÓN: Cambiado a 'contain' para que la imagen siempre se vea completa */
     object-fit: contain;
     opacity: 0;
     transition: opacity 1s ease-in-out;
@@ -339,4 +338,14 @@ body { font-family: sans-serif; background: #000; color: white; display: flex; f
 .quote-content.animate {
     -webkit-animation: slideInFromBottom 1.2s ease-out forwards;
     animation: slideInFromBottom 1.2s ease-out forwards;
+}
+
+/* --- NUEVO ESTILO PARA LA FUENTE DE LA NOTICIA --- */
+.news-source {
+    display: block; /* Para que aparezca en una línea debajo del titular */
+    margin-top: 4px; /* Un pequeño espacio de separación */
+    font-size: 0.8em; /* Un poco más pequeño que el titular */
+    color: #aaa; /* Un color grisáceo para que no destaque tanto */
+    text-align: right; /* Alineado a la derecha para un look más profesional */
+    font-style: italic; /* En cursiva */
 }
