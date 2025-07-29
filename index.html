@@ -11,17 +11,18 @@
     <!-- Enlace a la hoja de estilos externa -->
     <link rel="stylesheet" href="style.css">
 
-    <!-- El bloque <script type="importmap"> ha sido eliminado -->
-
 </head>
 <body ontouchstart="">
-    <!-- Toggle Switch -->
-    <div class="toggle-switch-container">
-        <input type="checkbox" id="slideshowToggle" class="toggle-switch-checkbox">
-        <label for="slideshowToggle" class="toggle-switch-label">
-            <span class="toggle-switch-inner"></span>
-            <span class="toggle-switch-switch"></span>
-        </label>
+    <!-- Contenedor para los controles del slideshow -->
+    <div class="slideshow-controls-container">
+        <button id="selectFolderBtn" class="select-folder-button">Seleccionar Carpeta</button>
+        <div class="toggle-switch-container">
+            <input type="checkbox" id="slideshowToggle" class="toggle-switch-checkbox">
+            <label for="slideshowToggle" class="toggle-switch-label">
+                <span class="toggle-switch-inner"></span>
+                <span class="toggle-switch-switch"></span>
+            </label>
+        </div>
     </div>
 
     <!-- Main Application Content -->
@@ -85,7 +86,7 @@
         <img id="slideshow-image" src="" alt="Slideshow Image">
     </div>
     
-    <!-- Enlace al script principal de la aplicación como módulo con ruta relativa -->
+    <!-- Enlace al script principal de la aplicación como módulo -->
     <script type="module" src="./app.js"></script>
 </body>
 </html>
