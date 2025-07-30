@@ -13,14 +13,15 @@ html, body {
 
 /* 1. EL FRAME EXTERIOR (Controla la posición y el tamaño final) */
 #app-frame {
-    /* Posición en la pantalla (¡ajústala a tu gusto!) */
+    /* Posición en la pantalla (la parte superior e izquierda no cambian) */
     position: absolute;
     top: 50px;
     left: 100px;
 
-    /* Tamaño físico final de 18cm de ancho, manteniendo la proporción */
-    width: 1080px;
-    height: 721px;
+    /* === MODIFICACIÓN: TAMAÑO LIGERAMENTE REDUCIDO PARA CREAR MARGEN INFERIOR === */
+    /* Se reduce el tamaño total manteniendo la proporción 18x12 */
+    width: 1044px;  /* Antes: 1080px */
+    height: 697px; /* Antes: 721px */
     
     /* Estilos visuales del marco */
     border: 3px solid #555;
@@ -36,9 +37,9 @@ html, body {
     width: 1280px;
     height: 800px;
     
-    /* La magia: Escala todo el contenido de este div */
+    /* === MODIFICACIÓN: FACTOR DE ESCALA AJUSTADO AL NUEVO TAMAÑO === */
     transform-origin: 0 0; /* Escala desde la esquina superior izquierda */
-    transform: scale(0.84375);
+    transform: scale(0.815625); /* Nuevo factor: 1044 / 1280 */
 
     /* Debe ser un contexto de posicionamiento para sus hijos */
     position: relative;
@@ -398,25 +399,19 @@ html, body {
     font-style: italic;
 }
 
-/* === NUEVOS ESTILOS PARA EL FILTRO DE BRILLO === */
 #brightness-overlay {
-    position: fixed; /* Fijo para que cubra toda la pantalla, sin importar el scroll */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #000; /* Color del filtro */
-    opacity: 0; /* Por defecto es totalmente transparente (invisible) */
-    z-index: 9999; /* Se asegura de que esté por encima de todo lo demás */
-    
-    /* Impide que podamos hacer clic en la capa y nos bloquee la app */
+    background-color: #000;
+    opacity: 0;
+    z-index: 9999;
     pointer-events: none; 
-    
-    /* La transición suave cuando aparezca y desaparezca */
     transition: opacity 1s ease-in-out;
 }
 
 #brightness-overlay.is-dimmed {
-    /* Cuando tenga esta clase, se volverá semitransparente */
-    opacity: 0.7; /* ¡Ajusta este valor! 0.7 es bastante oscuro. 0.5 es más sutil. */
+    opacity: 0.7;
 }
