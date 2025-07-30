@@ -20,34 +20,11 @@ window.removeAlarm = (index) => {
     removeAlarm(index);
 };
 
-// --- NUEVA FUNCIÓN PARA GESTIONAR EL BRILLO ---
-function manageScreenBrightness() {
-    const overlay = document.getElementById('brightness-overlay');
-    const currentHour = moment().hour(); // Obtenemos la hora actual (0-23)
-
-    // Define aquí tu horario. Ejemplo: atenuar entre las 21:00 y las 07:00
-    const startDimHour = 21; // 9 PM
-    const endDimHour = 7;    // 7 AM
-
-    // Comprueba si la hora actual está en el rango de "noche"
-    if (currentHour >= startDimHour || currentHour < endDimHour) {
-        // Es de noche, nos aseguramos de que la capa esté visible
-        overlay.classList.add('is-dimmed');
-    } else {
-        // Es de día, nos aseguramos de que la capa esté oculta
-        overlay.classList.remove('is-dimmed');
-    }
-}
-
 // --- Initialization ---
 function init() {
     // Clock
     updateClock();
     setInterval(updateClock, 15000);
-
-    // --- ACTIVACIÓN DEL CONTROL DE BRILLO ---
-    manageScreenBrightness(); // Comprueba el brillo al iniciar
-    setInterval(manageScreenBrightness, 60000); // Vuelve a comprobar cada minuto
 
     // Quotes
     initQuotes();
@@ -55,6 +32,7 @@ function init() {
     // Weather
     const WEATHER_LAT = 43.2;
     const WEATHER_LON = -3.8;
+    // Recuerda poner aquí tu API Key de OpenWeatherMap.
     const WEATHER_API_KEY = '509d6e285322730dccee6fe6f659ec68'; 
     updateWeatherDisplay(WEATHER_LAT, WEATHER_LON, WEATHER_API_KEY);
     setInterval(() => updateWeatherDisplay(WEATHER_LAT, WEATHER_LON, WEATHER_API_KEY), 1800000);
@@ -66,13 +44,11 @@ function init() {
         { name: 'El Diario Montañés', url: 'https://www.eldiariomontanes.es/rss/2.0/portada/' }
     ];
 
-    const sportsNewsFeeds = [
-        { name: 'Marca', url: 'https://e00-marca.uecdn.es/rss/portada.xml' },
-        { name: 'AS', url: 'https://as.com/rss/futbol/primera.xml' }
-    ];
-
+    // --- MODIFICACIÓN CLAVE ---
+    // Las noticias generales siguen usando los feeds RSS.
     createNewsRotator('generalNews', generalNewsFeeds);
-    createNewsRotator('sportsNews', sportsNewsFeeds);
+    // Para las noticias deportivas, le indicamos que use el método del 'scraper'.
+    createNewsRotator('sportsNews', 'scraper'); 
 
     // Alarm System
     initAlarmSystem('./mi_alarma.mp3');
