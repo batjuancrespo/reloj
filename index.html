@@ -14,8 +14,6 @@
 </head>
 <body ontouchstart="">
 
-    <!-- === INICIO DE LA ESTRUCTURA CORREGIDA === -->
-
     <!-- 1. El Frame Exterior: Define el tamaño y posición final en la pantalla -->
     <div id="app-frame">
         <!-- 2. El Canvas Interior: Contiene toda la app en su tamaño original y es el que se escala -->
@@ -93,7 +91,8 @@
         </div> <!-- Fin del #app-canvas -->
     </div> <!-- Fin del #app-frame -->
 
-    <!-- === FIN DE LA ESTRUCTURA CORREGIDA === -->
+    <!-- Esta capa se usará para simular el cambio de brillo -->
+    <div id="brightness-overlay"></div>
     
     <script type="module" src="./app.js"></script>
 </body>
