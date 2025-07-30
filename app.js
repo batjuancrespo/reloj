@@ -1,6 +1,6 @@
 import { updateWeatherDisplay } from './weather.js';
 import { createNewsRotator } from './news.js';
-import { initQuotes } from './quotes.js';
+import { initQuotes } from './quotes.js'; 
 import { initAlarmSystem, addAlarm, removeAlarm, updateTimeDisplay, checkAlarms, stopAlarmSound, incrementHour, decrementHour, incrementMinute, decrementMinute } from './alarm.js';
 import { initSlideshow, startSlideshow, stopSlideshow } from './slideshow.js';
 
@@ -20,11 +20,34 @@ window.removeAlarm = (index) => {
     removeAlarm(index);
 };
 
+// --- NUEVA FUNCIÓN PARA GESTIONAR EL BRILLO ---
+function manageScreenBrightness() {
+    const overlay = document.getElementById('brightness-overlay');
+    const currentHour = moment().hour(); // Obtenemos la hora actual (0-23)
+
+    // Define aquí tu horario. Ejemplo: atenuar entre las 21:00 y las 07:00
+    const startDimHour = 21; // 9 PM
+    const endDimHour = 7;    // 7 AM
+
+    // Comprueba si la hora actual está en el rango de "noche"
+    if (currentHour >= startDimHour || currentHour < endDimHour) {
+        // Es de noche, nos aseguramos de que la capa esté visible
+        overlay.classList.add('is-dimmed');
+    } else {
+        // Es de día, nos aseguramos de que la capa esté oculta
+        overlay.classList.remove('is-dimmed');
+    }
+}
+
 // --- Initialization ---
 function init() {
     // Clock
     updateClock();
     setInterval(updateClock, 15000);
+
+    // --- ACTIVACIÓN DEL CONTROL DE BRILLO ---
+    manageScreenBrightness(); // Comprueba el brillo al iniciar
+    setInterval(manageScreenBrightness, 60000); // Vuelve a comprobar cada minuto
 
     // Quotes
     initQuotes();
@@ -32,12 +55,11 @@ function init() {
     // Weather
     const WEATHER_LAT = 43.2;
     const WEATHER_LON = -3.8;
-    // Recuerda poner aquí tu API Key de OpenWeatherMap si la que tienes deja de funcionar.
-    const WEATHER_API_KEY = '509d6e285322730dccee6fe6f659ec68';
+    const WEATHER_API_KEY = '509d6e285322730dccee6fe6f659ec68'; 
     updateWeatherDisplay(WEATHER_LAT, WEATHER_LON, WEATHER_API_KEY);
     setInterval(() => updateWeatherDisplay(WEATHER_LAT, WEATHER_LON, WEATHER_API_KEY), 1800000);
 
-    // Definition of the news feeds with the latest requested URLs
+    // Definition of the news feeds
     const generalNewsFeeds = [
         { name: 'El Mundo', url: 'https://e00-elmundo.uecdn.es/elmundo/rss/portada.xml' },
         { name: 'El País', url: 'https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/section/ultimas-noticias/portada' },
