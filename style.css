@@ -418,5 +418,5 @@ html, body {
 
 #brightness-overlay.is-dimmed {
     /* Cuando tenga esta clase, se volverá semitransparente */
-    opacity: 0.7; /* ¡Ajusta este valor! 0.7 es bastante oscuro. 0.5 es más sutil. */
+    opacity: 0.9; /* ¡Ajusta este valor! 0.7 es bastante oscuro. 0.5 es más sutil. */
 }
