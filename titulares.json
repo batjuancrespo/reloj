@@ -1,7 +1,12 @@
 [
   {
-    "title": "Trump e Infantino confirman sorteo del Mundial en Washington",
+    "title": "Trump confirma sorteo del Mundial en Washington D.C.",
     "link": "https://as.com/us/futbol/donald-trump-confirma-que-el-sorteo-del-mundial-sera-el-5-de-diciembre-en-el-kennedy-center-de-washington-dc-n/",
+    "source": "AS"
+  },
+  {
+    "title": "El incómodo momento en el que Trump invita a Putin al Mundial 26",
+    "link": "https://as.com/us/videos/el-incomodo-momento-en-el-que-trump-frente-a-infantino-invita-a-putin-al-mundial-2026-v/",
     "source": "AS"
   },
   {
@@ -15,33 +20,28 @@
     "source": "AS"
   },
   {
-    "title": "Inter Miami confirma a Mateo Silvetti",
-    "link": "https://as.com/us/futbol/inter-miami-hace-oficial-el-fichaje-de-mateo-silvetti-n/",
+    "title": "El Chelsea estrena tridente: Palmer, João Pedro y Delap",
+    "link": "https://as.com/futbol/internacional/west-ham-chelsea-en-vivo-premier-league-hoy-en-directo-n-2/",
     "source": "AS"
   },
   {
-    "title": "Pardo: \"El cambio de formato le ha venido bien a la Leagues Cup\"",
-    "link": "https://as.com/us/futbol/pavel-pardo-el-cambio-de-formato-le-ha-venido-bien-a-la-leagues-cup-v/",
-    "source": "AS"
-  },
-  {
-    "title": "La pieza que falta en el puzle",
-    "link": "https://as.com/futbol/primera/la-pieza-que-falta-en-el-puzle-n/",
-    "source": "AS"
-  },
-  {
-    "title": "Lucho Díaz, titular en el inicio de la Bundesliga",
+    "title": "Lucho Díaz en la titular",
     "link": "https://colombia.as.com/futbol/colombianos-por-el-mundo/bayern-munich-leipzig-en-vivo-online-bundesliga-en-directo-n/",
     "source": "AS"
   },
   {
-    "title": "Ceballos tiene ofertas",
-    "link": "https://as.com/futbol/primera/ceballos-tiene-ofertas-n/",
+    "title": "Cuadro alternativo de Inter Miami para enfrentar DC United",
+    "link": "https://as.com/us/videos/cuadro-alternativo-de-inter-miami-para-enfrentar-dc-united-v/",
     "source": "AS"
   },
   {
-    "title": "Golpe de última hora a Independiente: “El fiscal...”",
-    "link": "https://chile.as.com/futbol/golpe-de-ultima-hora-a-independiente-de-avellaneda-el-fiscal-n/",
+    "title": "Allende: “Tenemos una cuenta pendiente con Orlando”",
+    "link": "https://as.com/us/videos/allende-tenemos-una-cuenta-pendiente-con-orlando-v/",
+    "source": "AS"
+  },
+  {
+    "title": "Inter Miami confirma a Mateo Silvetti",
+    "link": "https://as.com/us/futbol/inter-miami-hace-oficial-el-fichaje-de-mateo-silvetti-n/",
     "source": "AS"
   },
   {
@@ -50,18 +50,18 @@
     "source": "AS"
   },
   {
-    "title": "Los mismos jugadores que con Xavi",
+    "title": "Los mismos que con Xavi",
     "link": "https://www.marca.com/futbol/barcelona/2025/08/22/futbol-barcelona-2025-08-18.html",
+    "source": "Marca"
+  },
+  {
+    "title": "Ya hay once del Betis: Pellegrini hace un cambio",
+    "link": "https://www.marca.com/futbol/laliga-ea-sports/betis-alaves/2025/08/22/01_0101_20250822_185_173-directo.html",
     "source": "Marca"
   },
   {
     "title": "\"Se juega mucho y mal\"",
     "link": "https://www.marca.com/futbol/futbol-internacional/2025/08/22/ancelotti-atiza-fifa-juega-mal-deben-revisar-calendarios.html",
-    "source": "Marca"
-  },
-  {
-    "title": "En Francia también lo dicen: \"Lamine merece el Balón de Oro\"",
-    "link": "https://www.marca.com/futbol/barcelona/2025/08/22/jean-pierre-papin-lamine-yamal-merece-ganar-balon-oro-ano.html",
     "source": "Marca"
   },
   {
@@ -75,13 +75,13 @@
     "source": "Marca"
   },
   {
-    "title": "No vale el golazo del Eibar",
+    "title": "Martón da ventaja a un buen Eibar",
     "link": "https://www.marca.com/futbol/laliga-hypermotion/eibar-granada/2025/08/22/01_0102_20250822_953_5683-directo.html",
     "source": "Marca"
   },
   {
-    "title": "El Barça pediría a LaLiga jugar la cuarta jornada en Mestalla",
-    "link": "https://www.marca.com/futbol/barcelona/2025/08/22/barca-pediria-laliga-jugar-cuarta-jornada-mestalla.html",
+    "title": "En Francia también lo dicen: \"Lamine merece el Balón de Oro\"",
+    "link": "https://www.marca.com/futbol/barcelona/2025/08/22/jean-pierre-papin-lamine-yamal-merece-ganar-balon-oro-ano.html",
     "source": "Marca"
   },
   {
@@ -90,7 +90,7 @@
     "source": "Marca"
   },
   {
-    "title": "Maffeo suena para el Atlético... Mineiro",
+    "title": "Oficial: Álex Moreno vuelve a LaLiga",
     "link": "https://www.marca.com/futbol/mercado-fichajes/2025/08/22/68a7fcb87aeb1c2f751dc10e-directo.html",
     "source": "Marca"
   },
