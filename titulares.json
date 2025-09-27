@@ -1,17 +1,17 @@
 [
   {
-    "title": "Resiste el Atlético",
+    "title": "Baño de gloria del Atlético",
+    "link": "https://as.com/futbol/primera/bano-de-gloria-del-atletico-n/",
+    "source": "AS"
+  },
+  {
+    "title": "Julián: \"Un día muy especial...\"",
     "link": "https://as.com/futbol/primera/atletico-real-madrid-en-directo-ultima-hora-del-derbi-madrileno-de-la-liga-ea-sports-en-vivo-n/",
     "source": "AS"
   },
   {
-    "title": "Roncero: \"Un baño futbolístico y de actitud\"",
+    "title": "Roncero: \"No había visto esto en toda mi vida...\"",
     "link": "https://as.com/futbol/primera/polemica-analisis-y-reacciones-del-atletico-real-madrid-de-laliga-ea-sports-n/",
-    "source": "AS"
-  },
-  {
-    "title": "Haaland, siempre Haaland",
-    "link": "https://as.com/futbol/internacional/manchester-city-burnley-en-directo-premier-league-en-vivo-n/",
     "source": "AS"
   },
   {
@@ -20,8 +20,8 @@
     "source": "AS"
   },
   {
-    "title": "Bochorno del campeón del mundo",
-    "link": "https://as.com/futbol/internacional/chelsea-brighton-en-vivo-premier-legue-hoy-en-directo-n/",
+    "title": "Haaland, siempre Haaland",
+    "link": "https://as.com/futbol/internacional/haaland-siempre-haaland-n/",
     "source": "AS"
   },
   {
@@ -30,13 +30,13 @@
     "source": "AS"
   },
   {
-    "title": "¡Nketiah descompone al Liverpool!",
-    "link": "https://as.com/futbol/internacional/crystal-palace-liverpool-en-directo-n-3/",
+    "title": "Bochorno del campeón del mundo",
+    "link": "https://as.com/futbol/internacional/bochorno-del-campeon-del-mundo-n/",
     "source": "AS"
   },
   {
-    "title": "Johnny Cardoso, ausente en dos grandes citas del Atleti",
-    "link": "https://as.com/us/futbol/johnny-cardoso-ausente-en-dos-grandes-citas-del-atletico-de-madrid-n/",
+    "title": "¡Nketiah descompone al Liverpool!",
+    "link": "https://as.com/futbol/internacional/crystal-palace-liverpool-en-directo-n-3/",
     "source": "AS"
   },
   {
@@ -50,23 +50,13 @@
     "source": "AS"
   },
   {
-    "title": "Manita del Atlético al Real Madrid",
+    "title": "Manita histórica del Atlético",
     "link": "https://www.marca.com/futbol/laliga-ea-sports/atletico-r-madrid/2025/09/27/01_0101_20250927_175_186-directo.html",
     "source": "Marca"
   },
   {
-    "title": "Burrull y el penalti de Güler: \"Es claro, levanta la pierna e impacta con Nico, pero no es de roja\"",
-    "link": "https://www.marca.com/radio/2025/09/27/burrull-penalti-gueler-claro-levanta-pierna-e-impacta-nico-roja.html",
-    "source": "Marca"
-  },
-  {
-    "title": "Polémica celebración de Sorloth: \"No es acción de segunda tarjeta\"",
-    "link": "https://www.marca.com/radio/2025/09/27/burrull-celebracion-sorloth-accion-segunda-tarjeta-impera-equilibrio-arbitral.html",
-    "source": "Marca"
-  },
-  {
-    "title": "Gol anulado a Lenglet: \"Decisión correcta porque marca con el brazo\"",
-    "link": "https://www.marca.com/radio/2025/09/27/burrull-gol-anulado-lenglet-decision-correcta-marca-brazo.html",
+    "title": "Xabi también se equivoca",
+    "link": "https://www.marca.com/futbol/real-madrid/2025/09/27/llega-metropolitano-xabi-remake-ancelotti.html",
     "source": "Marca"
   },
   {
@@ -75,23 +65,33 @@
     "source": "Marca"
   },
   {
-    "title": "Es el timón del Atlético sin discusión",
-    "link": "https://www.marca.com/futbol/atletico/2025/09/27/atletico-real-madrid-valoracion-comentarios.html",
+    "title": "Burrull y el penalti de Güler: \"Es claro, levanta la pierna e impacta con Nico, pero no es de roja\"",
+    "link": "https://www.marca.com/radio/2025/09/27/burrull-penalti-gueler-claro-levanta-pierna-e-impacta-nico-roja.html",
     "source": "Marca"
   },
   {
-    "title": "Decepcionante Bellingham",
+    "title": "Los señalados en el Real Madrid tras la goleada del Atlético",
     "link": "https://www.marca.com/futbol/real-madrid/2025/09/27/real-madrid-atletico-madrid-valoracion-comentarios.html",
     "source": "Marca"
   },
   {
-    "title": "Estados Unidos, contra las cuerdas en los Fourballs",
-    "link": "https://www.marca.com/golf/ryder-cup/2025/09/27/68d7b5aff49425d14d429c1e-directo.html",
+    "title": "Mastantuono refleja la frustración del Madrid: pelotazo a la grada del Metropolitano",
+    "link": "https://www.marca.com/futbol/real-madrid/2025/09/27/mastantuono-refleja-frustracion-madrid-pelotazo-grada-metropolitano.html",
     "source": "Marca"
   },
   {
-    "title": "Unicaja - Valencia Basket, en directo",
-    "link": "https://www.marca.com/baloncesto/supercopa/unicaja-valencia-basket-club/2025/09/27/02_0208_20250927_6203_6206-directo.html",
+    "title": "Lección de Simeone a Xabi Alonso",
+    "link": "https://www.marca.com/futbol/atletico/2025/09/27/atletico-real-madrid-valoracion-comentarios.html",
+    "source": "Marca"
+  },
+  {
+    "title": "La posible roja de Sorloth: \"No es acción de segunda tarjeta\"",
+    "link": "https://www.marca.com/radio/2025/09/27/burrull-celebracion-sorloth-accion-segunda-tarjeta-impera-equilibrio-arbitral.html",
+    "source": "Marca"
+  },
+  {
+    "title": "El gol anulado a Lenglet: \"Decisión correcta porque marca con el brazo\"",
+    "link": "https://www.marca.com/radio/2025/09/27/burrull-gol-anulado-lenglet-decision-correcta-marca-brazo.html",
     "source": "Marca"
   },
   {
