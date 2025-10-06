@@ -1,6 +1,5 @@
 import { updateWeatherDisplay } from './weather.js';
-// Módulos antiguos eliminados de las importaciones
-import { initInfoRotator } from './infoRotator.js'; // NUEVO: Se importa el nuevo rotador
+import { initInfoRotator } from './infoRotator.js';
 import { initAlarmSystem, addAlarm, removeAlarm, updateTimeDisplay, checkAlarms, stopAlarmSound, incrementHour, decrementHour, incrementMinute, decrementMinute } from './alarm.js';
 import { initSlideshow, startSlideshow, stopSlideshow } from './slideshow.js';
 
@@ -20,6 +19,21 @@ window.removeAlarm = (index) => {
     removeAlarm(index);
 };
 
+// --- Función para gestionar el brillo de la pantalla ---
+function updateBrightness() {
+    const overlay = document.getElementById('brightness-overlay');
+    const currentHour = moment().hour();
+
+    // Atenuar la pantalla entre las 10 PM y las 9 AM
+    const isNightTime = currentHour >= 22 || currentHour < 9; // <-- ¡CAMBIO REALIZADO AQUÍ!
+
+    if (isNightTime) {
+        overlay.classList.add('is-dimmed');
+    } else {
+        overlay.classList.remove('is-dimmed');
+    }
+}
+
 // --- Initialization ---
 function init() {
     // Clock
@@ -29,12 +43,11 @@ function init() {
     // Weather
     const WEATHER_LAT = 43.2;
     const WEATHER_LON = -3.8;
-    // Recuerda poner aquí tu API Key de OpenWeatherMap.
     const WEATHER_API_KEY = '509d6e285322730dccee6fe6f659ec68'; 
     updateWeatherDisplay(WEATHER_LAT, WEATHER_LON, WEATHER_API_KEY);
     setInterval(() => updateWeatherDisplay(WEATHER_LAT, WEATHER_LON, WEATHER_API_KEY), 1800000);
 
-    // --- NUEVO: Inicializa el panel de información unificado ---
+    // Info Rotator
     initInfoRotator('info-rotator-content');
 
     // Alarm System
@@ -79,6 +92,10 @@ function init() {
             stopSlideshow();
         }
     });
+    
+    // --- Activar el sistema de brillo ---
+    updateBrightness(); // Comprueba el brillo al iniciar
+    setInterval(updateBrightness, 60000); // Y luego comprueba cada minuto
 
     console.log("Smart Clock Initialized. High Visibility Version.");
 }
