@@ -1,8 +1,6 @@
 import { updateWeatherDisplay } from './weather.js';
-// createNewsRotator y initQuotes ya no se necesitan, los gestiona el nuevo módulo.
-// import { createNewsRotator } from './news.js'; 
-// import { initQuotes } from './quotes.js'; 
-import { initInfoRotator } from './infoRotator.js';
+// Módulos antiguos eliminados de las importaciones
+import { initInfoRotator } from './infoRotator.js'; // NUEVO: Se importa el nuevo rotador
 import { initAlarmSystem, addAlarm, removeAlarm, updateTimeDisplay, checkAlarms, stopAlarmSound, incrementHour, decrementHour, incrementMinute, decrementMinute } from './alarm.js';
 import { initSlideshow, startSlideshow, stopSlideshow } from './slideshow.js';
 
