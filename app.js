@@ -1,6 +1,8 @@
 import { updateWeatherDisplay } from './weather.js';
-import { createNewsRotator } from './news.js';
-import { initQuotes } from './quotes.js'; 
+// createNewsRotator y initQuotes ya no se necesitan, los gestiona el nuevo módulo.
+// import { createNewsRotator } from './news.js'; 
+// import { initQuotes } from './quotes.js'; 
+import { initInfoRotator } from './infoRotator.js';
 import { initAlarmSystem, addAlarm, removeAlarm, updateTimeDisplay, checkAlarms, stopAlarmSound, incrementHour, decrementHour, incrementMinute, decrementMinute } from './alarm.js';
 import { initSlideshow, startSlideshow, stopSlideshow } from './slideshow.js';
 
@@ -26,9 +28,6 @@ function init() {
     updateClock();
     setInterval(updateClock, 15000);
 
-    // Quotes
-    initQuotes();
-
     // Weather
     const WEATHER_LAT = 43.2;
     const WEATHER_LON = -3.8;
@@ -37,18 +36,8 @@ function init() {
     updateWeatherDisplay(WEATHER_LAT, WEATHER_LON, WEATHER_API_KEY);
     setInterval(() => updateWeatherDisplay(WEATHER_LAT, WEATHER_LON, WEATHER_API_KEY), 1800000);
 
-    // Definition of the news feeds
-    const generalNewsFeeds = [
-        { name: 'El Mundo', url: 'https://e00-elmundo.uecdn.es/elmundo/rss/portada.xml' },
-        { name: 'El País', url: 'https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/section/ultimas-noticias/portada' },
-        { name: 'El Diario Montañés', url: 'https://www.eldiariomontanes.es/rss/2.0/portada/' }
-    ];
-
-    // --- MODIFICACIÓN CLAVE ---
-    // Las noticias generales siguen usando los feeds RSS.
-    createNewsRotator('generalNews', generalNewsFeeds);
-    // Para las noticias deportivas, le indicamos que use el método del 'scraper'.
-    createNewsRotator('sportsNews', 'scraper'); 
+    // --- NUEVO: Inicializa el panel de información unificado ---
+    initInfoRotator('info-rotator-content');
 
     // Alarm System
     initAlarmSystem('./mi_alarma.mp3');
