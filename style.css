@@ -286,8 +286,8 @@ html, body {
 .time-display { font-size: 2.2em; font-weight: bold; text-align: center; margin-bottom: 5px; }
 
 .alarm-button {
-    padding: 15px 20px; /* Aumentado */
-    font-size: 1.3em; /* Aumentado */
+    padding: 20px 25px; /* --- MODIFICADO: Aún más grande --- */
+    font-size: 1.5em; /* --- MODIFICADO: Aún más grande --- */
     font-weight: bold;
     border-radius: 8px;
     border: none;
@@ -341,8 +341,8 @@ html, body {
 }
 
 .alarm-info button {
-    padding: 15px 25px; /* Aumentado */
-    font-size: 1.4em; /* Aumentado */
+    padding: 20px 30px; /* --- MODIFICADO: Aún más grande --- */
+    font-size: 1.6em; /* --- MODIFICADO: Aún más grande --- */
     background: rgba(255, 0, 0, 0.6);
     color: white;
     border: none;
