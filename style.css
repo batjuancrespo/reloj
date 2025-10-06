@@ -348,55 +348,8 @@ html, body {
     cursor: pointer;
 }
 
-.news-panels { display: flex; margin-top: 15px; height: 120px; }
-.news-container { flex: 1; background: rgba(255, 255, 255, 0.05); padding: 10px 15px; border-radius: 10px; position: relative; overflow: hidden; }
-.news-container:first-child { margin-right: 10px; }
-.news-container h3 { font-size: 1em; margin-bottom: 8px; }
-.news-item { position: absolute; opacity: 0; transition: opacity 0.5s; width: calc(100% - 30px); }
-.news-item.active { opacity: 1; }
-.news-item a { color: white; text-decoration: none; font-size: 1.1em; }
-
 @keyframes alarm-flash { 50% { background: rgba(255, 0, 0, 0.4); } }
 .alarming { animation: alarm-flash 1s infinite; }
-
-#quote-section {
-    width: 100%;
-    margin-top: 15px;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.08);
-    border-radius: 10px;
-    text-align: center;
-    overflow: hidden;
-    color: rgba(255, 255, 255, 0.9);
-}
-.quote-text {
-    font-size: 1.5em;
-    font-style: italic;
-    margin-bottom: 10px;
-    line-height: 1.3;
-}
-.quote-author {
-    font-size: 1.3em;
-    font-weight: bold;
-}
-
-@keyframes slideInFromBottom {
-    from { transform: translateY(100%); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-}
-.quote-content.animate {
-    -webkit-animation: slideInFromBottom 1.2s ease-out forwards;
-    animation: slideInFromBottom 1.2s ease-out forwards;
-}
-
-.news-source {
-    display: block;
-    margin-top: 4px;
-    font-size: 0.8em;
-    color: #aaa;
-    text-align: right;
-    font-style: italic;
-}
 
 /* === NUEVOS ESTILOS PARA EL FILTRO DE BRILLO === */
 #brightness-overlay {
@@ -419,4 +372,60 @@ html, body {
 #brightness-overlay.is-dimmed {
     /* Cuando tenga esta clase, se volverá semitransparente */
     opacity: 0.9; /* ¡Ajusta este valor! 0.7 es bastante oscuro. 0.5 es más sutil. */
+}
+
+/* --- ESTILOS PARA EL NUEVO PANEL ROTATORIO --- */
+#info-rotator-panel {
+    margin-top: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 20px 25px;
+    flex-grow: 1; /* Hace que ocupe el espacio vertical restante */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden; /* Muy importante para las transiciones */
+}
+
+#info-rotator-content {
+    width: 100%;
+    opacity: 0; /* Empieza invisible */
+    transition: opacity 0.75s ease-in-out; /* La transición elegante y sutil */
+}
+
+#info-rotator-content.active {
+    opacity: 1; /* Se hace visible cuando tiene la clase 'active' */
+}
+
+/* Estilos para un titular de noticias */
+.info-title {
+    font-size: 2.4em; /* Tamaño de fuente más grande */
+    font-weight: bold;
+    line-height: 1.25;
+    color: #fff;
+}
+
+.info-source {
+    display: block;
+    font-size: 1.1em;
+    color: #ccc;
+    margin-top: 8px;
+    font-style: italic;
+}
+
+/* Estilos para una frase célebre */
+.quote-text-large {
+    font-size: 2.2em; /* Tamaño de fuente más grande */
+    font-style: italic;
+    line-height: 1.3;
+    color: #f0f0f0;
+}
+
+.quote-author-large {
+    display: block;
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #ddd;
+    margin-top: 15px;
 }
