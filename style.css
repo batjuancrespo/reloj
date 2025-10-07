@@ -172,7 +172,8 @@ html, body {
     height: 100%;
     object-fit: contain;
     opacity: 0;
-    transition: opacity 1s ease-in-out;
+    /* --- MODIFICADO: Transición más lenta para mayor suavidad --- */
+    transition: opacity 1.5s ease-in-out;
 }
 
 #slideshow-image.active {
@@ -286,8 +287,8 @@ html, body {
 .time-display { font-size: 2.2em; font-weight: bold; text-align: center; margin-bottom: 5px; }
 
 .alarm-button {
-    padding: 20px 25px; /* --- MODIFICADO: Aún más grande --- */
-    font-size: 1.5em; /* --- MODIFICADO: Aún más grande --- */
+    padding: 20px 25px;
+    font-size: 1.5em;
     font-weight: bold;
     border-radius: 8px;
     border: none;
@@ -341,8 +342,8 @@ html, body {
 }
 
 .alarm-info button {
-    padding: 20px 30px; /* --- MODIFICADO: Aún más grande --- */
-    font-size: 1.6em; /* --- MODIFICADO: Aún más grande --- */
+    padding: 20px 30px;
+    font-size: 1.6em;
     background: rgba(255, 0, 0, 0.6);
     color: white;
     border: none;
@@ -355,25 +356,20 @@ html, body {
 
 /* === NUEVOS ESTILOS PARA EL FILTRO DE BRILLO === */
 #brightness-overlay {
-    position: fixed; /* Fijo para que cubra toda la pantalla, sin importar el scroll */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #000; /* Color del filtro */
-    opacity: 0; /* Por defecto es totalmente transparente (invisible) */
-    z-index: 9999; /* Se asegura de que esté por encima de todo lo demás */
-    
-    /* Impide que podamos hacer clic en la capa y nos bloquee la app */
+    background-color: #000;
+    opacity: 0;
+    z-index: 9999;
     pointer-events: none; 
-    
-    /* La transición suave cuando aparezca y desaparezca */
     transition: opacity 1s ease-in-out;
 }
 
 #brightness-overlay.is-dimmed {
-    /* Cuando tenga esta clase, se volverá semitransparente */
-    opacity: 0.9; /* ¡Ajusta este valor! 0.7 es bastante oscuro. 0.5 es más sutil. */
+    opacity: 0.9;
 }
 
 /* --- ESTILOS PARA EL NUEVO PANEL ROTATORIO --- */
@@ -382,27 +378,27 @@ html, body {
     background: rgba(255, 255, 255, 0.05);
     border-radius: 10px;
     padding: 20px 25px;
-    flex-grow: 1; /* Hace que ocupe el espacio vertical restante */
+    flex-grow: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    overflow: hidden; /* Muy importante para las transiciones */
+    overflow: hidden;
 }
 
 #info-rotator-content {
     width: 100%;
-    opacity: 0; /* Empieza invisible */
-    transition: opacity 0.75s ease-in-out; /* La transición elegante y sutil */
+    opacity: 0;
+    transition: opacity 0.75s ease-in-out;
 }
 
 #info-rotator-content.active {
-    opacity: 1; /* Se hace visible cuando tiene la clase 'active' */
+    opacity: 1;
 }
 
 /* Estilos para un titular de noticias */
 .info-title {
-    font-size: 2.4em; /* Tamaño de fuente más grande */
+    font-size: 2.4em;
     font-weight: bold;
     line-height: 1.25;
     color: #fff;
@@ -418,7 +414,7 @@ html, body {
 
 /* Estilos para una frase célebre */
 .quote-text-large {
-    font-size: 2.2em; /* Tamaño de fuente más grande */
+    font-size: 2.2em;
     font-style: italic;
     line-height: 1.3;
     color: #f0f0f0;
