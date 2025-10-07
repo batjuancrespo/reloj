@@ -37,6 +37,7 @@ function handleFileSelection(event) {
             photoSelectButton.style.display = 'none';
         }
         
+        // Si el slideshow ya estaba activo, lo reinicia con las nuevas fotos
         if (slideshowIntervalId) {
             stopSlideshow();
             startSlideshow();
@@ -71,26 +72,24 @@ export function initSlideshow(imageElementId, inputElementId) {
 function displayNextImage() {
     if (!slideshowImageElement || localImageUrls.length === 0) return;
 
-    // --- MODIFICACIÓN CLAVE: Lógica para seleccionar una imagen aleatoria ---
     let randomIndex;
-    // Si hay más de una imagen, busca un índice aleatorio que no sea el último.
     if (localImageUrls.length > 1) {
         do {
             randomIndex = Math.floor(Math.random() * localImageUrls.length);
         } while (randomIndex === lastImageIndex);
     } else {
-        // Si solo hay una imagen, el índice siempre será 0.
         randomIndex = 0;
     }
     
-    lastImageIndex = randomIndex; // Guarda el índice de la imagen que vamos a mostrar.
+    lastImageIndex = randomIndex;
 
     slideshowImageElement.classList.remove('active');
 
+    // --- MODIFICADO: Sincronizado con la transición de 1.5s del CSS ---
     setTimeout(() => {
-        slideshowImageElement.src = localImageUrls[lastImageIndex]; // Usa el nuevo índice aleatorio
+        slideshowImageElement.src = localImageUrls[lastImageIndex];
         slideshowImageElement.classList.add('active');
-    }, 1000);
+    }, 1500); 
 }
 
 /**
@@ -102,17 +101,17 @@ export function startSlideshow() {
     }
     
     if (localImageUrls.length > 0) {
-        // Muestra la primera imagen inmediatamente (que será aleatoria)
         displayNextImage(); 
 
-        // Inicia el intervalo para cambiar de imagen.
-        slideshowIntervalId = setInterval(displayNextImage, 8000);
-        console.log("Slideshow iniciado con fotos locales.");
+        // --- MODIFICADO: De 8 a 15 segundos ---
+        slideshowIntervalId = setInterval(displayNextImage, 15000); 
+        console.log("Slideshow iniciado con fotos locales (15 segundos por foto).");
     } else {
-        alert("Por favor, selecciona primero una o más fotos usando el botón 'Seleccionar Fotos'.");
+        // Si no hay fotos, revierte al modo reloj.
         document.getElementById('slideshowToggle').checked = false;
         document.getElementById('slideshow-display').classList.add('hidden');
         document.getElementById('main-app-content').classList.remove('hidden');
+        alert("Por favor, selecciona primero una o más fotos usando el botón 'Seleccionar Fotos'.");
     }
 }
 
@@ -127,8 +126,9 @@ export function stopSlideshow() {
     }
     if (slideshowImageElement) {
         slideshowImageElement.classList.remove('active');
+        // --- MODIFICADO: Sincronizado con la transición de 1.5s del CSS ---
         setTimeout(() => {
             slideshowImageElement.src = ''; 
-        }, 1000);
+        }, 1500);
     }
 }
