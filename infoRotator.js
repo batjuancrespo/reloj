@@ -1,5 +1,3 @@
-// --- NUEVO ARCHIVO: infoRotator.js ---
-
 // Contenedores para las noticias y frases
 let generalNews = [];
 let sportsNews = [];
@@ -12,7 +10,7 @@ let currentIndex = -1;
 // Elemento del DOM donde se mostrará el contenido
 let contentElement;
 
-// Fuentes de noticias (copiadas de app.js)
+// Fuentes de noticias
 const generalNewsFeeds = [
     { name: 'El Mundo', url: 'https://e00-elmundo.uecdn.es/elmundo/rss/portada.xml' },
     { name: 'El País', url: 'https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/section/ultimas-noticias/portada' },
@@ -89,19 +87,16 @@ function buildRotationList() {
     rotationItems = [];
     let gIndex = 0, sIndex = 0, qIndex = 0;
     
-    // Construimos una lista larga para asegurar muchas rotaciones sin repetición inmediata
     const maxLength = Math.max(generalNews.length, sportsNews.length, quotes.length) * 5;
 
     for (let i = 0; i < maxLength; i++) {
-        const sequenceIndex = i % 5; // 0, 1, 2, 3, 4, 0, 1, ...
+        const sequenceIndex = i % 5;
         switch (sequenceIndex) {
-            case 0:
-            case 2:
+            case 0: case 2:
                 rotationItems.push(generalNews[gIndex]);
                 gIndex = (gIndex + 1) % generalNews.length;
                 break;
-            case 1:
-            case 3:
+            case 1: case 3:
                 rotationItems.push(sportsNews[sIndex]);
                 sIndex = (sIndex + 1) % sportsNews.length;
                 break;
@@ -111,7 +106,7 @@ function buildRotationList() {
                 break;
         }
     }
-    console.log(`Rotation list built with ${rotationItems.length} items.`);
+    console.log(`Rotation list rebuilt with ${rotationItems.length} items.`);
 }
 
 /**
@@ -120,16 +115,13 @@ function buildRotationList() {
 function showNextItem() {
     if (rotationItems.length === 0) return;
 
-    // 1. Inicia la transición de salida (hacer invisible)
     contentElement.classList.remove('active');
 
-    // 2. Espera a que la transición de salida termine
     setTimeout(() => {
         currentIndex = (currentIndex + 1) % rotationItems.length;
         const item = rotationItems[currentIndex];
         let htmlContent = '';
 
-        // 3. Actualiza el contenido del DOM
         if (item.type === 'news') {
             htmlContent = `
                 <div class="info-title">${item.title}</div>
@@ -142,15 +134,43 @@ function showNextItem() {
             `;
         }
         contentElement.innerHTML = htmlContent;
-
-        // Forzar un reflow del navegador, un truco para reiniciar la animación CSS
         void contentElement.offsetWidth;
-
-        // 4. Inicia la transición de entrada (hacer visible)
         contentElement.classList.add('active');
 
-    }, 750); // Este tiempo debe coincidir con la duración de la transición en CSS
+    }, 750);
 }
+
+
+/**
+ * Se encarga de refrescar los datos de noticias periódicamente.
+ */
+async function refreshNewsData() {
+    console.log("Refreshing news data...");
+    try {
+        // Volvemos a buscar las noticias generales y deportivas en paralelo
+        const [newGeneralNews, newSportsNews] = await Promise.all([
+            fetchGeneralNews(),
+            fetchSportsNews()
+        ]);
+
+        // Solo actualizamos si hemos recibido datos válidos para evitar quedarnos en blanco
+        if (newGeneralNews.length > 0) {
+            generalNews = newGeneralNews;
+            console.log(`General news updated: ${generalNews.length} items.`);
+        }
+        if (newSportsNews.length > 0) {
+            sportsNews = newSportsNews;
+            console.log(`Sports news updated: ${sportsNews.length} items.`);
+        }
+
+        // Reconstruimos la lista de rotación con las noticias frescas
+        buildRotationList();
+
+    } catch (error) {
+        console.error("Failed to refresh news data:", error);
+    }
+}
+
 
 /**
  * Función principal para inicializar el módulo.
@@ -163,18 +183,22 @@ export async function initInfoRotator(elementId) {
         return;
     }
 
-    // Cargar todos los datos en paralelo
+    // Cargar todos los datos en paralelo la primera vez
     [generalNews, sportsNews, quotes] = await Promise.all([
         fetchGeneralNews(),
         fetchSportsNews(),
         fetchQuotes()
     ]);
 
-    // Construir la lista de rotación y empezar el ciclo
     buildRotationList();
+
     if (rotationItems.length > 0) {
-        showNextItem(); // Muestra el primer elemento inmediatamente
-        setInterval(showNextItem, 8000); // Cambia cada 8 segundos
+        showNextItem();
+        setInterval(showNextItem, 8000); // Rota el contenido visible cada 8 segundos
+
+        // Refresca las fuentes de noticias cada hora
+        setInterval(refreshNewsData, 60 * 60 * 1000); // 1 hora en milisegundos
+
     } else {
         contentElement.innerHTML = `<div class="info-title">No se pudo cargar el contenido.</div>`;
         contentElement.classList.add('active');
