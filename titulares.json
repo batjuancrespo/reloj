@@ -1,17 +1,22 @@
 [
   {
-    "title": "¡El Salvador se desespera!",
+    "title": "¡Guatemala ganó en el Cuscatlán!",
     "link": "https://as.com/us/futbol/el-salvador-guatemala-en-vivo-eliminatorias-de-concacaf-rumbo-al-mundial-2026-en-directo-f202510-d/",
+    "source": "AS"
+  },
+  {
+    "title": "Pulisic será evaluado en Milan",
+    "link": "https://as.com/us/futbol/pochettino-sobre-lesion-de-pulisic-sera-evaluado-en-italia-f202510-n/",
+    "source": "AS"
+  },
+  {
+    "title": "Aguirre aprieta la mandíbula",
+    "link": "https://mexico.as.com/futbol/mexico-vs-ecuador-en-vivo-partido-amistoso-internacional-hoy-en-directo-f202510-d/",
     "source": "AS"
   },
   {
     "title": "Messi comanda otro recital",
     "link": "https://as.com/futbol/internacional/messi-comanda-otro-recital-f202510-n/",
-    "source": "AS"
-  },
-  {
-    "title": "México mejor, pero no concreta",
-    "link": "https://mexico.as.com/futbol/mexico-vs-ecuador-en-vivo-partido-amistoso-internacional-hoy-en-directo-f202510-d/",
     "source": "AS"
   },
   {
@@ -35,11 +40,6 @@
     "source": "AS"
   },
   {
-    "title": "Colombia empata con Canadá en intenso partido",
-    "link": "https://colombia.as.com/futbol/colombia-canada-en-vivo-online-amistoso-internacional-en-directo-f202510-d/",
-    "source": "AS"
-  },
-  {
     "title": "Berterame complica a Henry, Sepúlveda, Santi y Jiménez",
     "link": "https://mexico.as.com/futbol/berterame-complica-a-henry-sepulveda-santi-y-jimenez-f202510-n/",
     "source": "AS"
@@ -55,6 +55,11 @@
     "source": "Marca"
   },
   {
+    "title": "Con Messi es mejor",
+    "link": "https://www.marca.com/futbol/america/2025/10/15/argentina-gana-0-6-puerto-rico-dos-asistencia-leo-messi.html",
+    "source": "Marca"
+  },
+  {
     "title": "Todavía no estamos en el Mundial: así están las cuentas",
     "link": "https://www.marca.com/futbol/seleccion/2025/10/14/cuentas-clasificacion-aun-queda-trampa.html",
     "source": "Marca"
@@ -62,11 +67,6 @@
   {
     "title": "No hay otro igual",
     "link": "https://www.marca.com/futbol/seleccion/2025/10/14/espana-pedri-partir-ahi-cosa-posible.html",
-    "source": "Marca"
-  },
-  {
-    "title": "Mucho ojo con Baena",
-    "link": "https://www.marca.com/futbol/seleccion/2025/10/14/espana-valoracion-comentarios.html",
     "source": "Marca"
   },
   {
@@ -90,13 +90,13 @@
     "source": "Marca"
   },
   {
-    "title": "Historia de España",
+    "title": "Las portadas: \"Cubo de agua fría\" en Portugal",
     "link": "https://www.marca.com/futbol/album/2025/10/15/portadas-dia.html",
     "source": "Marca"
   },
   {
-    "title": "El mensaje de Figo: “Siempre he pensado que podría ser un buen presidente, creo que ha llegado el momento”",
-    "link": "https://www.marca.com/uestudio/2025/10/14/mensaje-figo-siempre-he-pensado-podria-buen-presidente-creo-llegado-momento.html",
+    "title": "¿No hay banco bueno? Derribando mitos a golpe de información",
+    "link": "https://finanzasparanofinancieros.marca.com/informacion-o-desinformacion-desmontando-algunos-mitos-sobre-la-banca.html",
     "source": "Marca"
   }
 ]
