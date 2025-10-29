@@ -26,21 +26,20 @@ function updateBrightness() {
     if (isNightTime) {
         overlay.classList.add('is-dimmed');
     } else {
+        // Si no es de noche, nos aseguramos de quitar ambas clases de opacidad
         overlay.classList.remove('is-dimmed');
+        overlay.classList.remove('is-temporarily-bright');
     }
 }
 
-// --- LÓGICA CORREGIDA: GESTIÓN AUTOMÁTICA DE MODO (RELOJ/SLIDESHOW) ---
+// --- LÓGICA DE MODO AUTOMÁTICO (RELOJ/SLIDESHOW) ---
 
 let inactivityTimer = null;
 let userHasOverriddenMode = false;
+let dimmerTimer = null; // Temporizador para el brillo temporal
 
 let slideshowToggle, mainAppContent, slideshowDisplay;
 
-/**
- * Aplica los cambios visuales basados en el estado actual del interruptor.
- * Esta es la única función que debe cambiar la visibilidad de los elementos.
- */
 function applyCurrentMode() {
     if (slideshowToggle.checked) {
         mainAppContent.classList.add('hidden');
@@ -53,35 +52,25 @@ function applyCurrentMode() {
     }
 }
 
-/**
- * Reinicia el temporizador de inactividad de 5 minutos.
- */
 function resetInactivityTimer() {
     clearTimeout(inactivityTimer);
     inactivityTimer = setTimeout(() => {
         console.log("5 minutos de inactividad. Volviendo al modo automático.");
         userHasOverriddenMode = false;
         autoManageMode();
-    }, 5 * 60 * 1000); // 5 minutos
+    }, 5 * 60 * 1000);
 }
 
-/**
- * Comprueba la hora y establece el modo por defecto si el usuario no ha intervenido.
- */
 function autoManageMode() {
-    if (userHasOverriddenMode) {
-        return; // El usuario tiene el control, no hacemos nada.
-    }
+    if (userHasOverriddenMode) return;
 
     const currentHour = moment().hour();
-    // Modo marco de fotos: de 9:00 a 20:59 (antes de las 9 PM / 21:00)
     const isDayTimeForSlideshow = currentHour >= 9 && currentHour < 21;
 
-    // Solo actuamos si el estado actual es incorrecto
     if (slideshowToggle.checked !== isDayTimeForSlideshow) {
         console.log(`Modo automático: cambiando a ${isDayTimeForSlideshow ? 'marco de fotos' : 'reloj'}`);
-        slideshowToggle.checked = isDayTimeForSlideshow; // Cambiamos el estado del interruptor
-        applyCurrentMode(); // Aplicamos los cambios visuales
+        slideshowToggle.checked = isDayTimeForSlideshow;
+        applyCurrentMode();
     }
 }
 
@@ -118,13 +107,33 @@ function init() {
         addAlarm(h + ':' + m);
     });
 
+    // El listener de click del body ahora también gestiona el brillo temporal
     document.body.addEventListener('click', () => {
+        // 1. Lógica para parar la alarma (existente)
         if (document.body.classList.contains('alarming')) {
             stopAlarmSound();
             document.body.classList.remove('alarming');
         }
+        
+        // 2. Lógica para reiniciar el timer de inactividad (existente)
         if (userHasOverriddenMode) {
             resetInactivityTimer();
+        }
+
+        // 3. LÓGICA: Brillo temporal en modo noche
+        const overlay = document.getElementById('brightness-overlay');
+        // Si la pantalla está en modo oscuro...
+        if (overlay.classList.contains('is-dimmed')) {
+            // ...cancelamos cualquier temporizador anterior para reiniciar la cuenta.
+            clearTimeout(dimmerTimer);
+            
+            // ...añadimos la clase que reduce la opacidad.
+            overlay.classList.add('is-temporarily-bright');
+            
+            // ...y programamos que se quite esa clase después de 7 segundos.
+            dimmerTimer = setTimeout(() => {
+                overlay.classList.remove('is-temporarily-bright');
+            }, 7000); // 7 segundos
         }
     });
 
@@ -134,11 +143,10 @@ function init() {
     mainAppContent = document.getElementById('main-app-content');
     slideshowDisplay = document.getElementById('slideshow-display');
 
-    // Listener del interruptor: ahora mucho más simple y correcto.
     slideshowToggle.addEventListener('change', () => {
         console.log("Modo cambiado manualmente por el usuario.");
         userHasOverriddenMode = true;
-        applyCurrentMode(); // Simplemente aplica el nuevo estado del interruptor
+        applyCurrentMode();
         resetInactivityTimer();
     });
     
@@ -147,8 +155,8 @@ function init() {
     setInterval(updateBrightness, 60000);
     
     // Iniciar el gestor de modo automático
-    autoManageMode(); // Comprueba el modo correcto al cargar la página
-    setInterval(autoManageMode, 60000); // Comprueba cada minuto
+    autoManageMode();
+    setInterval(autoManageMode, 60000);
 
     console.log("Smart Clock Initialized. High Visibility Version.");
 }
