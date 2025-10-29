@@ -77,7 +77,7 @@ html, body {
     font-size: 1em;
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color: 0.3s ease;
 }
 
 .select-folder-button:hover {
@@ -172,7 +172,6 @@ html, body {
     height: 100%;
     object-fit: contain;
     opacity: 0;
-    /* --- MODIFICADO: Transición más lenta para mayor suavidad --- */
     transition: opacity 1.5s ease-in-out;
 }
 
@@ -354,7 +353,7 @@ html, body {
 @keyframes alarm-flash { 50% { background: rgba(255, 0, 0, 0.4); } }
 .alarming { animation: alarm-flash 1s infinite; }
 
-/* === NUEVOS ESTILOS PARA EL FILTRO DE BRILLO === */
+/* === ESTILOS PARA EL FILTRO DE BRILLO === */
 #brightness-overlay {
     position: fixed;
     top: 0;
@@ -369,7 +368,13 @@ html, body {
 }
 
 #brightness-overlay.is-dimmed {
-    opacity: 0.9;
+    opacity: 0.9; /* Opacidad MÁXIMA por defecto en modo noche */
+}
+
+/* --- NUEVA CLASE --- */
+/* Esta clase se añade con JS para reducir temporalmente la opacidad al tocar la pantalla */
+#brightness-overlay.is-temporarily-bright {
+    opacity: 0.5; /* Opacidad REDUCIDA para interacción */
 }
 
 /* --- ESTILOS PARA EL NUEVO PANEL ROTATORIO --- */
