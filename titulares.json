@@ -1,12 +1,17 @@
 [
   {
-    "title": "¡João Pedro silencia Londres!",
+    "title": "Se arma en Londres: ¡tangana en el Derbi!",
     "link": "https://as.com/futbol/internacional/tottenham-chelsea-en-vivo-premier-league-hoy-en-directo-f202511-d/",
     "source": "AS"
   },
   {
     "title": "El Atleti del Nuevo Cholismo",
     "link": "https://as.com/futbol/primera/el-nuevo-cholismo-se-hace-ley-f202511-n/",
+    "source": "AS"
+  },
+  {
+    "title": "Ohtani abrirá para los Dodgers en juego 7",
+    "link": "https://as.com/us/mlb/dodgers-confirma-a-shohei-ohtani-como-abridor-del-juego-7-de-serie-mundial-ante-blue-jays-f202511-n/",
     "source": "AS"
   },
   {
@@ -20,17 +25,17 @@
     "source": "AS"
   },
   {
-    "title": "Jackson aumenta la ventaja",
+    "title": "Jackson se pierde el cuarto",
     "link": "https://colombia.as.com/futbol/colombianos-por-el-mundo/bayern-munich-bayer-leverkusen-hoy-en-vivo-online-luis-diaz-en-bundesliga-en-directo-f202511-d/",
     "source": "AS"
   },
   {
-    "title": "¡Guruzeta empata a los 2'!",
+    "title": "Guruzeta neutraliza a Brais",
     "link": "https://as.com/futbol/primera/real-sociedad-athletic-en-directo-laliga-ea-sports-hoy-en-vivo-f202511-d/",
     "source": "AS"
   },
   {
-    "title": "Vinicius, en el foco; los onces de Real Madrid y Valencia, al caer",
+    "title": "Mastantuono, la única novedad",
     "link": "https://as.com/futbol/primera/real-madrid-valencia-hoy-en-directo-jornada-11-de-laliga-ea-sports-ultima-hora-en-vivo-f202511-d/",
     "source": "AS"
   },
@@ -40,18 +45,18 @@
     "source": "AS"
   },
   {
-    "title": "Casemiro siempre resurge",
-    "link": "https://as.com/futbol/internacional/salvador-diallo-f202511-n/",
-    "source": "AS"
-  },
-  {
     "title": "¡Imperdible! La impresionante exposición dedicada a Messi",
     "link": "https://as.com/us/videos/conoce-the-messi-experience-en-la-ciudad-de-mexico-f202511-v/?pbsvideo=top",
     "source": "AS"
   },
   {
-    "title": "Empata Guruzeta",
+    "title": "Golazo de Guedes a los 24 segundos",
     "link": "https://www.marca.com/futbol/laliga-ea-sports/real-sociedad-athletic/2025/11/01/01_0101_20251101_188_174-directo.html",
+    "source": "Marca"
+  },
+  {
+    "title": "Vinicius, titular",
+    "link": "https://www.marca.com/futbol/laliga-ea-sports/r-madrid-valencia/2025/11/01/01_0101_20251101_186_191-directo.html",
     "source": "Marca"
   },
   {
@@ -62,11 +67,6 @@
   {
     "title": "Con ellos se puede ir a la guerra sin armas",
     "link": "https://www.marca.com/futbol/atletico/2025/11/01/giuliano-nico-gonzalez-guerra-armas.html",
-    "source": "Marca"
-  },
-  {
-    "title": "¿Será Vinicius titular? ¿Sorpresa Trent?",
-    "link": "https://www.marca.com/futbol/laliga-ea-sports/r-madrid-valencia/2025/11/01/01_0101_20251101_186_191-directo.html",
     "source": "Marca"
   },
   {
@@ -95,8 +95,8 @@
     "source": "Marca"
   },
   {
-    "title": "Polémica en el 1-0 del Villarreal: ¿qué hizo el VAR?",
-    "link": "https://www.marca.com/futbol/primera-division/2025/11/01/dudas-1-0-villarreal-var-eligio-momento-pase-gerard-moreno.html",
+    "title": "¿Robo o justicia? La decisión arbitral del Dodgers vs Blue Jays que cambió el rumbo de la Serie Mundial",
+    "link": "https://us.marca.com/mlb/serie-mundial/2025/11/01/69060e00268e3ec4368b45cc.html",
     "source": "Marca"
   }
 ]
