@@ -29,10 +29,8 @@ async function handleFileSelection(event) {
 
 async function loadPhotosFromStorage() {
     const stored = await hasStoredPhotos();
-    if (!stored) return false;
-
     photosLoaded = true;
-    return true;
+    return stored;
 }
 
 const PLUS_ICON = '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>';
@@ -114,13 +112,14 @@ export function startSlideshow() {
         clearInterval(slideshowIntervalId);
     }
 
-    if (getPhotoCount() > 0 && photosLoaded) {
+    if (getPhotoCount() > 0) {
         displayNextImage();
         slideshowIntervalId = setInterval(displayNextImage, 15000);
     } else {
         document.getElementById('slideshowToggle').checked = false;
         document.getElementById('slideshow-display').classList.add('hidden');
         document.getElementById('main-app-content').classList.remove('hidden');
+        alert("Primero añade fotos con el botón ➕.");
     }
 }
 
