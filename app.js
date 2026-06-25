@@ -75,7 +75,12 @@ function autoManageMode() {
 }
 
 // --- Initialization ---
-function init() {
+async function init() {
+    window.onerror = (msg, url, line) => {
+        console.error('Error capturado:', msg, url, line);
+        return true;
+    };
+
     // Clock
     updateClock();
     setInterval(updateClock, 15000);
@@ -92,7 +97,7 @@ function init() {
 
     // Alarm System
     initAlarmSystem('./mi_alarma.mp3');
-    setInterval(checkAlarms, 1000);
+    setInterval(checkAlarms, 10000); // 10 segundos (antes 1s)
     updateTimeDisplay();
 
     // Alarm UI Event Listeners
@@ -138,7 +143,7 @@ function init() {
     });
 
     // Slideshow System
-    initSlideshow('slideshow-image', 'photoInput');
+    await initSlideshow('slideshow-image', 'photoInput');
     slideshowToggle = document.getElementById('slideshowToggle');
     mainAppContent = document.getElementById('main-app-content');
     slideshowDisplay = document.getElementById('slideshow-display');

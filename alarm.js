@@ -1,140 +1,106 @@
-// Alarm module using Web Audio API
-
 let alarms = [];
-let audioCtx;
-let alarmBuffer;
-let currentSource = null; // To keep track of the playing source node
+let audioCtx = null;
+let alarmBuffer = null;
+let currentSource = null;
 
-// --- MODIFICACIÓN: Hora de alarma por defecto ---
-// Internal state for time selection
 let currentSelectedHour = 6;
 let currentSelectedMinute = 42;
 
-// Generar dinámicamente la lista de 16 imágenes de alarma
 const alarmImages = [];
 for (let i = 1; i <= 16; i++) {
-    // La ruta sigue el formato: ./alarm_image_ (1).png, ./alarm_image_ (2).png, etc.
     alarmImages.push(`./alarm_image_ (${i}).png`);
 }
 
-// Utility function (duplicated from app.js as it's needed here for displaying time)
 function pad(num) { return ('0' + num).slice(-2); }
 
-/**
- * Initializes the alarm system by loading the sound.
- * @param {string} soundUrl The URL of the alarm sound.
- */
 export async function initAlarmSystem(soundUrl) {
-    if (!audioCtx) {
-        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-    }
     try {
         const response = await fetch(soundUrl);
         const arrayBuffer = await response.arrayBuffer();
+
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
         alarmBuffer = await audioCtx.decodeAudioData(arrayBuffer);
-        console.log("Alarm sound loaded successfully.");
+        // Suspender el contexto hasta que se necesite
+        if (audioCtx.state === 'running') {
+            audioCtx.suspend();
+        }
     } catch (e) {
         console.error("Error loading alarm sound:", e);
+        alarmBuffer = null;
     }
-    updateAlarmList(); // Initialize alarm list display
+    updateAlarmList();
 }
 
-/**
- * Plays the alarm sound using Web Audio API.
- */
 function playAlarm() {
-    if (!alarmBuffer) {
-        console.error("Alarm sound not loaded or buffer is empty.");
-        return;
+    if (!alarmBuffer || !audioCtx) return;
+
+    stopAlarmSound();
+
+    if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
     }
-    stopAlarmSound(); // Ensure any previous alarm is stopped before starting a new one
 
     currentSource = audioCtx.createBufferSource();
     currentSource.buffer = alarmBuffer;
-    currentSource.loop = true; // Loop the sound
+    currentSource.loop = true;
     currentSource.connect(audioCtx.destination);
-    currentSource.start(0); // Play immediately
-    console.log("Alarm playing...");
+    currentSource.start(0);
 }
 
-/**
- * Stops the currently playing alarm sound.
- */
 export function stopAlarmSound() {
     if (currentSource) {
-        currentSource.stop();
-        currentSource.disconnect(); // Disconnect to allow garbage collection
+        try {
+            currentSource.stop();
+            currentSource.disconnect();
+        } catch (e) {
+            // Ignorar errores si ya estaba detenido
+        }
         currentSource = null;
-        console.log("Alarm stopped.");
+    }
+    if (audioCtx && audioCtx.state === 'running') {
+        audioCtx.suspend();
     }
 }
 
-/**
- * Checks if any set alarm matches the current time and triggers it.
- */
 export function checkAlarms() {
+    if (alarms.length === 0) return;
+
     const currentTime = moment().format('HH:mm');
-    let alarmTriggered = false;
 
     alarms.forEach((alarm, index) => {
         if (alarm.time === currentTime && !alarm.triggered) {
-            alarms[index].triggered = true; // Mark as triggered
+            alarms[index].triggered = true;
             document.body.classList.add('alarming');
             playAlarm();
-            alarmTriggered = true;
         }
     });
-
-    // If an alarm was triggered, ensure the list is updated to reflect this (e.g., to show a 'stop' button if logic supported)
-    if (alarmTriggered) {
-        updateAlarmList();
-    }
 }
 
-/**
- * Adds a new alarm. Only one alarm can be set at a time in this version.
- * @param {string} time - The alarm time in 'HH:mm' format.
- */
 export function addAlarm(time) {
-    // In this simplified version, only one alarm can be set
     if (alarms.length === 0) {
-        // La lógica para seleccionar una imagen aleatoria no cambia, ahora simplemente funciona con una lista más grande.
         const randomImage = alarmImages[Math.floor(Math.random() * alarmImages.length)];
         alarms.push({ time: time, triggered: false, imageUrl: randomImage });
         updateAlarmList();
-        console.log("Alarm set for:", time, "with image:", randomImage);
-    } else {
-        console.warn("Only one alarm can be set at a time. Please cancel the existing alarm first.");
     }
 }
 
-/**
- * Removes an alarm by its index.
- * @param {number} index - The index of the alarm to remove.
- */
 export function removeAlarm(index) {
     if (index >= 0 && index < alarms.length) {
-        // If the alarm being removed is the one currently alarming, stop it.
         if (alarms[index].triggered && document.body.classList.contains('alarming')) {
             stopAlarmSound();
             document.body.classList.remove('alarming');
         }
         alarms.splice(index, 1);
         updateAlarmList();
-        console.log("Alarm removed.");
     }
 }
 
-/**
- * Updates the alarm list display in the DOM.
- */
 export function updateAlarmList() {
     const list = document.getElementById('alarmList');
     const controls = document.querySelector('.alarm-controls');
 
     if (alarms.length > 0) {
         controls.style.display = 'none';
-        // Use `onclick` for compatibility with desktop and mobile touch (though `ontouchend` was in original)
         list.innerHTML = alarms.map((a, i) => `
             <div class="alarm-item">
                 <div class="alarm-image-container">
@@ -152,9 +118,6 @@ export function updateAlarmList() {
     }
 }
 
-/**
- * Updates the time display for the alarm setting UI, reflecting currentSelectedHour/Minute.
- */
 export function updateTimeDisplay() {
     const h = pad(currentSelectedHour);
     const m = pad(currentSelectedMinute);
@@ -163,34 +126,22 @@ export function updateTimeDisplay() {
     document.getElementById('selectedTime').textContent = h + ':' + m;
 }
 
-/**
- * Increments the selected hour.
- */
 export function incrementHour() {
     currentSelectedHour = (currentSelectedHour + 1) % 24;
     updateTimeDisplay();
 }
 
-/**
- * Decrements the selected hour.
- */
 export function decrementHour() {
-    currentSelectedHour = (currentSelectedHour - 1 + 24) % 24; // Ensure positive result for modulo
+    currentSelectedHour = (currentSelectedHour - 1 + 24) % 24;
     updateTimeDisplay();
 }
 
-/**
- * Increments the selected minute.
- */
 export function incrementMinute() {
     currentSelectedMinute = (currentSelectedMinute + 1) % 60;
     updateTimeDisplay();
 }
 
-/**
- * Decrements the selected minute.
- */
 export function decrementMinute() {
-    currentSelectedMinute = (currentSelectedMinute - 1 + 60) % 60; // Ensure positive result for modulo
+    currentSelectedMinute = (currentSelectedMinute - 1 + 60) % 60;
     updateTimeDisplay();
 }

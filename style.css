@@ -68,20 +68,27 @@ html, body {
     gap: 15px;
 }
 
-.select-folder-button {
-    background-color: #2196F3;
+.icon-button {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
     color: white;
-    border: none;
-    border-radius: 8px;
-    padding: 8px 12px;
-    font-size: 1em;
-    font-weight: bold;
     cursor: pointer;
-    transition: background-color: 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+    flex-shrink: 0;
 }
 
-.select-folder-button:hover {
-    background-color: #1976D2;
+.icon-button:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+.icon-button svg {
+    display: block;
 }
 
 .toggle-switch-container {
@@ -368,13 +375,11 @@ html, body {
 }
 
 #brightness-overlay.is-dimmed {
-    opacity: 0.9; /* Opacidad MÁXIMA por defecto en modo noche */
+    opacity: 0.9;
 }
 
-/* --- NUEVA CLASE --- */
-/* Esta clase se añade con JS para reducir temporalmente la opacidad al tocar la pantalla */
 #brightness-overlay.is-temporarily-bright {
-    opacity: 0.5; /* Opacidad REDUCIDA para interacción */
+    opacity: 0.5;
 }
 
 /* --- ESTILOS PARA EL NUEVO PANEL ROTATORIO --- */

@@ -1,57 +1,76 @@
-// Slideshow module
+import { appendPhotos, clearPhotos, hasStoredPhotos, loadRandomPhoto, getPhotoCount } from './photoStorage.js';
 
 let slideshowIntervalId = null;
 let slideshowImageElement = null;
-let localImageUrls = [];
+let currentPhotoUrl = null;
+let currentPhotoKey = undefined;
+let photosLoaded = false;
 
-// --- MODIFICACIÓN: Añadida variable para recordar la última imagen mostrada ---
-let lastImageIndex = -1;
-
-/**
- * Función que maneja la selección de archivos del input.
- */
-function handleFileSelection(event) {
-    const files = event.target.files;
-    if (!files || files.length === 0) {
-        console.log("No se seleccionó ningún archivo.");
-        return;
-    }
-
-    localImageUrls.forEach(url => URL.revokeObjectURL(url));
-    localImageUrls = [];
-    lastImageIndex = -1; // Resetea el índice al cargar nuevas fotos
-
-    for (const file of files) {
-        if (file.type.startsWith('image/')) {
-            const objectURL = URL.createObjectURL(file);
-            localImageUrls.push(objectURL);
-        }
-    }
-    
-    if (localImageUrls.length > 0) {
-        alert(`Se han cargado ${localImageUrls.length} imágenes. Ahora puedes activar el marco de fotos.`);
-        console.log(`Se han cargado ${localImageUrls.length} imágenes.`);
-        
-        const photoSelectButton = document.getElementById('photoSelectLabel');
-        if (photoSelectButton) {
-            photoSelectButton.style.display = 'none';
-        }
-        
-        // Si el slideshow ya estaba activo, lo reinicia con las nuevas fotos
-        if (slideshowIntervalId) {
-            stopSlideshow();
-            startSlideshow();
-        }
-    } else {
-        alert("Los archivos seleccionados no son imágenes válidas.");
+function revokeCurrentUrl() {
+    if (currentPhotoUrl) {
+        URL.revokeObjectURL(currentPhotoUrl);
+        currentPhotoUrl = null;
     }
 }
 
+async function handleFileSelection(event) {
+    const files = event.target.files;
+    if (!files || files.length === 0) return;
 
-/**
- * Initializes the slideshow by setting up the image element and the file input.
- */
-export function initSlideshow(imageElementId, inputElementId) {
+    await appendPhotos(Array.from(files));
+    photosLoaded = true;
+
+    event.target.value = '';
+
+    if (slideshowIntervalId) {
+        displayNextImage();
+    }
+}
+
+async function loadPhotosFromStorage() {
+    const stored = await hasStoredPhotos();
+    if (!stored) return false;
+
+    photosLoaded = true;
+    return true;
+}
+
+const PLUS_ICON = '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>';
+const TRASH_ICON = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/></svg>';
+
+function addClearButton() {
+    const container = document.querySelector('.slideshow-controls-container');
+    if (!container) return;
+
+    const clearBtn = document.createElement('button');
+    clearBtn.id = 'clearPhotosBtn';
+    clearBtn.className = 'icon-button';
+    clearBtn.innerHTML = TRASH_ICON;
+    clearBtn.title = 'Vaciar galería';
+    clearBtn.addEventListener('click', async () => {
+        if (getPhotoCount() === 0) return;
+        if (confirm('¿Borrar todas las fotos de la galería?')) {
+            await clearAllPhotos();
+        }
+    });
+
+    const toggleContainer = container.querySelector('.toggle-switch-container');
+    if (toggleContainer) {
+        container.insertBefore(clearBtn, toggleContainer);
+    } else {
+        container.appendChild(clearBtn);
+    }
+}
+
+function updateLabelToIcon() {
+    const label = document.getElementById('photoSelectLabel');
+    if (!label) return;
+    label.className = 'icon-button';
+    label.innerHTML = PLUS_ICON;
+    label.title = 'Añadir fotos';
+}
+
+export async function initSlideshow(imageElementId, inputElementId) {
     slideshowImageElement = document.getElementById(imageElementId);
     if (!slideshowImageElement) {
         console.error(`Elemento de imagen para slideshow con ID '${imageElementId}' no encontrado.`);
@@ -61,74 +80,67 @@ export function initSlideshow(imageElementId, inputElementId) {
     const photoInput = document.getElementById(inputElementId);
     if (photoInput) {
         photoInput.addEventListener('change', handleFileSelection);
-    } else {
-        console.error(`Input de fotos con ID '${inputElementId}' no encontrado.`);
+    }
+
+    updateLabelToIcon();
+    addClearButton();
+
+    const loaded = await loadPhotosFromStorage();
+    if (loaded) {
+        console.log(`${getPhotoCount()} fotos cargadas automáticamente desde almacenamiento local.`);
     }
 }
 
-/**
- * Displays the next image in the slideshow with a fade effect.
- */
-function displayNextImage() {
-    if (!slideshowImageElement || localImageUrls.length === 0) return;
+async function displayNextImage() {
+    if (!slideshowImageElement || !photosLoaded) return;
+    if (getPhotoCount() === 0) return;
 
-    let randomIndex;
-    if (localImageUrls.length > 1) {
-        do {
-            randomIndex = Math.floor(Math.random() * localImageUrls.length);
-        } while (randomIndex === lastImageIndex);
-    } else {
-        randomIndex = 0;
-    }
-    
-    lastImageIndex = randomIndex;
+    const result = await loadRandomPhoto(currentPhotoKey);
+    if (!result) return;
+
+    revokeCurrentUrl();
+    currentPhotoUrl = result.url;
+    currentPhotoKey = result.key;
 
     slideshowImageElement.classList.remove('active');
-
-    // --- MODIFICADO: Sincronizado con la transición de 1.5s del CSS ---
     setTimeout(() => {
-        slideshowImageElement.src = localImageUrls[lastImageIndex];
+        slideshowImageElement.src = currentPhotoUrl;
         slideshowImageElement.classList.add('active');
-    }, 1500); 
+    }, 1500);
 }
 
-/**
- * Starts the slideshow.
- */
 export function startSlideshow() {
     if (slideshowIntervalId) {
         clearInterval(slideshowIntervalId);
     }
-    
-    if (localImageUrls.length > 0) {
-        displayNextImage(); 
 
-        // --- MODIFICADO: De 8 a 15 segundos ---
-        slideshowIntervalId = setInterval(displayNextImage, 15000); 
-        console.log("Slideshow iniciado con fotos locales (15 segundos por foto).");
+    if (getPhotoCount() > 0 && photosLoaded) {
+        displayNextImage();
+        slideshowIntervalId = setInterval(displayNextImage, 15000);
     } else {
-        // Si no hay fotos, revierte al modo reloj.
         document.getElementById('slideshowToggle').checked = false;
         document.getElementById('slideshow-display').classList.add('hidden');
         document.getElementById('main-app-content').classList.remove('hidden');
-        alert("Por favor, selecciona primero una o más fotos usando el botón 'Seleccionar Fotos'.");
     }
 }
 
-/**
- * Stops the slideshow.
- */
 export function stopSlideshow() {
     if (slideshowIntervalId) {
         clearInterval(slideshowIntervalId);
         slideshowIntervalId = null;
-        console.log("Slideshow detenido.");
     }
+    revokeCurrentUrl();
     if (slideshowImageElement) {
         slideshowImageElement.classList.remove('active');
-        // --- MODIFICADO: Sincronizado con la transición de 1.5s del CSS ---
         setTimeout(() => {
-            slideshowImageElement.src = ''; 
+            slideshowImageElement.src = '';
         }, 1500);
     }
+}
+
+export async function clearAllPhotos() {
+    stopSlideshow();
+    await clearPhotos();
+    photosLoaded = false;
+    currentPhotoKey = undefined;
 }
