@@ -30,47 +30,38 @@ function readFileAsArrayBuffer(file) {
 }
 
 export async function savePhotos(files) {
-    if (!window.indexedDB) return;
-    try {
-        const db = await openDB();
-        const tx = db.transaction(STORE_NAME, 'readwrite');
-        const store = tx.objectStore;
-        store.clear();
-        for (const file of files) {
-            if (!file.type.startsWith('image/')) continue;
-            const data = await readFileAsArrayBuffer(file);
-            store.add({ data, type: file.type });
-        }
-        await new Promise((resolve, reject) => {
-            tx.oncomplete = resolve;
-            tx.onerror = () => reject(tx.error);
-        });
-        db.close();
-    } catch (e) {
-        console.error('Error guardando fotos:', e);
+    if (!window.indexedDB) throw new Error('IndexedDB no disponible');
+    const db = await openDB();
+    const tx = db.transaction(STORE_NAME, 'readwrite');
+    const store = tx.objectStore;
+    store.clear();
+    for (const file of files) {
+        if (!file.type.startsWith('image/')) continue;
+        const data = await readFileAsArrayBuffer(file);
+        store.add({ data, type: file.type });
     }
+    await new Promise((resolve, reject) => {
+        tx.oncomplete = resolve;
+        tx.onerror = () => reject(tx.error);
+    });
+    db.close();
 }
 
 export async function loadPhotos() {
-    if (!window.indexedDB) return [];
-    try {
-        const db = await openDB();
-        const tx = db.transaction(STORE_NAME, 'readonly');
-        const store = tx.objectStore;
-        const all = await new Promise((resolve, reject) => {
-            const req = store.getAll();
-            req.onsuccess = () => resolve(req.result);
-            req.onerror = () => reject(req.error);
-        });
-        db.close();
-        return all.map(entry => {
-            const blob = new Blob([entry.data], { type: entry.type });
-            return URL.createObjectURL(blob);
-        });
-    } catch (e) {
-        console.error('Error cargando fotos:', e);
-        return [];
-    }
+    if (!window.indexedDB) throw new Error('IndexedDB no disponible');
+    const db = await openDB();
+    const tx = db.transaction(STORE_NAME, 'readonly');
+    const store = tx.objectStore;
+    const all = await new Promise((resolve, reject) => {
+        const req = store.getAll();
+        req.onsuccess = () => resolve(req.result);
+        req.onerror = () => reject(req.error);
+    });
+    db.close();
+    return all.map(entry => {
+        const blob = new Blob([entry.data], { type: entry.type });
+        return URL.createObjectURL(blob);
+    });
 }
 
 export async function clearPhotos() {

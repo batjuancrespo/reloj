@@ -11,11 +11,9 @@ function revokeAllUrls() {
     lastImageIndex = -1;
 }
 
-function handleFileSelection(event) {
+async function handleFileSelection(event) {
     const files = event.target.files;
     if (!files || files.length === 0) return;
-
-    alert("DEBUG: " + files.length + " archivos seleccionados.");
 
     revokeAllUrls();
 
@@ -25,12 +23,11 @@ function handleFileSelection(event) {
     }
 
     if (localImageUrls.length > 0) {
-        savePhotos(Array.from(files));
-        alert(`Se han cargado ${localImageUrls.length} imágenes. Ahora puedes activar el marco de fotos.`);
-
-        const photoSelectButton = document.getElementById('photoSelectLabel');
-        if (photoSelectButton) {
-            photoSelectButton.style.display = 'none';
+        try {
+            await savePhotos(Array.from(files));
+            alert(`Se han cargado y guardado ${localImageUrls.length} imágenes.`);
+        } catch (e) {
+            alert(`Fotos cargadas (${localImageUrls.length}) pero NO se guardaron en almacenamiento local: ` + e.message);
         }
 
         if (slideshowIntervalId) {
@@ -43,10 +40,16 @@ function handleFileSelection(event) {
 }
 
 async function loadPhotosFromStorage() {
-    const urls = await loadPhotos();
-    if (urls.length === 0) return false;
-    localImageUrls = urls;
-    return true;
+    try {
+        const urls = await loadPhotos();
+        if (urls.length === 0) return false;
+        localImageUrls = urls;
+        alert(`Cargadas ${urls.length} fotos del almacenamiento local.`);
+        return true;
+    } catch (e) {
+        alert('Error al cargar fotos guardadas: ' + e.message);
+        return false;
+    }
 }
 
 function updateLabelToIcon() {
