@@ -1,9 +1,12 @@
 const DB_NAME = 'RelojPhotoDB';
-const DB_VERSION = 1;
+const DB_VERSION = 3;
 const STORE_NAME = 'photos';
 
 let photoKeys = [];
 let dbAvailable = true;
+let memoryStore = new Map();
+let memoryIdCounter = 0;
+let useMemory = false;
 
 function openDB() {
     return new Promise((resolve, reject) => {
@@ -20,6 +23,7 @@ function openDB() {
         };
         request.onsuccess = () => resolve(request.result);
         request.onerror = () => reject(request.error);
+        request.onblocked = () => reject(new Error('IndexedDB bloqueado'));
     });
 }
 
@@ -50,44 +54,60 @@ async function refreshPhotoKeys() {
             req.onerror = () => reject(req.error);
         });
         db.close();
+        useMemory = false;
     } catch (e) {
         dbAvailable = false;
-        photoKeys = [];
     }
 }
 
 export async function appendPhotos(files) {
-    try {
-        const db = await openDB();
-        const tx = db.transaction(STORE_NAME, 'readwrite');
-        const store = tx.objectStore;
+    if (!useMemory) {
+        try {
+            const db = await openDB();
+            const tx = db.transaction(STORE_NAME, 'readwrite');
+            const store = tx.objectStore;
 
-        for (const file of files) {
-            if (!file.type.startsWith('image/')) continue;
-            const data = await readFileAsArrayBuffer(file);
-            store.add({ data, type: file.type });
+            for (const file of files) {
+                if (!file.type.startsWith('image/')) continue;
+                const data = await readFileAsArrayBuffer(file);
+                store.add({ data, type: file.type });
+            }
+
+            await completeTx(tx);
+            db.close();
+            await refreshPhotoKeys();
+            return;
+        } catch (e) {
+            useMemory = true;
         }
+    }
 
-        await completeTx(tx);
-        db.close();
-        await refreshPhotoKeys();
-    } catch (e) {
-        dbAvailable = false;
+    // Fallback: guardar en memoria
+    for (const file of files) {
+        if (!file.type.startsWith('image/')) continue;
+        const data = await readFileAsArrayBuffer(file);
+        memoryIdCounter++;
+        memoryStore.set(memoryIdCounter, { data, type: file.type });
+        photoKeys.push(memoryIdCounter);
     }
 }
 
 export async function clearPhotos() {
-    try {
-        const db = await openDB();
-        const tx = db.transaction(STORE_NAME, 'readwrite');
-        const store = tx.objectStore;
-        store.clear();
-        await completeTx(tx);
-        db.close();
-    } catch (e) {
-        // Ignorar errores
+    if (!useMemory) {
+        try {
+            const db = await openDB();
+            const tx = db.transaction(STORE_NAME, 'readwrite');
+            const store = tx.objectStore;
+            store.clear();
+            await completeTx(tx);
+            db.close();
+        } catch (e) {
+            useMemory = true;
+        }
     }
+    memoryStore.clear();
     photoKeys = [];
+    memoryIdCounter = 0;
 }
 
 export async function loadRandomPhoto(excludeKey) {
@@ -99,6 +119,13 @@ export async function loadRandomPhoto(excludeKey) {
         key = candidates[Math.floor(Math.random() * candidates.length)];
     } else {
         key = photoKeys[Math.floor(Math.random() * photoKeys.length)];
+    }
+
+    if (useMemory) {
+        const entry = memoryStore.get(key);
+        if (!entry) return null;
+        const blob = new Blob([entry.data], { type: entry.type });
+        return { url: URL.createObjectURL(blob), key };
     }
 
     return loadPhotoByKey(key);
