@@ -31,14 +31,23 @@ function readFileAsArrayBuffer(file) {
 
 export async function savePhotos(files) {
     if (!window.indexedDB) throw new Error('IndexedDB no disponible');
+    // Leer todos los archivos ANTES de abrir la transacción
+    const entries = [];
+    for (const file of files) {
+        if (!file.type.startsWith('image/')) continue;
+        entries.push({
+            data: await readFileAsArrayBuffer(file),
+            type: file.type
+        });
+    }
+    if (entries.length === 0) throw new Error('No hay imágenes válidas');
+    // Ahora abrir transacción y guardar (sin await entre operaciones IDB)
     const db = await openDB();
     const tx = db.transaction(STORE_NAME, 'readwrite');
     const store = tx.objectStore(STORE_NAME);
     store.clear();
-    for (const file of files) {
-        if (!file.type.startsWith('image/')) continue;
-        const data = await readFileAsArrayBuffer(file);
-        store.add({ data, type: file.type });
+    for (const entry of entries) {
+        store.add(entry);
     }
     await new Promise((resolve, reject) => {
         tx.oncomplete = resolve;
