@@ -47,19 +47,32 @@ export async function savePhotos(files) {
     db.close();
 }
 
+function getAllFromStore(store) {
+    return new Promise(function(resolve, reject) {
+        var result = [];
+        var req = store.openCursor();
+        req.onsuccess = function(event) {
+            var cursor = event.target.result;
+            if (cursor) {
+                result.push(cursor.value);
+                cursor.continue();
+            } else {
+                resolve(result);
+            }
+        };
+        req.onerror = function() { reject(req.error); };
+    });
+}
+
 export async function loadPhotos() {
     if (!window.indexedDB) throw new Error('IndexedDB no disponible');
     const db = await openDB();
     const tx = db.transaction(STORE_NAME, 'readonly');
     const store = tx.objectStore(STORE_NAME);
-    const all = await new Promise((resolve, reject) => {
-        const req = store.getAll();
-        req.onsuccess = () => resolve(req.result);
-        req.onerror = () => reject(req.error);
-    });
+    const all = await getAllFromStore(store);
     db.close();
-    return all.map(entry => {
-        const blob = new Blob([entry.data], { type: entry.type });
+    return all.map(function(entry) {
+        var blob = new Blob([entry.data], { type: entry.type });
         return URL.createObjectURL(blob);
     });
 }
