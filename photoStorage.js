@@ -33,7 +33,7 @@ export async function savePhotos(files) {
     if (!window.indexedDB) throw new Error('IndexedDB no disponible');
     const db = await openDB();
     const tx = db.transaction(STORE_NAME, 'readwrite');
-    const store = tx.objectStore;
+    const store = tx.objectStore(STORE_NAME);
     store.clear();
     for (const file of files) {
         if (!file.type.startsWith('image/')) continue;
@@ -51,7 +51,7 @@ export async function loadPhotos() {
     if (!window.indexedDB) throw new Error('IndexedDB no disponible');
     const db = await openDB();
     const tx = db.transaction(STORE_NAME, 'readonly');
-    const store = tx.objectStore;
+    const store = tx.objectStore(STORE_NAME);
     const all = await new Promise((resolve, reject) => {
         const req = store.getAll();
         req.onsuccess = () => resolve(req.result);
@@ -69,7 +69,7 @@ export async function clearPhotos() {
     try {
         const db = await openDB();
         const tx = db.transaction(STORE_NAME, 'readwrite');
-        const store = tx.objectStore;
+        const store = tx.objectStore(STORE_NAME);
         store.clear();
         await new Promise((resolve, reject) => {
             tx.oncomplete = resolve;
