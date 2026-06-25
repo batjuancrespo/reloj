@@ -1,11 +1,16 @@
 const DB_NAME = 'RelojPhotoDB';
-const DB_VERSION = 2;
+const DB_VERSION = 1;
 const STORE_NAME = 'photos';
 
 let photoKeys = [];
+let dbAvailable = true;
 
 function openDB() {
     return new Promise((resolve, reject) => {
+        if (!window.indexedDB) {
+            reject(new Error('IndexedDB no disponible'));
+            return;
+        }
         const request = indexedDB.open(DB_NAME, DB_VERSION);
         request.onupgradeneeded = (event) => {
             const db = event.target.result;
@@ -35,41 +40,53 @@ function completeTx(tx) {
 }
 
 async function refreshPhotoKeys() {
-    const db = await openDB();
-    const tx = db.transaction(STORE_NAME, 'readonly');
-    const store = tx.objectStore;
-    photoKeys = await new Promise((resolve, reject) => {
-        const req = store.getAllKeys();
-        req.onsuccess = () => resolve(req.result);
-        req.onerror = () => reject(req.error);
-    });
-    db.close();
+    try {
+        const db = await openDB();
+        const tx = db.transaction(STORE_NAME, 'readonly');
+        const store = tx.objectStore;
+        photoKeys = await new Promise((resolve, reject) => {
+            const req = store.getAllKeys();
+            req.onsuccess = () => resolve(req.result);
+            req.onerror = () => reject(req.error);
+        });
+        db.close();
+    } catch (e) {
+        dbAvailable = false;
+        photoKeys = [];
+    }
 }
 
 export async function appendPhotos(files) {
-    const db = await openDB();
-    const tx = db.transaction(STORE_NAME, 'readwrite');
-    const store = tx.objectStore;
+    try {
+        const db = await openDB();
+        const tx = db.transaction(STORE_NAME, 'readwrite');
+        const store = tx.objectStore;
 
-    for (const file of files) {
-        if (!file.type.startsWith('image/')) continue;
-        const data = await readFileAsArrayBuffer(file);
-        store.add({ data, type: file.type });
+        for (const file of files) {
+            if (!file.type.startsWith('image/')) continue;
+            const data = await readFileAsArrayBuffer(file);
+            store.add({ data, type: file.type });
+        }
+
+        await completeTx(tx);
+        db.close();
+        await refreshPhotoKeys();
+    } catch (e) {
+        dbAvailable = false;
     }
-
-    await completeTx(tx);
-    db.close();
-
-    await refreshPhotoKeys();
 }
 
 export async function clearPhotos() {
-    const db = await openDB();
-    const tx = db.transaction(STORE_NAME, 'readwrite');
-    const store = tx.objectStore;
-    store.clear();
-    await completeTx(tx);
-    db.close();
+    try {
+        const db = await openDB();
+        const tx = db.transaction(STORE_NAME, 'readwrite');
+        const store = tx.objectStore;
+        store.clear();
+        await completeTx(tx);
+        db.close();
+    } catch (e) {
+        // Ignorar errores
+    }
     photoKeys = [];
 }
 
@@ -88,23 +105,28 @@ export async function loadRandomPhoto(excludeKey) {
 }
 
 export async function loadPhotoByKey(key) {
-    const db = await openDB();
-    const tx = db.transaction(STORE_NAME, 'readonly');
-    const store = tx.objectStore;
-    const entry = await new Promise((resolve, reject) => {
-        const req = store.get(key);
-        req.onsuccess = () => resolve(req.result);
-        req.onerror = () => reject(req.error);
-    });
-    db.close();
+    try {
+        const db = await openDB();
+        const tx = db.transaction(STORE_NAME, 'readonly');
+        const store = tx.objectStore;
+        const entry = await new Promise((resolve, reject) => {
+            const req = store.get(key);
+            req.onsuccess = () => resolve(req.result);
+            req.onerror = () => reject(req.error);
+        });
+        db.close();
 
-    if (!entry) return null;
-    const blob = new Blob([entry.data], { type: entry.type });
-    return { url: URL.createObjectURL(blob), key };
+        if (!entry) return null;
+        const blob = new Blob([entry.data], { type: entry.type });
+        return { url: URL.createObjectURL(blob), key };
+    } catch (e) {
+        return null;
+    }
 }
 
 export async function hasStoredPhotos() {
     if (photoKeys.length > 0) return true;
+    if (!dbAvailable) return false;
     await refreshPhotoKeys();
     return photoKeys.length > 0;
 }

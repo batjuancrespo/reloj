@@ -143,7 +143,11 @@ async function init() {
     });
 
     // Slideshow System
-    await initSlideshow('slideshow-image', 'photoInput');
+    try {
+        await initSlideshow('slideshow-image', 'photoInput');
+    } catch (e) {
+        console.error('Error al inicializar slideshow:', e);
+    }
     slideshowToggle = document.getElementById('slideshowToggle');
     mainAppContent = document.getElementById('main-app-content');
     slideshowDisplay = document.getElementById('slideshow-display');
