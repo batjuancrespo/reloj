@@ -11,33 +11,34 @@ function revokeAllUrls() {
     lastImageIndex = -1;
 }
 
-async function handleFileSelection(event) {
+function handleFileSelection(event) {
     const files = event.target.files;
     if (!files || files.length === 0) return;
 
-    const loadedUrls = [];
+    alert("DEBUG: " + files.length + " archivos seleccionados.");
+
+    revokeAllUrls();
 
     for (const file of files) {
         if (!file.type.startsWith('image/')) continue;
-        loadedUrls.push(URL.createObjectURL(file));
+        localImageUrls.push(URL.createObjectURL(file));
     }
 
-    if (loadedUrls.length === 0) {
-        alert('No se seleccionaron imágenes válidas.');
-        return;
-    }
+    if (localImageUrls.length > 0) {
+        savePhotos(Array.from(files));
+        alert(`Se han cargado ${localImageUrls.length} imágenes. Ahora puedes activar el marco de fotos.`);
 
-    revokeAllUrls();
-    localImageUrls = loadedUrls;
+        const photoSelectButton = document.getElementById('photoSelectLabel');
+        if (photoSelectButton) {
+            photoSelectButton.style.display = 'none';
+        }
 
-    await savePhotos(Array.from(files));
-
-    event.target.value = '';
-
-    alert(`Cargadas ${localImageUrls.length} fotos.`);
-
-    if (slideshowIntervalId) {
-        displayNextImage();
+        if (slideshowIntervalId) {
+            stopSlideshow();
+            startSlideshow();
+        }
+    } else {
+        alert("Los archivos seleccionados no son imágenes válidas.");
     }
 }
 
@@ -131,7 +132,8 @@ export function startSlideshow() {
         document.getElementById('slideshowToggle').checked = false;
         document.getElementById('slideshow-display').classList.add('hidden');
         document.getElementById('main-app-content').classList.remove('hidden');
-        alert('Primero añade fotos con el botón ➕.');
+        var count = localImageUrls.length;
+        alert("Por favor, selecciona primero una o más fotos usando el botón '+'. (fotos ahora: " + count + ")");
     }
 }
 
