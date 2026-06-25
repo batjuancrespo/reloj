@@ -142,12 +142,7 @@ async function init() {
         }
     });
 
-    // Slideshow System
-    try {
-        await initSlideshow('slideshow-image', 'photoInput');
-    } catch (e) {
-        console.error('Error al inicializar slideshow:', e);
-    }
+    // Slideshow System — toggle listener se registra ANTES de initSlideshow
     slideshowToggle = document.getElementById('slideshowToggle');
     mainAppContent = document.getElementById('main-app-content');
     slideshowDisplay = document.getElementById('slideshow-display');
@@ -157,6 +152,10 @@ async function init() {
         userHasOverriddenMode = true;
         applyCurrentMode();
         resetInactivityTimer();
+    });
+
+    initSlideshow('slideshow-image', 'photoInput').catch(e => {
+        console.error('Error al inicializar slideshow:', e);
     });
     
     // Brightness System
