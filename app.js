@@ -154,7 +154,7 @@ async function init() {
         resetInactivityTimer();
     });
 
-    initSlideshow('slideshow-image', 'photoInput').catch(e => {
+    var slideshowInit = initSlideshow('slideshow-image', 'photoInput').catch(function(e) {
         console.error('Error al inicializar slideshow:', e);
     });
     
@@ -162,9 +162,11 @@ async function init() {
     updateBrightness();
     setInterval(updateBrightness, 60000);
     
-    // Iniciar el gestor de modo automático
-    autoManageMode();
-    setInterval(autoManageMode, 60000);
+    // Iniciar el gestor de modo automático (espera a que initSlideshow termine)
+    slideshowInit.then(function() {
+        autoManageMode();
+        setInterval(autoManageMode, 60000);
+    });
 
     console.log("Smart Clock Initialized. High Visibility Version.");
 }
