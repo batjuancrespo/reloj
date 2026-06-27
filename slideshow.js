@@ -1,59 +1,52 @@
-import { savePhotos, loadPhotos, clearPhotos } from './photoStorage.js';
+import { savePhotos, getPhotoKeys, loadPhotoByKey, clearPhotos } from './photoStorage.js';
 
-let slideshowIntervalId = null;
-let slideshowImageElement = null;
-let localImageUrls = [];
-let lastImageIndex = -1;
+var slideshowIntervalId = null;
+var slideshowImageElement = null;
+var photoKeys = [];
+var currentPhotoUrl = null;
+var currentKey = -1;
 
-function revokeAllUrls() {
-    localImageUrls.forEach(url => URL.revokeObjectURL(url));
-    localImageUrls = [];
-    lastImageIndex = -1;
+function revokeCurrentUrl() {
+    if (currentPhotoUrl) {
+        URL.revokeObjectURL(currentPhotoUrl);
+        currentPhotoUrl = null;
+    }
 }
 
 async function handleFileSelection(event) {
-    const files = event.target.files;
+    var files = event.target.files;
     if (!files || files.length === 0) return;
 
-    revokeAllUrls();
-
-    for (const file of files) {
-        if (!file.type.startsWith('image/')) continue;
-        localImageUrls.push(URL.createObjectURL(file));
+    try {
+        await savePhotos(Array.from(files));
+        photoKeys = await getPhotoKeys();
+        alert('Se han cargado y guardado ' + photoKeys.length + ' imágenes.');
+    } catch (e) {
+        alert('Error al guardar: ' + e.message);
+        return;
     }
 
-    if (localImageUrls.length > 0) {
-        try {
-            await savePhotos(Array.from(files));
-            alert(`Se han cargado y guardado ${localImageUrls.length} imágenes.`);
-        } catch (e) {
-            alert(`Fotos cargadas (${localImageUrls.length}) pero NO se guardaron en almacenamiento local: ` + e.message);
-        }
+    event.target.value = '';
 
-        if (slideshowIntervalId) {
-            stopSlideshow();
-            startSlideshow();
-        }
-    } else {
-        alert("Los archivos seleccionados no son imágenes válidas.");
+    if (slideshowIntervalId) {
+        stopSlideshow();
+        startSlideshow();
     }
 }
 
 async function loadPhotosFromStorage() {
     try {
-        const urls = await loadPhotos();
-        if (urls.length === 0) return false;
-        localImageUrls = urls;
-        alert(`Cargadas ${urls.length} fotos del almacenamiento local.`);
+        photoKeys = await getPhotoKeys();
+        if (photoKeys.length === 0) return false;
         return true;
     } catch (e) {
-        alert('Error al cargar fotos guardadas: ' + e.message);
+        console.error('Error cargando fotos:', e);
         return false;
     }
 }
 
 function updateLabelToIcon() {
-    const label = document.getElementById('photoSelectLabel');
+    var label = document.getElementById('photoSelectLabel');
     if (!label) return;
     label.className = 'icon-button';
     label.innerHTML = '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>';
@@ -61,22 +54,22 @@ function updateLabelToIcon() {
 }
 
 function addClearButton() {
-    const container = document.querySelector('.slideshow-controls-container');
+    var container = document.querySelector('.slideshow-controls-container');
     if (!container) return;
 
-    const clearBtn = document.createElement('button');
+    var clearBtn = document.createElement('button');
     clearBtn.id = 'clearPhotosBtn';
     clearBtn.className = 'icon-button';
     clearBtn.innerHTML = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/></svg>';
     clearBtn.title = 'Vaciar galería';
-    clearBtn.addEventListener('click', async () => {
-        if (localImageUrls.length === 0) return;
+    clearBtn.addEventListener('click', async function() {
+        if (photoKeys.length === 0) return;
         if (confirm('¿Borrar todas las fotos de la galería?')) {
             await clearAllPhotos();
         }
     });
 
-    const toggleContainer = container.querySelector('.toggle-switch-container');
+    var toggleContainer = container.querySelector('.toggle-switch-container');
     if (toggleContainer) {
         container.insertBefore(clearBtn, toggleContainer);
     } else {
@@ -88,7 +81,7 @@ export async function initSlideshow(imageElementId, inputElementId) {
     slideshowImageElement = document.getElementById(imageElementId);
     if (!slideshowImageElement) return;
 
-    const photoInput = document.getElementById(inputElementId);
+    var photoInput = document.getElementById(inputElementId);
     if (photoInput) {
         photoInput.addEventListener('change', handleFileSelection);
     }
@@ -96,31 +89,41 @@ export async function initSlideshow(imageElementId, inputElementId) {
     updateLabelToIcon();
     addClearButton();
 
-    const loaded = await loadPhotosFromStorage();
+    var loaded = await loadPhotosFromStorage();
     if (loaded) {
-        console.log(`${localImageUrls.length} fotos cargadas de almacenamiento local.`);
+        console.log(photoKeys.length + ' fotos disponibles en almacenamiento local.');
     }
 }
 
-function displayNextImage() {
-    if (!slideshowImageElement || localImageUrls.length === 0) return;
+async function displayNextImage() {
+    if (photoKeys.length === 0) return;
 
-    let randomIndex;
-    if (localImageUrls.length > 1) {
+    var key;
+    if (photoKeys.length > 1 && currentKey !== -1) {
         do {
-            randomIndex = Math.floor(Math.random() * localImageUrls.length);
-        } while (randomIndex === lastImageIndex);
+            key = photoKeys[Math.floor(Math.random() * photoKeys.length)];
+        } while (key === currentKey);
     } else {
-        randomIndex = 0;
+        key = photoKeys[Math.floor(Math.random() * photoKeys.length)];
     }
 
-    lastImageIndex = randomIndex;
+    currentKey = key;
 
-    slideshowImageElement.classList.remove('active');
-    setTimeout(() => {
-        slideshowImageElement.src = localImageUrls[lastImageIndex];
-        slideshowImageElement.classList.add('active');
-    }, 1500);
+    try {
+        var url = await loadPhotoByKey(key);
+        if (!url) return;
+
+        revokeCurrentUrl();
+        currentPhotoUrl = url;
+
+        slideshowImageElement.classList.remove('active');
+        setTimeout(function() {
+            slideshowImageElement.src = currentPhotoUrl;
+            slideshowImageElement.classList.add('active');
+        }, 1500);
+    } catch (e) {
+        console.error('Error cargando foto:', e);
+    }
 }
 
 export function startSlideshow() {
@@ -128,15 +131,14 @@ export function startSlideshow() {
         clearInterval(slideshowIntervalId);
     }
 
-    if (localImageUrls.length > 0) {
+    if (photoKeys.length > 0) {
         displayNextImage();
         slideshowIntervalId = setInterval(displayNextImage, 15000);
     } else {
         document.getElementById('slideshowToggle').checked = false;
         document.getElementById('slideshow-display').classList.add('hidden');
         document.getElementById('main-app-content').classList.remove('hidden');
-        var count = localImageUrls.length;
-        alert("Por favor, selecciona primero una o más fotos usando el botón '+'. (fotos ahora: " + count + ")");
+        alert('Primero añade fotos con el botón ➕.');
     }
 }
 
@@ -145,9 +147,11 @@ export function stopSlideshow() {
         clearInterval(slideshowIntervalId);
         slideshowIntervalId = null;
     }
+    revokeCurrentUrl();
+    currentKey = -1;
     if (slideshowImageElement) {
         slideshowImageElement.classList.remove('active');
-        setTimeout(() => {
+        setTimeout(function() {
             slideshowImageElement.src = '';
         }, 1500);
     }
@@ -155,6 +159,6 @@ export function stopSlideshow() {
 
 export async function clearAllPhotos() {
     stopSlideshow();
-    revokeAllUrls();
     await clearPhotos();
+    photoKeys = [];
 }
